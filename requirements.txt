@@ -29,9 +29,4 @@ flake8==4.0.1
 pep8==1.7.1
 pyflakes==2.4.0
 pycodestyle==2.8.0
-pytest==6.2.5
-attrs==21.2.0
-py==1.10.0
-pluggy==1.0.0
-iniconfig==1.1.1
 python-Levenshtein==0.12.2
