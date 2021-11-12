@@ -1,0 +1,14 @@
+._*
+*~
+*.pyc
+ve
+.project
+.pydevproject
+node_modules
+.cache
+dist
+pypanopto.egg-info
+.pytest_cache
+testbed.py
+.settings
+__pycache__

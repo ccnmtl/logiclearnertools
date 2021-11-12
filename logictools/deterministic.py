@@ -2,21 +2,21 @@
 checking student response deterministically
 """
 from create_expressions_mistakes import *
+
+
+from contextlib import redirect_stdout
 import io
 
 
+
 def check_correct_operation(e1, e2, ops, num_ops=1):
-    print("called c_c_o()")  # this does get called, but doesn't make
-    # LogicTreeTrainer object??
-
-    if e1 == e2:  # if the student entered the same thing as the previous step
+    print("called c_c_o()") #this does get called, but doesn't make LogicTreeTrainer object??
+    if e1 == e2: #if the student entered the same thing as the previous step
         print("returned false and continued")
-    return False
-
+        return False
     ops = ops*num_ops
-
     def convert_to_logic_symbols(expr):
-        # logic_symbols = ['∧', '∨', '→', '↔', '~']
+        logic_symbols = ['∧', '∨', '→', '↔', '~']
         new_expr = expr.replace('^', '∧')
         new_expr = new_expr.replace('v', '∨')
         new_expr = new_expr.replace('<->', '↔')
@@ -34,17 +34,13 @@ def check_correct_operation(e1, e2, ops, num_ops=1):
     f = io.StringIO()
     print("this is f")
     print(f)
-    # with statement: https://www.geeksforgeeks.org/with-statement-in-python/
-    # redirect_stdout: https://docs.python.org/3/library/contextlib.html#:~:text
-    # =in%20version%203.4.-,contextlib,-.redirect_stdout(new_target)%C2%B6
+    #with statement: https://www.geeksforgeeks.org/with-statement-in-python/
+    #redirect_stdout: https://docs.python.org/3/library/contextlib.html#:~:text=in%20version%203.4.-,contextlib,-.redirect_stdout(new_target)%C2%B6
+    #combination means that output in this block is directed to f instead of sys.stdout
 
-    # combination means that output in this block is directed to f instead of
-    # sys.stdout
-
-    # !!!!CAREFUL WHEN CLEANING!!!!!!!
-    # for dubugging, commented out with statement and un-indented until
-    # comment that says "until here"
-    # with redirect_stdout(f):
+    #!!!!CAREFUL WHEN CLEANING!!!!!!!
+    #for dubugging, commented out with statement and un-indented until comment that says "until here"
+    #with redirect_stdout(f):
     print("got inside with statement")
     try:
         print("LogicTreeTrainer 1")
@@ -68,13 +64,12 @@ def check_correct_operation(e1, e2, ops, num_ops=1):
     #         for loc_parses in t.deep_parse_tree():
     #             tree_strs.append(loc_parses)
     # else:
-    # tree_strs = [t.parse_tree() for t in trees]
+        # tree_strs = [t.parse_tree() for t in trees]
 
     tree_strs = [t.parse_tree() for t in trees]
     print(tree_strs)
 
-    if e2 in tree_strs: # compare what the user entered to the possible
-        # next steps
+    if e2 in tree_strs: #compare what the user entered to the possible next steps
         del trainer #clean up
         del tree_strs
         del f

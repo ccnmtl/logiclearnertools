@@ -17,11 +17,11 @@ import sys
 import ast
 import random
 import math
-from collections import Iterable
+from collections.abc import Iterable
 
 from sly import Lexer
 from sly import Parser
-from parsing_logic.scan_parse import *
+from scan_parse import *
 
 import networkx as nx
 

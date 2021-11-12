@@ -10,11 +10,12 @@ MAX_COMPLEXITY ?= 7
 PY_DIRS ?= $(APP)
 FLAKE8 ?= $(VE)/bin/flake8
 PIP ?= $(VE)/bin/pip
+PYTEST ?= $(VE)/bin/pytest
 
-all: flake8 test
+all: test
 
 clean:
-	rm -rf $(VE)
+	rm -rf $(VE) .pytest_cache
 	find . -name '*.pyc' -exec rm {} \;
 
 $(PY_SENTINAL):
