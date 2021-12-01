@@ -1,9 +1,9 @@
 boto3==1.17.76
-botocore==1.20.76
-click==8.0.1
+botocore==1.23.11
+click==8.0.3
 decorator==4.4.2
 Flask==2.0.0
-Flask-WTF==0.14.3
+Flask-WTF==1.0.0
 gunicorn==20.1.0
 importlib-metadata==4.8.2
 itsdangerous==2.0.1
@@ -18,11 +18,11 @@ python-dateutil==2.8.1
 s3transfer==0.4.2
 six==1.16.0
 sly==0.4
-sympy==1.8
+sympy==1.9
 typing-extensions==3.10.0.0
 urllib3==1.26.4
 Werkzeug==2.0.2
-WTForms==2.3.3
+WTForms==3.0.0
 zipp==3.6.0
 sly==0.4
 flake8==4.0.1
