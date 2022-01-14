@@ -20,7 +20,7 @@ six==1.16.0
 sly==0.4
 sympy==1.9
 typing-extensions==4.0.1
-urllib3==1.26.5
+urllib3==1.26.8
 Werkzeug==2.0.2
 WTForms==3.0.0
 zipp==3.6.0
