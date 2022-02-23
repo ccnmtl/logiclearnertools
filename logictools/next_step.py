@@ -1,4 +1,4 @@
-from .expression_parser import validate_and_get_fontier
+from .expression_parser import validate_and_get_frontier
 
 
 def next_step(next_expr, next_rule, step_list, target):
