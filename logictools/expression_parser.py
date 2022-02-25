@@ -1,9 +1,9 @@
-from .logic_rule_transforms import *
+from logictools.logic_rule_transforms import *
 from copy import deepcopy
 from lark import Lark, Tree, Token
 from lark.visitors import Visitor, Transformer, v_args
 from lark.exceptions import UnexpectedInput
-from .validation_exception import *
+from logictools.validation_exception import *
 
 
 class ExpressionParser:

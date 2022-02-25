@@ -1,4 +1,5 @@
-from .expression_parser import validate_and_get_frontier
+import time
+from logictools.expression_parser import validate_and_get_frontier
 
 
 def next_step(next_expr, next_rule, step_list, target):
@@ -18,9 +19,13 @@ def next_step(next_expr, next_rule, step_list, target):
         hintRule: next rule hint
     }
     """
-    cur_expr, _ = step_list[-1]
+    cur_expr = step_list[-1]
     response = validate_and_get_frontier(cur_expr, next_expr, next_rule, target)
-    hint = response["nextFrontier"][time.time() % len(response["nextFrontier"])]  # super hacky placeholder for search
+
+    # super hacky placeholder for search
+    idx = int(time.time() % len(response["nextFrontier"]))
+
+    hint = response["nextFrontier"][idx]
     response["hintExpression"], response["hintRule"] = hint
 
     return response
