@@ -4,7 +4,7 @@ importlib-metadata==4.0.1
 itsdangerous==2.0.1
 Jinja2==3.0.1
 jmespath==0.10.0
-MarkupSafe==2.0.1
+MarkupSafe==2.1.0
 mpmath==1.2.1
 networkx<2.6
 numpy<1.21
