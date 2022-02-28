@@ -1,3 +1,25 @@
+from Levenshtein import distance
+
+
+# all heuristics expect Tuple[expr: str, law:str] as inputs
+
+def levenshtein_distance(n1, n2):
+    return distance(n1[0], n2[0]) / 10
+
+
+def unitary_distance(n1, n2):
+    return 1
+
+
+if __name__ == "__main__":
+    n1, n2 = ('p->q', None), ('~pvq', None)
+    print(levenshtein_distance(n1, n2))
+    print(unitary_distance(n1, n2))
+
+
+"""
+OLD (to replicate heuristics)
+
 import astar
 import os
 import sys
@@ -157,8 +179,10 @@ def __main__():
     print(h4(start, nxt, ans))
     print(h5(start, nxt, ans))
     print(h6(start, nxt, ans))
-    #sample_questions('questions.txt')
+    #sample_questions('questions.json')
 
 
 if __name__ == '__main__':
     __main__()
+
+"""
