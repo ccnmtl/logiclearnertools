@@ -1,74 +1,86 @@
-from astar import find_path
 from expression_parser import *
 from astar_heuristics import *
 import json
+from heapq import heappush, heappop
+
+inf = float('inf')
 
 
-def get_goal_path(start, goal, goal_heuristic, adjacent_heuristic, frontier_getter, goal_check):
+def frontier_func(x):
+    fr = get_frontier(x[0])
+    # print(fr)
+    return fr
 
-    start, goal = (start, None), (goal, None)
-    return find_path(
-        start=start,
-        goal=goal,
-        heuristic_cost_estimate_fnct=goal_heuristic,
-        distance_between_fnct=adjacent_heuristic,
-        neighbors_fnct=frontier_getter,
-        is_goal_reached_fnct=goal_check,
-    )
+
+def goal_func(x, target):
+    # print(x, target)
+    return x[0] == target
+
+
+def astar_search(start, goal, distance_func, heuristic):
+
+    class SearchNode:
+        def __init__(self, data, fscore=inf, gscore=inf):
+            self.data = data
+            self.fscore = fscore
+            self.gscore = gscore
+            self.out_of_openset = True
+            self.completed = False
+            self.prev = None
+
+        def __lt__(self, other):
+            return self.fscore < other.fscore
+
+    class NodeDict(dict):  # can't replace with defaultdict because it doesn't accept args in lambda :(
+
+        def __missing__(self, key):
+            value = SearchNode(key)
+            self.__setitem__(key, value)
+            return value
+
+    start = (start, "Start")
+
+    if goal_func(start, goal):
+        return [start]
+
+    search_dict = NodeDict()
+    start_node = search_dict[start] = SearchNode(start, fscore=heuristic(start, goal), gscore=.0)
+    open_set = []
+    heappush(open_set, start_node)
+
+    while open_set:
+        current_node = heappop(open_set)
+        if goal_func(current_node.data, goal):
+            rev_sol = []
+            while current_node is not None:
+                rev_sol.append(current_node.data)
+                current_node = current_node.prev
+            return reversed(rev_sol)
+
+        current_node.out_of_openset = True
+        current_node.completed = True
+
+        for neighbor in map(lambda n: search_dict[n], frontier_func(current_node.data)):
+            if neighbor.completed:
+                continue
+            tentative_gscore = current_node.gscore + distance_func(current_node.data, neighbor.data)
+            if tentative_gscore < neighbor.gscore:
+                neighbor.prev = current_node
+                neighbor.gscore = tentative_gscore
+                neighbor.fscore = tentative_gscore + heuristic(neighbor.data, goal)
+                if neighbor.out_of_openset:
+                    neighbor.out_of_openset = False
+                    heappush(open_set, neighbor)
+                else:
+                    open_set.remove(neighbor)
+                    heappush(open_set, neighbor)
+
+    return None
 
 
 if __name__ == "__main__":
     with open('questions.json') as f:
-        questions = json.load(f)
+        questions = json.load(f)['questions']
     for q in questions[:1]:
-        start = q['question'].split('that ')[1].split(' is')[0]
-        goal = q['answer']
-        gp = get_goal_path(
-            start, goal, levenshtein_distance, unitary_distance, lambda x: get_frontier(x[0]), lambda x, y: x == y
-        )
-        print("\n\n")
-        if gp[0]:
-            for step in gp[0]:
-                print(step)
-
-"""
-OLD (to replicate logging)
-
-if __name__ == '__main__':
-
-    # if len(sys.argv) != 3:
-    #     print(
-    #         'Usage : {script} <start_expression> <answer>'.format(script=sys.argv[0]))
-    #     sys.exit(1)
-
-    #station1 = get_station_by_name(sys.argv[1])
-    #start = sys.argv[1]
-
-    with open('questions.json') as file:
-        questions = json.load(file)
-    print("Used Heuristic: abs(length of possible step - length of answer)")
-    total_time = 0
-
-    for i, question in enumerate(questions[:1]):
-        try:
-            start = question['question'].split('that ')[1].split(' is')[0]
-            print('Start: ', start)
-            ans = question['answer']
-            print('Answer: ', ans)
-            result_tuple = get_path(start, ans)
-            print("------**-------")
-            if result_tuple[0]:
-                for s in result_tuple[0]:
-                    print(s)
-            else:
-                raise Exception('path not found!')
-            with open('results.txt','a') as file:
-                file.write('Question {}: {} nodes considered. {} bailouts.\n'.format(i, result_tuple[1], result_tuple[2]))
-                print('Question {}: {} nodes considered. {} bailouts.\n'.format(i, result_tuple[1], result_tuple[2]))
-        except Exception as e:
-            with open('results.txt','a') as file:
-                file.write('Question {}: Error. {}\n'.format(i, e))
-                print('Question {}: Error. {}\n'.format(i, e))
-
-        print('\n*************************************\n')
-"""
+        gp = astar_search(q['premise'], q['target'], levenshtein_distance, unitary_distance)
+        print(list(gp))
