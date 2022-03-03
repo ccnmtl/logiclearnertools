@@ -27,7 +27,7 @@ from setuptools import setup
 
 setup(
     name="logiclearnertools",
-    version="0.1.0",
+    version="0.1.1",
     author="Natalia Dittren, Columbia University Computer Science Faculty and Students",
     author_email="natalia.d@columbia.edu",
     url="https://github.com/ccnmtl/logiclearnertools",
@@ -38,6 +38,7 @@ setup(
     license="GPLv3+",
     platforms=["any"],
     zip_safe=False,
+    package_data = {'' : ['*.*']},
     packages=['logictools'],
     include_package_data=True,
     )
