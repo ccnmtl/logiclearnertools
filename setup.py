@@ -38,7 +38,6 @@ setup(
     license="GPLv3+",
     platforms=["any"],
     zip_safe=False,
-    package_data = {'' : ['*.*']},
     packages=['logictools'],
     include_package_data=True,
     )
