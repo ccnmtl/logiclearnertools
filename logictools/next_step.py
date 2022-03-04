@@ -19,13 +19,14 @@ def next_step(next_expr, next_rule, step_list, target):
         hintRule: next rule hint
     }
     """
+
     cur_expr = step_list[-1]
     response = validate_and_get_frontier(cur_expr, next_expr, next_rule, target)
 
     # super hacky placeholder for search
-    idx = int(time.time() % len(response["nextFrontier"]))
-
-    hint = response["nextFrontier"][idx]
-    response["hintExpression"], response["hintRule"] = hint
+    if response["nextFrontier"]:
+        idx = int(time.time() % len(response["nextFrontier"]))
+        hint = response["nextFrontier"][idx]
+        response["hintExpression"], response["hintRule"] = hint
 
     return response
