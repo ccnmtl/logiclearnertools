@@ -52,7 +52,7 @@
             "target": "~pvq",
             "difficulty": "mild",
             "solution": [
-                {"statement": "~(p^~q)vq", "rule": "Start"},{"statement": "(~pvq)vq)", "rule": "De Morgan's Law"},{"statement": "~pvqvq", "rule": "Associativity"},
+                {"statement": "~(p^~q)vq", "rule": "Start"},{"statement": "(~pvq)vq", "rule": "De Morgan's Law"},{"statement": "~pvqvq", "rule": "Associativity"},
                 {"statement": "~pvq", "rule": "Idempotence"}
             ]
         },
@@ -82,7 +82,7 @@
             "target": "(p->r)^(q->r)",
             "difficulty": "mild",
             "solution": [{"statement": "(pvq)->r", "rule": "Start"},{"statement": "~(pvq)vr", "rule": "Implication as Disjunction"},
-                {"statement": "(~p^~q)vr)", "rule": "De Morgan's Law"},{"statement": "(~pvr)^(~qvr)", "rule": "Distributivity"},
+                {"statement": "(~p^~q)vr", "rule": "De Morgan's Law"},{"statement": "(~pvr)^(~qvr)", "rule": "Distributivity"},
                 {"statement": "(p->r)^(~qvr)", "rule": "Implication as Disjunction"},{"statement": "(p->r)^(q->r)", "rule": "Implication as Disjunction"}]
         },
         {
@@ -99,7 +99,7 @@
             "target": "T",
             "difficulty": "mild",
             "solution": [
-                {"statement": "F->T", "rule": "Start"},{"statement": "~FvT", "rule": "Implication as Disjunction"},{"statement": "TvT", "rule": "Negation"}, {"statement": "T", "rule": "Identity"}
+                {"statement": "F->T", "rule": "Start"},{"statement": "~FvT", "rule": "Implication as Disjunction"},{"statement": "TvT", "rule": "Negation"}, {"statement": "T", "rule": "Domination"}
             ]
         },
         {
@@ -166,7 +166,7 @@
                 {"statement": "(p^q)v(~pv(p^~q))", "rule": "Start"},
                 {"statement": "(p^q)v((~pvp)^(~pv~q))", "rule": "Distributivity"},
                 {"statement": "(p^q)v(T^(~pv~q))", "rule": "Negation"},
-                {"statement": "(p^q)^(~pv~q)", "rule": "Identity"},
+                {"statement": "(p^q)v(~pv~q)", "rule": "Identity"},
                 {"statement": "(p^q)v~(p^q)", "rule": "De Morgan's Law"},
                 {"statement": "T", "rule": "Negation"}
             ]
@@ -178,10 +178,9 @@
             "solution": [
                 {"statement": "(p^~q)v(q^~p)", "rule": "Start"},
                 {"statement": "~(~(p^~q)^~(q^~p))", "rule": "De Morgan's Law"},
-                {"statement": "~(~(p^~q)^~(q^~p))", "rule": "De Morgan's Law"},
                 {"statement": "~((~pVq)^~(q^~p))", "rule": "De Morgan's Law"},
                 {"statement": "~((~pVq)^(~qVp))", "rule": "De Morgan's Law"},
-                {"statement": "~((p->q)^(q->p))", "rule": "Implication as Disjunction"},
+                {"statement": " ~((p->q)^(~qVp))", "rule": "Implication as Disjunction"},
                 {"statement": "~((p->q)^(q->p))", "rule": "Implication as Disjunction"},
                 {"statement": "~(p<=>q)", "rule": "Iff as Implication"}
             ]
@@ -252,11 +251,8 @@
             "difficulty": "medium",
             "solution": [
                 {"statement": "~((~p^q)v~(rv~s))", "rule": "Start"},
-                {"statement": "~((pV~q)^(~q->s))", "rule": "Start"},
-                {"statement": "~((pV~q)^(qVs))", "rule": "Implication as Disjunction"},
-                {"statement": "~(pV~q)V~(qVs)", "rule": "De Morgan's Law"},
-                {"statement": "(~p^q)V~(qVs)", "rule": "De Morgan's Law"},
-                {"statement": "(~p^q)V(~q^~s)", "rule": "De Morgan's Law"}
+                {"statement": "~(~p^q)^(rV~s)", "rule": "De Morgan's Law"},
+                {"statement": "(pV~q)^(rV~s)", "rule": "De Morgan's Law"}
             ]
         },
         {
@@ -279,7 +275,6 @@
             "solution": [
                 {"statement": "s^((~s^~q)v(~s^~T))^p", "rule": "Start"},
                 {"statement": "s^((~s^~q)V(~s^F))^p", "rule": "Negation"},
-                {"statement": "s^((~s^~q)V~s)^p", "rule": "Identity"},
                 {"statement": "s^((~s^~q)VF)^p", "rule": "Domination"},
                 {"statement": "s^(~s^~q)^p", "rule": "Identity"},
                 {"statement": "s^~s^~q^p", "rule": "Associativity"},
@@ -293,12 +288,8 @@
             "solution": [
                 {"statement": "~(~(((~p^s)v((~p^T)^~s))^p)^~p)", "rule": "Start"},
                 {"statement": "~(~(((~p^s)V(~p^~s))^p)^~p)", "rule": "Identity"},
-                {"statement": "~(~(~p^(sV~s))^p)^~p)", "rule": "Distributivity"},
-                {"statement": "~(~(~p^(sV~s)^p)^~p)", "rule": "Distributivity"},
                 {"statement": "~(~((~p^(sV~s))^p)^~p)", "rule": "Distributivity"},
-                {"statement": "~(~F^~p)", "rule": "Negation"},
-                {"statement": "~(~((~p^T)^p)^~p)", "rule": "Negation"},
-                {"statement": "~(~(~p^p)^~p)", "rule": "Identity"},
+                {"statement": "~(~(~p^(sV~s)^p)^~p)", "rule": "Associativity"},
                 {"statement": "~(~F^~p)", "rule": "Negation"},
                 {"statement": "~(T^~p)", "rule": "Negation"},
                 {"statement": "~~p", "rule": "Identity"},
