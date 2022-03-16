@@ -1,5 +1,5 @@
 import itertools
-from collections import defaultdict
+from collections import OrderedDict
 
 from lark import Tree, Token
 from itertools import permutations
@@ -36,14 +36,19 @@ def safe_paren(node: object):
 
 def idempotence(tree: Tree):
     assert tree.data == "term" or tree.data == "expr"
-    unique_exprs = set()
-    new_children = []
-    for i, c in enumerate(tree.children):
-        if c not in unique_exprs:
-            unique_exprs.add(c)
-            new_children.append(c)
-    tree.children = new_children
-    return tree
+    return Tree(tree.data, list({k: None for k in tree.children}.keys()))  # dicts remember insertion order now!
+
+
+def reverse_idempotence(node):
+    if is_tree(node, "term") or is_tree(node, "expr"):
+        new_trees = [
+            Tree(node.data, node.children[:i] + [c] + node.children[i:]) for i, c in enumerate(node.children)
+        ]
+    else:
+        new_trees = [
+            Tree("expr", [node, node]), Tree("term", [node, node])
+        ]
+    return new_trees
 
 
 def simplify_multiple_negation(tree: Tree):
@@ -101,16 +106,19 @@ def commutativity(tree: Tree):  # p^q^r == q^p^r == ... r^p^q, returns list of p
 def associativity_LR(tree: Tree):  # only for (a^b)^c or with V, i.e. 2-node 3-var ops. Somewhat Hacky. Expand later
     assert tree.data == "expr" or tree.data == "term"
     ch = tree.children
-    if len(ch) == 2 and type(ch[0]) == Tree and ch[0].data == "paren_expr":
-        par = ch[0].children[0]
-        if is_tree(par, tree.data) and len(par.children) == 2:
-            tree.children = [
-                par.children[0],
-                Tree("paren_expr", [
-                    Tree(tree.data, [par.children[1], ch[1]])
-                ])
-            ]
-    return tree
+    new_trees = []
+    for i, c in enumerate(ch):
+        if is_tree(c, "paren_expr") and is_tree(c.children[0], tree.data):
+            swap_ch = c.children[0].children
+            if i > 0:
+                for j in range(len(swap_ch)-1):
+                    new_paren = parenthesize(Tree(tree.data, ch[:i] + swap_ch[:j+1]))
+                    new_trees.append(Tree(tree.data, [new_paren] + swap_ch[j+1:] + ch[i+1:]))
+            if i < len(ch)-1:
+                for j in range(1, len(swap_ch)):
+                    new_paren = parenthesize(Tree(tree.data, swap_ch[j:] + ch[i+1:]))
+                    new_trees.append(Tree(tree.data, ch[:i] + swap_ch[:j] + [new_paren]))
+    return new_trees
 
 
 def associativity_expand(tree: Tree):  # remove all parenthesized expressions
@@ -123,6 +131,16 @@ def associativity_expand(tree: Tree):  # remove all parenthesized expressions
             new_children.append(c)
     tree.children = new_children
     return tree
+
+
+def reverse_associativity_expand(tree: Tree):  # add parentheses around arbitrary sequences of expressions
+    assert tree.data == "expr" or tree.data == "term"
+    ch = tree.children
+    new_trees = []
+    for i in range(len(ch)-1):
+        for j in range(i+2, len(ch)+1):
+            new_trees.append(Tree(tree.data, ch[:i] + [parenthesize(Tree(tree.data, ch[i:j]))] + ch[j:]))
+    return new_trees
 
 
 def impl_to_disj(tree: Tree):  # p->q == ~pVq
@@ -178,8 +196,9 @@ def impl_to_dblimpl(tree: Tree):  # (p->q)^(q->p) == p<=>q, any adjacent pair ca
                 if ch0 == c2.children[0].children[1] and ch1 == c2.children[0].children[0]:
                     pre_exclude = tree.children[:i]
                     post_exclude = tree.children[i+2:]
-                    tr = Tree("eqn", [ch0, ch1])
-                    new_trees.append(Tree("term", pre_exclude + [tr] + post_exclude))
+                    tr_fwd, tr_bkwd = Tree("eqn", [ch0, ch1]), Tree("eqn", [ch1, ch0])
+                    new_trees.append(Tree("term", pre_exclude + [tr_fwd] + post_exclude))
+                    new_trees.append(Tree("term", pre_exclude + [tr_bkwd] + post_exclude))
     return new_trees if len(new_trees) > 0 else [tree]
 
 
@@ -193,6 +212,18 @@ def negation(tree: Tree):  # pv~p=T, p^~p=F
             tree = Token("TRUE", "T") if tree.data == "expr" else Token("FALSE", "F")
             break
     return tree
+
+
+def reverse_negation(token: Token, additional_ids=('p', 'q', 'r', 's')):
+    assert is_token(token, "TRUE") or is_token(token, "FALSE")
+    new_trees = []
+    for i in additional_ids:
+        tok = Token("ID", i)
+        if is_token(token, "TRUE"):
+            new_trees.append(parenthesize(Tree("expr", [tok, negate(tok)])))
+        else:
+            new_trees.append(parenthesize(Tree("term", [tok, negate(tok)])))
+    return new_trees
 
 
 def demorgan(tree: Tree):  # ~(pvq) == ~p^~q, ~(p^q) == ~pV~q
@@ -233,19 +264,17 @@ def absorption(tree: Tree):  # pV(p^q) == p, p^(pVq) == p
     return tree
 
 
-def reverse_absorption(tree: Tree):  # pvq == pv(p^q), p^q == p^(pvq), consecutive pairs in order
-    assert tree.data == "expr" or tree.data == "term"
-    if len(tree.children) == 1:
-        return [tree]
-    dual = "expr" if tree.data == "term" else "term"
+def reverse_absorption(node, additional_ids=('p', 'q', 'r', 's')):  # p == pv(p^ID), p == p^(pvID)
     new_trees = []
-    for i, c in enumerate(tree.children[:-1]):
-        tr = parenthesize(Tree(dual, [c, tree.children[i+1]]))
-        new_trees.append(Tree(tree.data, tree.children[:i+1] + [tr] + tree.children[i+2:]))  # :i+1 keeps p in pv(p^q)
+    if is_token(node, "ID"):
+        additional_ids = [v for v in additional_ids if node.value != v]
+    for v in additional_ids:
+        new_trees.append(Tree("expr", [node, parenthesize(Tree("term", [node, v]))]))
+        new_trees.append(Tree("term", [node, parenthesize(Tree("expr", [node, v]))]))
     return new_trees
 
 
-def TF_negation(tree: Tree):
+def TF_negation(tree: Tree):  # ~T == F, ~F == T
     assert tree.data == "literal"
     if len(tree.children) == 2:
         if is_token(tree.children[1], "TRUE"):
@@ -311,13 +340,13 @@ operation_names = {                       # change to Enum?
     "Double Negation": [double_negate, simplify_multiple_negation],
     "Implication as Disjunction": [impl_to_disj, disj_to_impl],
     "Iff as Implication": [dblimpl_to_impl, impl_to_dblimpl],
-    "Idempotence": [idempotence],
+    "Idempotence": [idempotence, reverse_idempotence],
     "Identity": [identity, reverse_identity],
     "Domination": [domination],
     "Commutativity": [commutativity],
-    "Associativity": [associativity_LR, associativity_expand],
-    "Negation": [negation, TF_negation],
-    "Absorption": [absorption],
+    "Associativity": [associativity_LR, associativity_expand, reverse_associativity_expand],
+    "Negation": [negation, TF_negation, reverse_negation],
+    "Absorption": [absorption, reverse_absorption],
     "Distributivity": [distributivity, reverse_distributivity],
     "De Morgan's Law": [demorgan, reverse_demorgan]
 }
@@ -339,25 +368,31 @@ allowed_operations = {
         impl_to_disj, reverse_identity
     ],
     'expr': [
-        idempotence, identity, domination, commutativity, associativity_LR, associativity_expand, negation, absorption,
-        distributivity, reverse_distributivity, double_negate, reverse_demorgan, disj_to_impl, reverse_identity
+        idempotence, identity, domination, commutativity, associativity_LR, associativity_expand,
+        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity, double_negate,
+        reverse_demorgan, disj_to_impl, reverse_identity, reverse_idempotence
     ],
     'term': [
-        idempotence, identity, domination, commutativity, associativity_LR, associativity_expand, negation, absorption,
-        distributivity, reverse_distributivity, double_negate, reverse_demorgan, impl_to_dblimpl, reverse_identity
+        idempotence, identity, domination, commutativity, associativity_LR, associativity_expand,
+        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity, double_negate,
+        reverse_demorgan, impl_to_dblimpl, reverse_identity, reverse_idempotence
     ],
     'literal': [
-        simplify_multiple_negation, TF_negation, demorgan, reverse_identity
+        simplify_multiple_negation, TF_negation, demorgan, reverse_identity, reverse_idempotence
     ],
     'variable': [],
     'paren_expr': [
-        double_negate, reverse_identity
+        double_negate, reverse_identity, reverse_idempotence, reverse_absorption
     ],
     'ID': [
-        reverse_identity
+        reverse_identity, reverse_idempotence, reverse_absorption
     ],
-    "TRUE": [],
-    "FALSE": [],
+    "TRUE": [
+        reverse_negation
+    ],
+    "FALSE": [
+        reverse_negation
+    ],
     "_LPAR": [],
     "_RPAR": [],
     "NOT": [],
@@ -378,13 +413,16 @@ if __name__ == "__main__":
     ep = ExpressionParser()
     tts = TreeToString()
 
-    tr1 = ep.parse('pvqvr').children[0]
-    tr2 = disj_to_impl(tr1)
+    tr1 = Token("TRUE", "True") #ep.parse('p').children[0]
+    tr2 = reverse_negation(tr1)
     print([tts.transform(t) for t in tr2])
-    tr1 = ep.parse('a->q->c').children[0]
-    tr2 = impl_to_disj(tr1)
+    tr1 = Token("FALSE", "F") #ep.parse('(pvq)').children[0]
+    tr2 = reverse_negation(tr1)
     print([tts.transform(t) for t in tr2])
 
-    tr3 = ep.parse('(pvq)').children[0]
-    tr4 = simplify_paren_expr(tr3)
-    print(tr4 if type(tr4) == Token else tts.transform(tr4), sep="\n")
+    t1 = ep.parse('a^b^c^a^b^a').children[0]
+    t1 = idempotence(t1)
+    print(t1 if type(t1) == Token else tts.transform(t1), sep="\n")
+    t3 = ep.parse('(a^b^c)v(a^b^c)').children[0]
+    t3 = idempotence(t3)
+    print(t3 if type(t3) == Token else tts.transform(t3), sep="\n")
