@@ -136,14 +136,14 @@
         },
         {
             "premise": "~(q^~p)^(qv~p)",
-            "target": "p<=>q",
+            "target": "p<->q",
             "difficulty": "mild",
             "solution": [
                 {"statement": "~(q^~p)^(qv~p)", "rule": "Start"},
                 {"statement": "(~qvp)^(qv~p)", "rule": "De Morgan's Law"},
                 {"statement": "(q->p)^(qv~p)", "rule": "Implication as Disjunction"},
                 {"statement": "(q->p)^(p->q)", "rule": "Implication as Disjunction"},
-                {"statement": "p<=>q", "rule": "Iff as Implication"}
+                {"statement": "p<->q", "rule": "Iff as Implication"}
             ]
         },
         {
@@ -173,7 +173,7 @@
         },
         {
             "premise": "(p^~q)v(q^~p)",
-            "target": "~(p<=>q)",
+            "target": "~(p<->q)",
             "difficulty": "medium",
             "solution": [
                 {"statement": "(p^~q)v(q^~p)", "rule": "Start"},
@@ -182,7 +182,7 @@
                 {"statement": "~((~pVq)^(~qVp))", "rule": "De Morgan's Law"},
                 {"statement": " ~((p->q)^(~qVp))", "rule": "Implication as Disjunction"},
                 {"statement": "~((p->q)^(q->p))", "rule": "Implication as Disjunction"},
-                {"statement": "~(p<=>q)", "rule": "Iff as Implication"}
+                {"statement": "~(p<->q)", "rule": "Iff as Implication"}
             ]
         },
         {
@@ -309,13 +309,13 @@
             ]
         },
         {
-            "premise": "p^~(p^~q)<=>(p^q)",
+            "premise": "p^~(p^~q)<>(p^q)",
             "target": "T",
             "difficulty": "spicy",
             "solution": [
-                {"statement": "p^~(p^~q)<=>(p^q)", "rule": "Start"},{"statement": "p^(~pvq)<=>(p^q)", "rule": "De Morgan's Law"},
-                {"statement": "(p^~p)v(p^q)<=>(p^q)", "rule": "Distributivity"},{"statement": "Fv(p^q)<=>(p^q)", "rule": "Negation"},
-                {"statement": "(p^q)<=>(p^q)", "rule": "Identity"},{"statement": "((p^q)->(p^q))^((p^q)->(p^q))", "rule": "Iff as Implication"},
+                {"statement": "p^~(p^~q)<->(p^q)", "rule": "Start"},{"statement": "p^(~pvq)<->(p^q)", "rule": "De Morgan's Law"},
+                {"statement": "(p^~p)v(p^q)<->(p^q)", "rule": "Distributivity"},{"statement": "Fv(p^q)<->(p^q)", "rule": "Negation"},
+                {"statement": "(p^q)<->(p^q)", "rule": "Identity"},{"statement": "((p^q)->(p^q))^((p^q)->(p^q))", "rule": "Iff as Implication"},
                 {"statement": "(p^q)->(p^q)", "rule": "Idempotence"},{"statement": "~(p^q)v(p^q)", "rule": "Implication as Disjunction"},{"statement": "T", "rule": "Negation"}
             ]
         },
