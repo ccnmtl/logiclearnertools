@@ -1,8 +1,12 @@
 Maintainer
 ----------
-Columbia University Center for Teaching & Learning 
+Columbia University Center for Teaching & Learning
 
-Original Authors
+Authors
 ----------------
 * Amogh Shreedhar Inamdar (@AmoghSInamdar)
+* Uzay Macar (@uzaymacar)
+* Michel Vazirani (@MichelVazirani)
+* Mehr Kaur (@mehrkaur)
+* Daniel Borovskiy (@dborovskiy)
 * Natalia Dittren (@ndittren)
