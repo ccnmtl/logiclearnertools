@@ -18,7 +18,7 @@ typing-extensions==4.1.1
 urllib3==1.26.8
 Werkzeug==2.0.2
 zipp==3.6.0
-lark==1.0.0
+lark==1.1.2
 flake8==4.0.1
 pep8==1.7.1
 pyflakes==2.4.0
