@@ -1,91 +1,156 @@
-from collections import defaultdict
+import json
 from random import random
 
+import inspect
+from lark import Tree
 from Levenshtein import distance
-import gensim.downloader
+import numpy as np
+import sys
+import os
+
+
+current = os.path.dirname(os.path.realpath(__file__))
+parent = os.path.dirname(current)
+sys.path.append(parent)
+import expression_parser as ep
+import logic_rule_transforms as lrt
+
 
 # all heuristics expect Tuple<expr: str, law:str> as inputs. Change typing to a StepNode : {expr: str, law: str} object
-
 
 def random_weight(n1, n2):
     return random() * 10
 
 
 def levenshtein_distance(n1, n2):
-    return distance(n1[0], n2[0]) / 10
+    return distance(n1[0], n2[0])
+
+
+def len_distance(n1, n2):
+    return abs(len(n1[0])-len(n2[0]))
 
 
 def unitary_distance(n1, n2):
     return 1
 
 
-def big_change_favored_weight(n1, n2):  # implemented in the old code
-    scores = defaultdict(int, {
-        "Double Negation": 6,
-        "Implication as Disjunction": 2,
-        "Iff as Implication": 1,
-        "Idempotence": 7,
-        "Identity": 7,
-        "Domination": 7,
-        "Commutativity": 8,
-        "Associativity": 8,
-        "Negation": 6,
-        "Absorption": 5,
-        "Distributivity": 4,
-        "De Morgan's Law": 3
-    })
-    return scores[n2[1]]
+def lookahead_one(n1, n2):
+    fr = ep.get_frontier(n1[0])
+    target = ep.ExpressionParser().parse(n2[0])
+    formatted_target = ep.TreeToString().transform(target) if type(target) == Tree else target.value
+    return 0 if formatted_target in {n[0] for n in fr} else len(fr)
 
 
-def small_change_favored_weight(n1, n2):  # implemented in the old code
-    return 9 - big_change_favored_weight(n1, n2)
+def variable_mismatch(n1, n2):            # vars in n1 but not in n2 and vice versa
+    cfunc = lambda x: 97 <= ord(x) <= 122 and x != 'v'
+    n1v, n2v = set(filter(cfunc, n1[0])), set(filter(cfunc, n2[0]))
+    return len((n1v | n2v) - (n1v & n2v))
 
 
-def combo_weight(n1, n2, heuristic=levenshtein_distance, cutoff=4):  # implemented in old code
-    if heuristic(n1, n2) > cutoff:  # apparently, optimal cutoff weight not determined
-        return big_change_favored_weight(n1, n2)
-    return small_change_favored_weight(n1, n2)
+class RuleDists:
+
+    def __init__(self):
+        self.all_dists = list(filter(lambda r: not r[0].startswith("__"), inspect.getmembers(self, predicate=inspect.ismethod)))
+        self.all_dists = [r[1] for r in self.all_dists]
+
+    def start_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Start" else d
+
+    def iad_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Implication as Disjunction" else d
+
+    def ifi_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Iff as Implication" else d
+
+    def idemp_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Idempotence" else d
+
+    def ident_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Identity" else d
+
+    def dom_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Domination" else d
+
+    def comm_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Commutativity" else d
+
+    def assoc_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Associativity" else d
+
+    def neg_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Negation" else d
+
+    def absorb_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Absorption" else d
+
+    def distr_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "Distributivity" else d
+
+    def demgn_dist(self, n1, n2, d=1):
+        return 0 if n1[1] == "De Morgan's Law" else d
 
 
+class MetaHeuristic:
+
+    def __init__(self, heuristics=()):
+        self.heuristics = heuristics
+        self.weights = np.random.random(len(heuristics))
+
+    def init_state(self, weight_file):
+        self.heuristics, self.weights = [], []
+        with open(weight_file, "r") as wf:
+            for l in wf.readlines():
+                heur, val = l.split(": ")
+                if heur in globals():
+                    self.heuristics.append(globals()[heur])
+                else:
+                    self.heuristics.append(getattr(RuleDists(), heur))
+                self.weights.append(float(val))
+
+    def set_weights(self, weights):
+        self.weights = weights
+
+    def meta_dist(self, n1, n2):
+        ds = np.array([x(n1, n2) for x in self.heuristics])
+        return np.sum(ds * self.weights)
+
+
+class GeneHeuristic:
+
+    def __init__(self, heuristics, weights):
+        self.heuristics = heuristics
+        self.weights = weights
+        self.params = {}
+
+    def gene_meta_dist(self, n1, n2):
+        ds = np.array([x(n1, n2) for x in self.heuristics])
+        return np.sum(ds * self.weights)
+
+    def set_params(self, params):
+        self.params = params
+
+    def load(self, weight_file):
+        self.heuristics, self.weights = [], []
+        with open(weight_file, "r") as wf:
+            lines = list(wf.readlines())
+            self.params = json.loads(lines[0].replace("'", "\""))
+            for l in lines[2:]:
+                heur, val = l.split(": ")
+                if heur in globals():
+                    self.heuristics.append(globals()[heur])
+                else:
+                    self.heuristics.append(getattr(RuleDists(), heur))
+                self.weights.append(float(val))
+
+    def save(self, out_file):
+        with open(out_file, "w") as f:
+            f.write(str(self.params)+"\n\n")
+            for i, h in enumerate(self.heuristics):
+                f.write(f'{h.__name__}: {self.weights[i]}\n')
 
 
 if __name__ == "__main__":
-    n1, n2 = ('p->q', None), ('~pvq', None)
+    n1, n2 = ('p->q', "Start"), ('p->q', None)
+
     print(levenshtein_distance(n1, n2))
-    print(unitary_distance(n1, n2))
 
-"""
-
-def h_abs_difference_left(start, next, ans): #was h6, fixed per last week's meeting
-    return abs(abs(len(start)-len(ans)) - abs(len(next)-len(ans)))
-
-#_______edit distance h functions
-
-def h_edit_dist_to_end(start, next, ans):
-    return distance(next, ans)
-
-def h_edit_proportion_change(start, next, ans):
-    return distance(next, ans) / distance(start, ans)
-
-def h_edit_w1_difference_left(start, next, ans):
-    return big_change_favored_weight(start, next) * distance(next, ans) / distance(start, ans)
-
-def h_edit_abs_difference_left(start, next, ans): #was h6, fixed per last week's meeting
-    return abs(distance(start, ans) - distance(next, ans))
-
-#______
-# #g's were not dependant on disntance, so we don't need to add new ones for edit distance
-def g_big(n1, n2):
-    return big_change_favored_weight(n1, n2)
-
-def g_small(n1, n2):
-    return small_change_favored_weight(n1, n2)
-
-def g_combo(n1, n2,  ans, h):
-    CUTOFF = 4 # Needs to be tested and changed
-    if h(n1, n2, ans) > CUTOFF:
-        return big_change_favored_weight(n1, n2)
-    else:
-        return small_change_favored_weight(n1, n2)
-
-"""
