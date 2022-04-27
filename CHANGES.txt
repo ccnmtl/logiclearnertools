@@ -1,3 +1,8 @@
+0.1.5  (2022-04-26)
+===================
+* Minor rule changes, Negation scope is more local, parenthesized expressions handled better.
+* Added very basic automatic solution check
+
 0.1.4  (2022-04-05)
 ===================
 * Fixes bug dealing with parentheses
