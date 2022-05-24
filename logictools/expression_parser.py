@@ -245,13 +245,32 @@ def get_hint(expr, target, heuristic, max_timeout=1):
 
     isfound, result = astar_search(expr, target, heuristic, frontier_func, goal_func, max_timeout=max_timeout)
     return {
-        "nextStep": result[1],
+        "nextStep": result[1] if len(result) > 1 else result[0],
         "solutionFound": isfound,
         "path": result
     }
 
 
 def validate_and_get_hint(old_expr: str, new_expr: str, new_rule: str, target: str, max_timeout: int) -> dict:
+    """
+    Validates an input expression and rule given the previous expression, and returns a hint for the next step
+    :param old_expr: previous valid expression
+    :param new_expr: user's proposed expression
+    :param new_rule: user's proposed rule
+    :param target: target proposition of the question
+    :param max_timeout: amount of time to search for
+    :return: dict containing {
+        isValid: bool, whether the input expression is valid,
+        isSolution: bool, whether the solution has been reached,
+        errorCode: Enum, if not isValid, the exception code for the error,
+        errorMsg: str, if not isValid, the exception description for the error,
+        hint: dict, {
+            nextStep: tuple<str, str>, the (expr, rule) hint for the next step,
+            solutionFound: bool, whether the hint search actually solved the question,
+            path: list<tuple>, the steps for the closest node to target found by the search (=target if solutionFound)
+        }
+    }
+    """
     ep, tts = ExpressionParser(), TreeToString()
 
     response = {
