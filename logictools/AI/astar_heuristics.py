@@ -2,18 +2,10 @@ import json
 from random import random
 
 import inspect
-from lark import Tree
 from Levenshtein import distance
 import numpy as np
-import sys
-import os
 
-
-current = os.path.dirname(os.path.realpath(__file__))
-parent = os.path.dirname(current)
-sys.path.append(parent)
-import expression_parser as ep
-import logic_rule_transforms as lrt
+from logictools.AI.neural_embedding_heuristic import NeuralEmbeddingHeuristic
 
 
 # all heuristics expect Tuple<expr: str, law:str> as inputs. Change typing to a StepNode : {expr: str, law: str} object
@@ -32,13 +24,6 @@ def len_distance(n1, n2):
 
 def unitary_distance(n1, n2):
     return 1
-
-
-def lookahead_one(n1, n2):
-    fr = ep.get_frontier(n1[0])
-    target = ep.ExpressionParser().parse(n2[0])
-    formatted_target = ep.TreeToString().transform(target) if type(target) == Tree else target.value
-    return 0 if formatted_target in {n[0] for n in fr} else len(fr)
 
 
 def variable_mismatch(n1, n2):            # vars in n1 but not in n2 and vice versa
@@ -117,9 +102,10 @@ class MetaHeuristic:
 
 class GeneHeuristic:
 
-    def __init__(self, heuristics, weights):
+    def __init__(self, heuristics=None, weights=None, model_files=None):
         self.heuristics = heuristics
         self.weights = weights
+        self.model_files = model_files
         self.params = {}
 
     def gene_meta_dist(self, n1, n2):
@@ -135,22 +121,30 @@ class GeneHeuristic:
             lines = list(wf.readlines())
             self.params = json.loads(lines[0].replace("'", "\""))
             for l in lines[2:]:
-                heur, val = l.split(": ")
-                if heur in globals():
-                    self.heuristics.append(globals()[heur])
-                else:
-                    self.heuristics.append(getattr(RuleDists(), heur))
+                try:
+                    heur, val, file = l.split(": ")
+                    self.heuristics.append(getattr(NeuralEmbeddingHeuristic(file[:-1], is_state_dict=True), heur))
+                except ValueError:
+                    heur, val = l.split(": ")
+                    if heur in globals():
+                        self.heuristics.append(globals()[heur])
+                    else:
+                        self.heuristics.append(getattr(RuleDists(), heur))
                 self.weights.append(float(val))
 
     def save(self, out_file):
         with open(out_file, "w") as f:
             f.write(str(self.params)+"\n\n")
             for i, h in enumerate(self.heuristics):
-                f.write(f'{h.__name__}: {self.weights[i]}\n')
+                if self.model_files[i]:
+                    f.write(f"{h.__name__}: {self.weights[i]}: {self.model_files[i]}\n")
+                else:
+                    f.write(f"{h.__name__}: {self.weights[i]}\n")
 
 
 if __name__ == "__main__":
     n1, n2 = ('p->q', "Start"), ('p->q', None)
-
-    print(levenshtein_distance(n1, n2))
+    gh = GeneHeuristic()
+    gh.load("astar_heuristic_weights.txt")
+    print(gh.gene_meta_dist(n1, n2))
 
