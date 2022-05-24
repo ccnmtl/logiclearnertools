@@ -34,8 +34,8 @@ class TreeToString(Transformer):
     def __init__(self):
         super().__init__()
         self.string_forms = {
-            "IMPL": "->", "DBLIMPL": "<=>", "NOT": "~", "AND": "^",
-            "OR": "V", "LPAR": "(", "RPAR": ")", "TRUE": "T", "FALSE": "F"
+            "IMPL": "->", "DBLIMPL": "<->", "NOT": "~", "AND": "^",
+            "OR": "v", "LPAR": "(", "RPAR": ")", "TRUE": "T", "FALSE": "F"
         }
 
     def start(self, eqn):
