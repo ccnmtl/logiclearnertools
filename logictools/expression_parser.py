@@ -1,10 +1,13 @@
+import os.path
+
+from logictools.AI.astar_search import astar_search
 from logictools.logic_rule_transforms import *
 from copy import deepcopy
 from lark import Lark, Tree, Token
 from lark.visitors import Visitor, Transformer, v_args
 from lark.exceptions import UnexpectedInput
 from logictools.validation_exception import *
-
+from logictools.AI.astar_heuristics import GeneHeuristic
 
 class ExpressionParser:
 
@@ -232,9 +235,70 @@ def validate_and_get_frontier(old_expr: str, new_expr: str, new_rule: str, targe
     return response
 
 
+def get_hint(expr, target, heuristic, max_timeout=1):
+    def frontier_func(x):
+        fr = get_frontier(x[0], include_paren=False, allowed_ops=search_operations)
+        return fr
+
+    def goal_func(x, target):
+        return x[0] == target[0]
+
+    isfound, result = astar_search(expr, target, heuristic, frontier_func, goal_func, max_timeout=max_timeout)
+    return {
+        "nextStep": result[1] if len(result) > 1 else result[0],
+        "solutionFound": isfound,
+        "path": result
+    }
+
+
+def validate_and_get_hint(old_expr: str, new_expr: str, new_rule: str, target: str, max_timeout: int) -> dict:
+    """
+    Validates an input expression and rule given the previous expression, and returns a hint for the next step
+    :param old_expr: previous valid expression
+    :param new_expr: user's proposed expression
+    :param new_rule: user's proposed rule
+    :param target: target proposition of the question
+    :param max_timeout: amount of time to search for
+    :return: dict containing {
+        isValid: bool, whether the input expression is valid,
+        isSolution: bool, whether the solution has been reached,
+        errorCode: Enum, if not isValid, the exception code for the error,
+        errorMsg: str, if not isValid, the exception description for the error,
+        hint: dict, {
+            nextStep: tuple<str, str>, the (expr, rule) hint for the next step,
+            solutionFound: bool, whether the hint search actually solved the question,
+            path: list<tuple>, the steps for the closest node to target found by the search (=target if solutionFound)
+        }
+    }
+    """
+    ep, tts = ExpressionParser(), TreeToString()
+
+    response = {
+        "isValid": True
+    }
+
+    old_tree = ep.parse(old_expr)
+    new_linted = old_linted = tts.transform(old_tree)
+    current_frontier = get_frontier(old_linted)
+    try:
+        new_linted = validate(current_frontier, new_expr, new_rule)
+        response['isSolution'] = check_success(new_linted, target)
+    except InvalidExpressionException as e:
+        response = e.get_error_dict()
+
+
+    target = ExpressionParser().parse(target)
+    target = TreeToString().transform(target) if type(target) == Tree else target.value
+
+    heuristic = GeneHeuristic()
+    heuristic.load(os.path.join("AI", "astar_heuristic_weights.txt"))
+    response['hint'] = get_hint(new_linted, target, heuristic.gene_meta_dist, max_timeout=max_timeout)
+    return response
+
+
 if __name__ == "__main__":
-    old, new, rule, goal = "~p^~q", "~(pvq)", "de morgan's law", "~pV~q"
-    print(validate_and_get_frontier(old, new, rule, goal))
+    old, new, rule, goal = "~(p^q)v~q", "(~pv~q)v~q", "de morgan's law", "~pv~q"
+    print(validate_and_get_hint(old, new, rule, goal, max_timeout=1))
 
     print("\n", get_frontier("~(~p)<->p"), "\n")
 
