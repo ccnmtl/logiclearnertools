@@ -3,7 +3,7 @@ import time
 from logictools.AI.astar_heuristics import *
 import json
 from heapq import heappush, heappop
-import logic_rule_transforms as lrt
+import logictools.logic_rule_transforms as lrt
 
 inf = float('inf')
 
@@ -127,4 +127,3 @@ if __name__ == "__main__":
         gh.load("astar_heuristic_weights.txt")
         gp2 = astar_search("~(pvq)", "~p^~q", gh.gene_meta_dist, frontier_func, goal_func, max_timeout=1)
         print(gp2)
-
