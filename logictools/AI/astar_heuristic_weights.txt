@@ -1,0 +1,18 @@
+{'pop_size': 20, 'questions': 7, 'generations': 8, 'elitism': 3, 'pc': 0.8, 'pm': 0.2, 'max_timeout': 1}
+
+levenshtein_distance: 3.3601717785491116
+len_distance: 3.7696044944648466
+unitary_distance: 1.5333983002484652
+variable_mismatch: 6.0998937591149485
+absorb_dist: -3.884644202204644
+assoc_dist: 1.94532788987045
+comm_dist: -8.070806134817223
+demgn_dist: 3.713453998996009
+distr_dist: 3.9430246462114162
+dom_dist: 4.090039771061299
+iad_dist: 6.922363651826952
+idemp_dist: -7.034632943160622
+ident_dist: -9.850481063865118
+ifi_dist: -4.209165243692032
+neg_dist: -0.5590580833642136
+start_dist: 1.4494340114979742
