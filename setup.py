@@ -27,7 +27,7 @@ from setuptools import setup
 
 setup(
     name="logiclearnertools",
-    version="0.1.6.1",
+    version="0.1.6.2",
     author="Natalia Dittren, Columbia University Computer Science Faculty and Students",
     author_email="natalia.d@columbia.edu",
     url="https://github.com/ccnmtl/logiclearnertools",
