@@ -1,1 +1,1 @@
-recursive-include logictools *.lark *.json
+recursive-include logictools *.lark *.json *.txt
