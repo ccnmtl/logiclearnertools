@@ -14,7 +14,7 @@ s3transfer==0.6.0
 six==1.16.0
 sly==0.4
 sympy==1.9
-typing-extensions==4.2.0
+typing-extensions==4.3.0
 urllib3==1.26.10
 Werkzeug==2.0.2
 zipp==3.8.1
