@@ -1,8 +1,6 @@
 import itertools
-from collections import OrderedDict
 
-from lark import Lark, Tree, Token
-from itertools import permutations
+from lark import Tree, Token
 
 
 def is_token(node: object, token_type: str) -> bool:
@@ -417,12 +415,12 @@ search_operations = {
     ],
     'expr': [
         idempotence, identity, domination, commutativity, associativity_LR, associativity_expand,
-        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity, double_negate,
+        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity,
         reverse_demorgan, disj_to_impl
     ],
     'term': [
         idempotence, identity, domination, commutativity, associativity_LR, associativity_expand,
-        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity, double_negate,
+        reverse_associativity_expand, negation, absorption, distributivity, reverse_distributivity,
         reverse_demorgan, impl_to_dblimpl
     ],
     'literal': [
@@ -430,16 +428,12 @@ search_operations = {
     ],
     'variable': [],
     'paren_expr': [
-        double_negate, reverse_absorption
     ],
     'ID': [
-        reverse_absorption
     ],
     "TRUE": [
-        reverse_negation
     ],
     "FALSE": [
-        reverse_negation
     ],
     "_LPAR": [],
     "_RPAR": [],
@@ -452,7 +446,7 @@ search_operations = {
 
 
 if __name__ == "__main__":
-    from expression_parser import ExpressionParser, TreeToString
+    from logictools.expression_parser import ExpressionParser, TreeToString
 
     ep = ExpressionParser()
     tts = TreeToString()

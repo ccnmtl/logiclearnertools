@@ -67,12 +67,12 @@ def astar_search(start, goal, neighbor_dist, frontier_func, goal_func,
         current_node = heappop(open_set)
         current_node.out_of_openset = True
         current_node.completed = True
-        if max_depth is not None and current_node.depth > max_depth:
+        if max_depth and current_node.depth > max_depth:
             continue
 
         if goal_func(current_node.data, goal):
             rev_sol = []
-            while current_node is not None:
+            while current_node:
                 rev_sol.append(current_node.data)
                 current_node = current_node.prev
             return True, list(reversed(rev_sol))
