@@ -21,7 +21,7 @@ zipp==3.8.1
 lark==1.1.2
 flake8==4.0.1
 pep8==1.7.1
-pyflakes==2.4.0
+pyflakes==2.5.0
 pycodestyle==2.8.0
 python-Levenshtein==0.12.2
 importlib-metadata<4.13  # for flake8
