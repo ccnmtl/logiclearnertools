@@ -1,6 +1,6 @@
 import time
-from logictools.AI.expression_parser import (validate_and_get_frontier,
-validate_and_get_hint)
+from logictools.expression_parser import (validate_and_get_frontier,
+                                          validate_and_get_hint)
 
 
 def next_step(next_expr, next_rule, step_list, target):
