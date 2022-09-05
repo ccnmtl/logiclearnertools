@@ -8,7 +8,7 @@ MarkupSafe==2.1.1
 mpmath==1.2.1
 networkx<2.9
 numpy<1.24
-psutil==5.9.1
+psutil==5.9.2
 python-dateutil==2.8.2
 s3transfer==0.6.0
 six==1.16.0
