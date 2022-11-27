@@ -22,7 +22,7 @@ lark==1.1.4
 flake8==5.0.4
 pep8==1.7.1
 
-pyflakes==2.5.0
+pyflakes==3.0.1
 pycodestyle==2.9.1
 levenshtein==0.20.8
 rapidfuzz==2.13.2
