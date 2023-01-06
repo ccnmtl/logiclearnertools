@@ -37,7 +37,6 @@ setup(
     scripts=[],
     license="GPLv3+",
     platforms=["any"],
-    zip_safe=False,
     packages=['logictools', 'logictools.AI'],
     include_package_data=True,
     )
