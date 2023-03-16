@@ -22,7 +22,8 @@ def next_step(next_expr, next_rule, step_list, target):
     """
 
     cur_expr = step_list[-1]
-    response = validate_and_get_frontier(cur_expr, next_expr, next_rule, target)
+    response = validate_and_get_frontier(
+        cur_expr, next_expr, next_rule, target)
 
     # super hacky placeholder for search
     if response["nextFrontier"]:
@@ -53,6 +54,5 @@ def get_hint(next_expr, next_rule, step_list, target):
 
     cur_expr = step_list[-1]
     response = validate_and_get_hint(cur_expr, next_expr, next_rule, target, 1)
-
 
     return response

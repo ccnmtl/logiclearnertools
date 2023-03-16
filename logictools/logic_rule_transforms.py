@@ -23,7 +23,8 @@ def simplify_paren_expr(tree: Tree) -> object:
     assert tree.data == "paren_expr"
     while is_tree(tree.children[0], 'paren_expr'):
         tree = tree.children[0]
-    if type(tree.children[0]) != Tree or is_tree(tree.children[0], 'literal') or len(tree.children[0].children) == 1:
+    if type(tree.children[0]) != Tree or is_tree(
+            tree.children[0], 'literal') or len(tree.children[0].children) == 1:
         tree = tree.children[0]
     return tree
 
@@ -34,7 +35,8 @@ def safe_paren(node: object):
 
 def idempotence(tree: Tree):
     assert tree.data == "term" or tree.data == "expr"
-    return Tree(tree.data, list({k: None for k in tree.children}.keys()))  # dicts remember insertion order now!
+    # dicts remember insertion order now!
+    return Tree(tree.data, list({k: None for k in tree.children}.keys()))
 
 
 def reverse_idempotence(node):
@@ -44,7 +46,13 @@ def reverse_idempotence(node):
         ]
     else:
         new_trees = [
-            safe_paren(Tree("expr", [node, node])), safe_paren(Tree("term", [node, node]))
+            safe_paren(
+                Tree(
+                    "expr", [
+                        node, node])), safe_paren(
+                Tree(
+                    "term", [
+                        node, node]))
         ]
     return new_trees
 
@@ -53,7 +61,8 @@ def simplify_multiple_negation(tree: Tree):
     assert tree.data == "literal"
     ch = tree
     count = 0
-    while is_tree(ch, "literal") or is_tree(ch, "paren_expr") and is_tree(ch.children[0], "literal"):
+    while is_tree(ch, "literal") or is_tree(
+            ch, "paren_expr") and is_tree(ch.children[0], "literal"):
         count += 1 if is_tree(ch, "literal") else 0
         ch = ch.children[1] if is_tree(ch, "literal") else ch.children[0]
     tree = negate(ch) if count % 2 != 0 else ch
@@ -63,11 +72,23 @@ def simplify_multiple_negation(tree: Tree):
 def identity(tree: Tree):
     assert tree.data == "expr" or tree.data == "term"
     if tree.data == "expr":
-        new_children = list(filter(lambda x: not is_token(x, "FALSE"), tree.children))
-        new_children = new_children if len(new_children) > 0 else [Token("FALSE", "F")]
+        new_children = list(
+            filter(
+                lambda x: not is_token(
+                    x,
+                    "FALSE"),
+                tree.children))
+        new_children = new_children if len(new_children) > 0 else [
+            Token("FALSE", "F")]
     elif tree.data == "term":
-        new_children = list(filter(lambda x: not is_token(x, "TRUE"), tree.children))
-        new_children = new_children if len(new_children) > 0 else [Token("TRUE", "T")]
+        new_children = list(
+            filter(
+                lambda x: not is_token(
+                    x,
+                    "TRUE"),
+                tree.children))
+        new_children = new_children if len(new_children) > 0 else [
+            Token("TRUE", "T")]
     return Tree(tree.data, new_children)
 
 
@@ -88,7 +109,8 @@ def reverse_identity(node):
 def domination(tree: Tree):
     assert tree.data == "expr" or tree.data == "term"
     new_tree = tree
-    if tree.data == "expr" and any([is_token(c, "TRUE") for c in tree.children]):
+    if tree.data == "expr" and any([is_token(c, "TRUE")
+                                   for c in tree.children]):
         new_tree = Token("TRUE", "T")
     elif tree.data == "term" and any([is_token(c, "FALSE") for c in tree.children]):
         new_tree = Token("FALSE", "F")
@@ -97,11 +119,14 @@ def domination(tree: Tree):
 
 def commutativity(tree: Tree):  # p^q^r == q^p^r == ... r^p^q, returns list of permutations
     assert tree.data == "expr" or tree.data == "term" or tree.data == "eqn"
-    new_trees = [Tree(tree.data, p) for p in itertools.permutations(tree.children)]
+    new_trees = [Tree(tree.data, p)
+                 for p in itertools.permutations(tree.children)]
     return new_trees
 
 
-def associativity_LR(tree: Tree):  # only for (a^b)^c or with V, i.e. 2-node 3-var ops. Somewhat Hacky. Expand later
+# only for (a^b)^c or with V, i.e. 2-node 3-var ops. Somewhat Hacky.
+# Expand later
+def associativity_LR(tree: Tree):
     assert tree.data == "expr" or tree.data == "term"
     ch = tree.children
     new_trees = []
@@ -109,13 +134,17 @@ def associativity_LR(tree: Tree):  # only for (a^b)^c or with V, i.e. 2-node 3-v
         if is_tree(c, "paren_expr") and is_tree(c.children[0], tree.data):
             swap_ch = c.children[0].children
             if i > 0:
-                for j in range(len(swap_ch)-1):
-                    new_paren = parenthesize(Tree(tree.data, ch[:i] + swap_ch[:j+1]))
-                    new_trees.append(Tree(tree.data, [new_paren] + swap_ch[j+1:] + ch[i+1:]))
-            if i < len(ch)-1:
+                for j in range(len(swap_ch) - 1):
+                    new_paren = parenthesize(
+                        Tree(tree.data, ch[:i] + swap_ch[:j + 1]))
+                    new_trees.append(
+                        Tree(tree.data, [new_paren] + swap_ch[j + 1:] + ch[i + 1:]))
+            if i < len(ch) - 1:
                 for j in range(1, len(swap_ch)):
-                    new_paren = parenthesize(Tree(tree.data, swap_ch[j:] + ch[i+1:]))
-                    new_trees.append(Tree(tree.data, ch[:i] + swap_ch[:j] + [new_paren]))
+                    new_paren = parenthesize(
+                        Tree(tree.data, swap_ch[j:] + ch[i + 1:]))
+                    new_trees.append(
+                        Tree(tree.data, ch[:i] + swap_ch[:j] + [new_paren]))
     return new_trees
 
 
@@ -131,13 +160,15 @@ def associativity_expand(tree: Tree):  # remove all parenthesized expressions
     return tree
 
 
-def reverse_associativity_expand(tree: Tree):  # add parentheses around arbitrary sequences of expressions
+# add parentheses around arbitrary sequences of expressions
+def reverse_associativity_expand(tree: Tree):
     assert tree.data == "expr" or tree.data == "term"
     ch = tree.children
     new_trees = []
-    for i in range(len(ch)-1):
-        for j in range(i+2, len(ch)+1):
-            new_trees.append(Tree(tree.data, ch[:i] + [parenthesize(Tree(tree.data, ch[i:j]))] + ch[j:]))
+    for i in range(len(ch) - 1):
+        for j in range(i + 2, len(ch) + 1):
+            new_trees.append(
+                Tree(tree.data, ch[:i] + [parenthesize(Tree(tree.data, ch[i:j]))] + ch[j:]))
     return new_trees
 
 
@@ -146,10 +177,15 @@ def impl_to_disj(tree: Tree):  # p->q == ~pVq
     if len(tree.children) > 1:
         new_trees = []
         for i in range(len(tree.children) - 1):
-            impl_fwd = Tree("expr", [simplify_multiple_negation(negate(tree.children[i])), tree.children[i+1]])
-            impl_rev = Tree("expr", [tree.children[i+1], simplify_multiple_negation(negate(tree.children[i]))])
-            new_trees.append(Tree("dbl_expr", tree.children[:i] + [safe_paren(impl_fwd)] + tree.children[i+2:]))
-            new_trees.append(Tree("dbl_expr", tree.children[:i] + [safe_paren(impl_rev)] + tree.children[i+2:]))
+            impl_fwd = Tree("expr", [simplify_multiple_negation(
+                negate(tree.children[i])), tree.children[i + 1]])
+            impl_rev = Tree("expr",
+                            [tree.children[i + 1],
+                             simplify_multiple_negation(negate(tree.children[i]))])
+            new_trees.append(Tree(
+                "dbl_expr", tree.children[:i] + [safe_paren(impl_fwd)] + tree.children[i + 2:]))
+            new_trees.append(Tree(
+                "dbl_expr", tree.children[:i] + [safe_paren(impl_rev)] + tree.children[i + 2:]))
         return new_trees
     return [tree]
 
@@ -159,15 +195,20 @@ def disj_to_impl(tree: Tree):  # ~pVq == p->q, convert any adjacent pair to impl
     if len(tree.children) > 1:
         new_trees = []
         for i in range(len(tree.children) - 1):
-            expr_fwd = Tree("dbl_expr", [simplify_multiple_negation(negate(tree.children[i])), tree.children[i+1]])
-            expr_rev = Tree("dbl_expr", [simplify_multiple_negation(negate(tree.children[i+1])), tree.children[i]])
-            new_trees.append(Tree("expr", tree.children[:i] + [safe_paren(expr_fwd)] + tree.children[i+2:]))
-            new_trees.append(Tree("expr", tree.children[:i] + [safe_paren(expr_rev)] + tree.children[i+2:]))
+            expr_fwd = Tree("dbl_expr", [simplify_multiple_negation(
+                negate(tree.children[i])), tree.children[i + 1]])
+            expr_rev = Tree("dbl_expr", [simplify_multiple_negation(
+                negate(tree.children[i + 1])), tree.children[i]])
+            new_trees.append(
+                Tree("expr", tree.children[:i] + [safe_paren(expr_fwd)] + tree.children[i + 2:]))
+            new_trees.append(
+                Tree("expr", tree.children[:i] + [safe_paren(expr_rev)] + tree.children[i + 2:]))
         return new_trees
     return [tree]
 
 
-def dblimpl_to_impl(tree: Tree):  # p<=>q == (p->q)^(q->p), only leftmost (commute for others)
+# p<=>q == (p->q)^(q->p), only leftmost (commute for others)
+def dblimpl_to_impl(tree: Tree):
     assert tree.data == "eqn"
     if len(tree.children) > 1:
         p, q = tree.children[0], tree.children[1]
@@ -181,22 +222,38 @@ def dblimpl_to_impl(tree: Tree):  # p<=>q == (p->q)^(q->p), only leftmost (commu
     return tree
 
 
-def impl_to_dblimpl(tree: Tree):  # (p->q)^(q->p) == p<=>q, any adjacent pair can be operated on
+# (p->q)^(q->p) == p<=>q, any adjacent pair can be operated on
+def impl_to_dblimpl(tree: Tree):
     assert tree.data == "term"
     if len(tree.children) == 1:
         return [tree]
     new_trees = []
     for i, c in enumerate(tree.children[:-1]):
-        c2 = tree.children[i+1]
+        c2 = tree.children[i + 1]
         if is_tree(c, "paren_expr") and is_tree(c2, "paren_expr"):
-            if is_tree(c.children[0], "dbl_expr") and is_tree(c2.children[0], "dbl_expr"):
+            if is_tree(c.children[0], "dbl_expr") and is_tree(
+                    c2.children[0], "dbl_expr"):
                 ch0, ch1 = c.children[0].children[0], c.children[0].children[1]
                 if ch0 == c2.children[0].children[1] and ch1 == c2.children[0].children[0]:
                     pre_exclude = tree.children[:i]
-                    post_exclude = tree.children[i+2:]
-                    tr_fwd, tr_bkwd = Tree("eqn", [ch0, ch1]), Tree("eqn", [ch1, ch0])
-                    new_trees.append(Tree("term", pre_exclude + [tr_fwd] + post_exclude))
-                    new_trees.append(Tree("term", pre_exclude + [tr_bkwd] + post_exclude))
+                    post_exclude = tree.children[i + 2:]
+                    tr_fwd, tr_bkwd = Tree(
+                        "eqn", [
+                            ch0, ch1]), Tree(
+                        "eqn", [
+                            ch1, ch0])
+                    new_trees.append(
+                        Tree(
+                            "term",
+                            pre_exclude +
+                            [tr_fwd] +
+                            post_exclude))
+                    new_trees.append(
+                        Tree(
+                            "term",
+                            pre_exclude +
+                            [tr_bkwd] +
+                            post_exclude))
     return new_trees if len(new_trees) > 0 else [tree]
 
 
@@ -208,11 +265,18 @@ def negation(tree: Tree):  # pv~p=T, p^~p=F
     new_trees = []
     for i, c in enumerate(tree.children):
         neg_c = simplify_multiple_negation(negate(c))
-        if neg_c in pos_dict and i < pos_dict[neg_c]:                     # avoid duplicates
+        # avoid duplicates
+        if neg_c in pos_dict and i < pos_dict[neg_c]:
             j = pos_dict[neg_c]
-            tok = Token("TRUE", "T") if tree.data == "expr" else Token("FALSE", "F")
-            new_trees.append(Tree(tree.data, tree.children[:i] + [tok] + tree.children[i+1:j] + tree.children[j+1:]))
-            new_trees.append(Tree(tree.data, tree.children[:i] + tree.children[i+1:j] + tree.children[j+1:] + [tok]))
+            tok = Token(
+                "TRUE",
+                "T") if tree.data == "expr" else Token(
+                "FALSE",
+                "F")
+            new_trees.append(Tree(
+                tree.data, tree.children[:i] + [tok] + tree.children[i + 1:j] + tree.children[j + 1:]))
+            new_trees.append(Tree(
+                tree.data, tree.children[:i] + tree.children[i + 1:j] + tree.children[j + 1:] + [tok]))
     return new_trees if len(new_trees) > 0 else [tree]
 
 
@@ -234,7 +298,9 @@ def demorgan(tree: Tree):  # ~(pvq) == ~p^~q, ~(p^q) == ~pV~q
         ch = tree.children[1].children[0]
         if (is_tree(ch, "expr") or is_tree(ch, "term")) and len(ch.children) > 1:
             dual = "expr" if ch.data == "term" else "term"
-            new_ch = [simplify_multiple_negation(negate(c)) for c in ch.children]
+            new_ch = [
+                simplify_multiple_negation(
+                    negate(c)) for c in ch.children]
             tree = parenthesize(Tree(dual, new_ch))
     return tree
 
@@ -246,9 +312,11 @@ def reverse_demorgan(tree: Tree):  # ~pV~q == ~(p^q), ~p^~q == ~(pvq)
     new_trees = []
     dual = "expr" if tree.data == "term" else "term"
     for i, c in enumerate(tree.children[:-1]):
-        new_ch = [simplify_multiple_negation(negate(c)) for c in tree.children[i:i+2]]
+        new_ch = [simplify_multiple_negation(
+            negate(c)) for c in tree.children[i:i + 2]]
         tr = negate(Tree("paren_expr", [Tree(dual, new_ch)]))
-        new_trees.append(Tree(tree.data, tree.children[:i] + [tr] + tree.children[i+2:]))
+        new_trees.append(
+            Tree(tree.data, tree.children[:i] + [tr] + tree.children[i + 2:]))
     return new_trees if len(new_trees) > 0 else [tree]
 
 
@@ -266,13 +334,26 @@ def absorption(tree: Tree):  # pV(p^q) == p, p^(pVq) == p
     return tree
 
 
-def reverse_absorption(node, additional_ids=('p', 'q', 'r', 's')):  # p == pv(p^ID), p == p^(pvID)
+# p == pv(p^ID), p == p^(pvID)
+def reverse_absorption(node, additional_ids=('p', 'q', 'r', 's')):
     new_trees = []
     if is_token(node, "ID"):
         additional_ids = [v for v in additional_ids if node.value != v]
     for v in additional_ids:
-        new_trees.append(Tree("expr", [node, parenthesize(Tree("term", [node, v]))]))
-        new_trees.append(Tree("term", [node, parenthesize(Tree("expr", [node, v]))]))
+        new_trees.append(
+            Tree(
+                "expr", [
+                    node, parenthesize(
+                        Tree(
+                            "term", [
+                                node, v]))]))
+        new_trees.append(
+            Tree(
+                "term", [
+                    node, parenthesize(
+                        Tree(
+                            "expr", [
+                                node, v]))]))
     return new_trees
 
 
@@ -292,9 +373,11 @@ def distributivity(tree: Tree):  # pv(q^r) == (pvq)^(pvr) etc., assumes args in 
         return [tree]
     new_trees = []
     for i, c in enumerate(tree.children):
-        if is_tree(c, "paren_expr") and (is_tree(c.children[0], "expr") or is_tree(c.children[0], "term")):
+        if is_tree(c, "paren_expr") and (
+                is_tree(c.children[0], "expr") or is_tree(c.children[0], "term")):
             pre_exclude = tree.children[:i]
-            post_exclude = tree.children[i+1:]  # These preserve the original order of arguments
+            # These preserve the original order of arguments
+            post_exclude = tree.children[i + 1:]
             new_children = [
                 Tree("paren_expr", [Tree(tree.data, [n1, n2])]) for n1 in pre_exclude for n2 in c.children[0].children
             ] + [
@@ -304,30 +387,51 @@ def distributivity(tree: Tree):  # pv(q^r) == (pvq)^(pvr) etc., assumes args in 
     return new_trees if len(new_trees) > 0 else [tree]
 
 
-def reverse_distributivity(tree: Tree):  # (pvq)^(pvr) == pV(q^r) etc., assumes args in order. Hacky
+# (pvq)^(pvr) == pV(q^r) etc., assumes args in order. Hacky
+def reverse_distributivity(tree: Tree):
     assert tree.data == "expr" or tree.data == "term"
     if len(tree.children) == 1:
         return [tree]
 
     def is_viable_node(n):
         return is_tree(n, "paren_expr") \
-               and (is_tree(n.children[0], "expr") or is_tree(n.children[0], "term")) \
-               and len(n.children[0].children) == 2
+            and (is_tree(n.children[0], "expr") or is_tree(n.children[0], "term")) \
+            and len(n.children[0].children) == 2
 
     new_trees = []
-    viable_nodes = list(filter(lambda x: is_viable_node(x[1]), enumerate(tree.children)))
+    viable_nodes = list(
+        filter(
+            lambda x: is_viable_node(
+                x[1]), enumerate(
+                tree.children)))
     for pos, val in enumerate(viable_nodes[:-1]):
         i, c1 = val
-        for j, c2 in viable_nodes[pos+1:]:
-            d1, d2 = c1.children[0], c2.children[0]  # children of paren_expr (i.e. the dual expression)
+        for j, c2 in viable_nodes[pos + 1:]:
+            # children of paren_expr (i.e. the dual expression)
+            d1, d2 = c1.children[0], c2.children[0]
             for ch in d2.children:
                 if ch in d1.children:
-                    exclude = [c for k, c in enumerate(tree.children) if k not in (i, j)]
+                    exclude = [
+                        c for k, c in enumerate(
+                            tree.children) if k not in (
+                            i, j)]
                     idxs = (d1.children.index(ch), d2.children.index(ch))
-                    factored = [c for k, c in enumerate(d1.children) if k != idxs[0]]  # accommodate (ch, ch) e.g. (p^p)
-                    factored += [c for k, c in enumerate(d2.children) if k != idxs[1]]
-                    factored_tree = Tree(d1.data, [ch, parenthesize(Tree(tree.data, factored))])  # pV(q^r)
-                    new_trees.append(Tree(tree.data, [factored_tree] + exclude))
+                    # accommodate (ch, ch) e.g. (p^p)
+                    factored = [
+                        c for k, c in enumerate(
+                            d1.children) if k != idxs[0]]
+                    factored += [c for k,
+                                 c in enumerate(d2.children) if k != idxs[1]]
+                    factored_tree = Tree(
+                        d1.data, [
+                            ch, parenthesize(
+                                Tree(
+                                    tree.data, factored))])  # pV(q^r)
+                    new_trees.append(
+                        Tree(
+                            tree.data,
+                            [factored_tree] +
+                            exclude))
 
     return new_trees if len(new_trees) > 0 else [tree]
 

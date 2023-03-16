@@ -5,10 +5,11 @@ import inspect
 from Levenshtein import distance
 import numpy as np
 
-from logictools.AI.neural_embedding_heuristic import NeuralEmbeddingHeuristic
+from logictools.AI.neural_heuristic.neural_embedding_heuristic import NeuralEmbeddingHeuristic
 
 
-# all heuristics expect Tuple<expr: str, law:str> as inputs. Change typing to a StepNode : {expr: str, law: str} object
+# all heuristics expect Tuple<expr: str, law:str> as inputs. Change typing
+# to a StepNode : {expr: str, law: str} object
 
 def random_weight(n1, n2):
     return random() * 10
@@ -19,7 +20,7 @@ def levenshtein_distance(n1, n2):
 
 
 def len_distance(n1, n2):
-    return abs(len(n1[0])-len(n2[0]))
+    return abs(len(n1[0]) - len(n2[0]))
 
 
 def unitary_distance(n1, n2):
@@ -27,7 +28,7 @@ def unitary_distance(n1, n2):
 
 
 def variable_mismatch(n1, n2):            # vars in n1 but not in n2 and vice versa
-    cfunc = lambda x: 97 <= ord(x) <= 122 and x != 'v'
+    def cfunc(x): return 97 <= ord(x) <= 122 and x != 'v'
     n1v, n2v = set(filter(cfunc, n1[0])), set(filter(cfunc, n2[0]))
     return len((n1v | n2v) - (n1v & n2v))
 
@@ -35,7 +36,12 @@ def variable_mismatch(n1, n2):            # vars in n1 but not in n2 and vice ve
 class RuleDists:
 
     def __init__(self):
-        self.all_dists = list(filter(lambda r: not r[0].startswith("__"), inspect.getmembers(self, predicate=inspect.ismethod)))
+        self.all_dists = list(
+            filter(
+                lambda r: not r[0].startswith("__"),
+                inspect.getmembers(
+                    self,
+                    predicate=inspect.ismethod)))
         self.all_dists = [r[1] for r in self.all_dists]
 
     def start_dist(self, n1, n2, d=1):
@@ -123,7 +129,8 @@ class GeneHeuristic:
             for l in lines[2:]:
                 try:
                     heur, val, file = l.split(": ")
-                    self.heuristics.append(getattr(NeuralEmbeddingHeuristic(file[:-1], is_state_dict=True), heur))
+                    self.heuristics.append(
+                        getattr(NeuralEmbeddingHeuristic(file[:-1], is_state_dict=True), heur))
                 except ValueError:
                     heur, val = l.split(": ")
                     if heur in globals():
@@ -134,10 +141,11 @@ class GeneHeuristic:
 
     def save(self, out_file):
         with open(out_file, "w") as f:
-            f.write(str(self.params)+"\n\n")
+            f.write(str(self.params) + "\n\n")
             for i, h in enumerate(self.heuristics):
                 if self.model_files[i]:
-                    f.write(f"{h.__name__}: {self.weights[i]}: {self.model_files[i]}\n")
+                    f.write(
+                        f"{h.__name__}: {self.weights[i]}: {self.model_files[i]}\n")
                 else:
                     f.write(f"{h.__name__}: {self.weights[i]}\n")
 
@@ -147,4 +155,3 @@ if __name__ == "__main__":
     gh = GeneHeuristic()
     gh.load("astar_heuristic_weights.txt")
     print(gh.gene_meta_dist(n1, n2))
-

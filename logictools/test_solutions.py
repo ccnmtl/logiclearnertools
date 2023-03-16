@@ -11,7 +11,9 @@ def question_solver(question):
     for i, s in enumerate(question["solution"][:-1]):
         frontier = get_frontier(s["statement"])
         try:
-            validate(frontier, question["solution"][i+1]["statement"], question["solution"][i+1]["rule"])
+            validate(frontier,
+                     question["solution"][i + 1]["statement"],
+                     question["solution"][i + 1]["rule"])
         except InvalidExpressionException:
             return f"Step {i+1}: {question['solution'][i+1]} not entailed by {s}"
     return "Passed"
