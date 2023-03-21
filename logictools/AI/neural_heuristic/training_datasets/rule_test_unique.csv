@@ -1,0 +1,1655 @@
+~~(sv~s),sv~s,Double Negation
+~(p^p)vq,~pvq,Idempotence
+(q^T)v~~(q^r),qv~~(q^r),Identity
+((p^T)vq)^(pv~(q^T)),(pvq)^(pv~(q^T)),Identity
+~~~(~r^~~(p^(qvq))),~(~r^~(~(p^(qvq)))),Double Negation
+~s->~s,sv~s,Implication as Disjunction
+~rvr,rv~r,Commutativity
+F->~~(~qvq),F->~~(qv~q),Commutativity
+(pv~p)vF,pv~p,Identity
+(pvp)^(pvr),p^(pvr),Idempotence
+(~pv(~q^~q^~s))^(~pv((~q^~s)^s))^(qv(~q^~s))^(qv((~q^~s)^s)),(~pv(~q^~s))^(~pv((~q^~s)^s))^(qv(~q^~s))^(qv((~q^~s)^s)),Idempotence
+~((~q->s)^~~(Fv(~p->~q))),~((~q->s)^(Fv(~p->~q))),Double Negation
+~(~s^s)^((~s^s)vr),~(~s^s),Absorption
+~(~(~~p->p)v~(p->~~p^(pvs))),~(~(~~p->p)v~(p->~~p)),Absorption
+~~~~~(~p^~p),~~~(~p^~p),Double Negation
+(~qvp)^(rv~s)v((rv~s)^(pvp)),(~qvp)^(rv~s)v((rv~s)^p),Idempotence
+(pvq)^~~(~p->~q),(pvq)^(~p->~q),Double Negation
+~q^(qvs),~q,Absorption
+rv~(q^p)v((q^p)^p),rv~(q^p),Absorption
+~(qvp),~(pvq),Commutativity
+~pv(p^r)->(r^q),~p->(r^q),Absorption
+qv(q^p)->(p->q),q->(p->q),Absorption
+~(~r^~~~~(p^(qvq))),~(~r^~(~(p^(qvq)))),Double Negation
+((pvq)^(pvq))^(q->p),(pvq)^(q->p),Idempotence
+~~(~(q^r)v~(q^r))->p,~~~(q^r)->p,Idempotence
+s^(((~svF)^~q)v(~s^~T))^p,s^((~s^~q)v(~s^~T))^p,Identity
+(q^(qvp)v~p)->((p->q)->q),(p->q^(qvp))->((p->q)->q),Implication as Disjunction
+~q^p^p,~q^p,Idempotence
+pvF,Fvp,Commutativity
+p<->(qv(r^~r)),p<->(qvF),Negation
+~(~r^~~~(~(qvq)v~p)),~(~r^~~~(~pv~(qvq))),Commutativity
+~~(~q^~(p->q)),~~(~(p->q)^~q),Commutativity
+Fvqv(q^p),Fvq,Absorption
+s^((~s^~q)v((~sv~s)^~(pv~p)))^p,s^((~s^~q)v(~s^~(pv~p)))^p,Idempotence
+q^~(~s^~q),q^(svq),De Morgan's Law
+(~pv~q)^(pv~q),~(p^q)^(pv~q),De Morgan's Law
+~((~p->~q)^~~(~q->s)),~((~p->~q)^(~q->s)),Double Negation
+pvp^(pvq),pvp,Absorption
+q->(T^~~(p->q)),q->~~(p->q),Identity
+(~q^~s)v(~p^q),(~p^q)v(~q^~s),Commutativity
+~(~r^~~((p^(qv~q))^(qvq))),~(~r^~~((p^T)^(qvq))),Negation
+~~(p^~(~p^~r)),p^~(~p^~r),Double Negation
+~~(~(p<->q)^~(p<->q)),~~~(p<->q),Idempotence
+(pv(qvq))vF,pv(qvq),Identity
+~(~r^~~((p^q)^((p^q)vp)v((pvp)^q))),~(~r^~~((p^q)^((p^q)vp)v(p^q))),Idempotence
+~(~s^s)^((~s^s)vs),~(~s^s),Absorption
+~(~~(~p^q)v~(rv~s)),~((~p^q)v~(rv~s)),Double Negation
+~~(p^~p),p^~p,Double Negation
+pv~pv(p^r),pv~p,Absorption
+~(p^q)^(~p->~(T^q)),~(p^q)^(~p->~q),Identity
+~~((q^~q)vF),(q^~q)vF,Double Negation
+~p->qv(q^r),~p->q,Absorption
+pvp^(~p->q),pvp^(pvq),Implication as Disjunction
+(~~pv~~p)<->p^(pvq),(~~pv~~p)<->p,Absorption
+~~~(qvq),~(qvq),Double Negation
+(~(p^T)^q)v((~(p^T)^q)^s)v(~q^~s),(~(p^T)^q)v(~q^~s),Absorption
+~~(~(p->q)^~q),~((p->q)vq),De Morgan's Law
+~(~r^~~((p^q)v(q^p))),~(~r^~~((p^q)v(p^q))),Commutativity
+(qvq)v~p,~pv(qvq),Commutativity
+(p^~(p^~q)->(p^q))^((p^q)->~~(p^~(p^~q))),(p^~(p^~q)->(p^q))^((p^q)->p^~(p^~q)),Double Negation
+(p^(rv~s))v(~q^(rv~s)),(pv~q)^(rv~s),Distributivity
+~(~((((~p^~p)^s)v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Idempotence
+((~s^~q)v(~s^~T))^p^s,s^((~s^~q)v(~s^~T))^p,Commutativity
+(pv~p)^((pv~p)vs)vF,(pv~p)vF,Absorption
+~~~(p^(~q^T)),~(p^(~q^T)),Double Negation
+p->(~~(q^T)->r)^((~~(q^T)->r)vp),p->(~~(q^T)->r),Absorption
+qv(Fvp),qvp,Identity
+~~(~(p^~q)vq),~(p^~q)vq,Double Negation
+s^((~s^((svr)^~q))v(~s^~(pv~p)))^p,s^((~s^(svr)^~q)v(~s^~(pv~p)))^p,Associativity
+~~(~r^r),~~(r^~r),Commutativity
+(r^~rvr)^(r^~rvq),r^~rv(r^q),Distributivity
+(~(p^~q)->(p^~q))vq,(p^~q)v(p^~q)vq,Implication as Disjunction
+(p->q)->(((p^p)->q)->q),(p->q)->((p->q)->q),Idempotence
+(p->q)->~~((qv~p)->q),(p->q)->((qv~p)->q),Double Negation
+~(F^~(rv~r)),~(F^~T),Negation
+((~p->p)^~r)->q,((pvp)^~r)->q,Implication as Disjunction
+(pv(p^r)v~q)^(rv~s),(pv~q)^(rv~s),Absorption
+~(~(pvq)v~(~p->~q)),(pvq)^(~p->~q),De Morgan's Law
+(~q^T)^~(pvp),(~q^T)^~p,Idempotence
+~(q<->p),~(p<->q),Commutativity
+~~(pvF),pvF,Double Negation
+~(~p^(pvq)^~q)->r,(p^(pvq)vq)->r,De Morgan's Law
+(p->q)->(((p->qv(q^r))v(p->q))->q),(p->q)->(((p->q)v(p->q))->q),Absorption
+p->((qvq)^(qvs)^(qvr)^(svr)),p->(qv(q^s)vr),Distributivity
+((T^(~p^q))v~s)^((T^(~p^q))v~q),((T^(~p^q))v~q)^((T^(~p^q))v~s),Commutativity
+~(~(p^~q)^~(T^(q^~p))),~(~(p^~q)^~(q^~p)),Identity
+~((Fv~((((~p^T)v((~p^T)^r)^s)v((~p^T)^~s))^p))^~p),~(~((((~p^T)v((~p^T)^r)^s)v((~p^T)^~s))^p)^~p),Identity
+~p^p,p^~p,Commutativity
+~(~q^~p)v~(p^q),(p^q)->~(~q^~p),Implication as Disjunction
+p^(T^~p),p^~p,Identity
+~((~p->~q)^(((~q->s)v(~q->s))^T)),~((~p->~q)^((~q->s)^T)),Idempotence
+p^~~(pvr),p^(pvr),Double Negation
+p->~~(~rv(r^q)->q),p->(~rv(r^q)->q),Double Negation
+~(~(q^~p)^~(~q^~s)),(q^~p)v(~q^~s),De Morgan's Law
+(q->p)^((p->q)v(p->q)),(q->p)^(p->q),Idempotence
+pv(p^q),p,Absorption
+~~(qv(r^~r)),qv(r^~r),Double Negation
+(p^(Fvq)^(qvs))->r,(p^q^(qvs))->r,Identity
+(p->q)->((~~(p^p)->q)^((~~(p^p)->q)vr)->q),(p->q)->((~~(p^p)->q)->q),Absorption
+~qvq,qv~q,Commutativity
+~~p<->pv(p^q),(~(~p))<->p,Absorption
+p->~(~q^~r),p->(qvr),De Morgan's Law
+(pvq)^(rvp)v((rvp)^p),(pvq)^(rvp),Absorption
+~(~Tv~(~p->(q^~q)))v~(~Tv~(~p->(q^~q))),~(~Tv~(~p->(q^~q))),Idempotence
+q<->(Fvp),q<->p,Identity
+~(~p^~q)->r,~(~q^~p)->r,Commutativity
+~~(~qvq)^(~r^~(~pv~r)),~~(~qvq)^~r^~(~pv~r),Associativity
+~((Fvq)^~p)^(qv~p),~(q^~p)^(qv~p),Identity
+(~p->q)v((~p->q)^s)^~~(~p->~q),(~p->q)^~~(~p->~q),Absorption
+~~(qv(p^~q)),qv(p^~q),Double Negation
+F->~~~(~r^r),F->~(~r^r),Double Negation
+~~(~pvq),~pvq,Double Negation
+~((p^~q)v(p^~q))vq,~(p^~q)vq,Idempotence
+~~~~(~pv~q)^(pv~q),~~~(p^q)^(pv~q),De Morgan's Law
+p^(T^(pvr)),p^(pvr),Identity
+~~(pv~q)^(~r->~s),~~(pv~q)^(rv~s),Implication as Disjunction
+~(p^((pvr)^T))^~q,~(p^(pvr)^T)^~q,Associativity
+~(~((((~p^T)v((~p^T)^r)^s)v((~p^T)^~s))^p)^~p),~(~((((~p^T)^s)v((~p^T)^~s))^p)^~p),Absorption
+pv~~(p^s)^((p^s)vq),pv~~(p^s),Absorption
+~r->~r,rv~r,Implication as Disjunction
+~~(~p^(~qv~q)),~p^(~qv~q),Double Negation
+~(p^q)^(~p->~q),~(p^q)^(pv~q),Implication as Disjunction
+~(~((q^r)v(q^~r))^~(~(((q^r)v(q^~r))vs)v~p)),~(~((q^r)v(q^~r))^(((q^r)v(q^~r))vs)^p),De Morgan's Law
+~~((p^~q)->q),~~(qv~(p^~q)),Implication as Disjunction
+~~(pvp),~(~p),Idempotence
+~rvT,rv~rv~r,Negation
+~(~pv~T)->q,(p^T)->q,De Morgan's Law
+~((q^~p)v~(~r->~(s^T))),~((q^~p)v~(~r->~s)),Identity
+p,~(~p),Double Negation
+T^((pv~q)^(pvq)),(pv~q)^(pvq),Identity
+p<->p,(~(~p))<->p,Double Negation
+~(~(~(q^r)->(q^~r))^~(~(q^r)->(q^~r))^p),~((~(~(q^r)->(q^~r))^~(~(q^r)->(q^~r)))^p),Associativity
+~((p^T)vq),~(p^T)^~q,De Morgan's Law
+(p->q)->~~((~(~F^~p)->q)->q),(p->q)->~~(((Fvp)->q)->q),De Morgan's Law
+p^~(~(pvq)v~p),p^(pvq)^p,De Morgan's Law
+~(pvp)->q,~p->q,Idempotence
+q->(((q^~q)vp)->q),q->((Fvp)->q),Negation
+(((p->r)^(q->r))^((p->r)^(pvq)))->r,((p->r)^((q->r)^(pvq)))->r,Distributivity
+~(pvp)^~(qvq),~p^~(qvq),Idempotence
+(~(q^~p)^q)v(~(q^~p)^(~p^~p)),(~(q^~p)^q)v(~(q^~p)^~p),Idempotence
+T^~(~pv~(pvs)),T^p^(pvs),De Morgan's Law
+qv(q^r),q,Absorption
+~(~q^~r)v~p,p->~(~q^~r),Implication as Disjunction
+(Tv(r^q))^(qv(r^q)),(T^q)v(r^q),Distributivity
+~~~(~((q^r)v(~r^q))^p),~(~((q^r)v(~r^q))^p),Double Negation
+(q^q)v(q^s)v(~q^q)v(~q^s),q^~q^(qvs),Distributivity
+p^(~p->(svs)),p^(~p->s),Idempotence
+~~(p^(pvq)),p^(pvq),Double Negation
+~~(~q^(qv(svF))),~~(~q^(qvs)),Identity
+~(~p->F)^~q,~(pvF)^~q,Implication as Disjunction
+s^(((~(p^~p)->~s)^~q)v(~s^~T))^p,s^(((~F->~s)^~q)v(~s^~T))^p,Negation
+(~p^q)v(~(qv(q^p))^~s),(~p^q)v(~(q^qv(q^p))^~s),Idempotence
+((~p->p)^~(rvr))->q,((~p->p)^~r)->q,Idempotence
+(pvq)^(q->p),(pvq)^(pv~q),Implication as Disjunction
+~~(~p^~q^~q),~~(~p^~q),Idempotence
+~(~~(p^(~q->q))^~r),~(~~(p^(qvq))^~r),Implication as Disjunction
+~~~(r^~r)vT,~(r^~r)vT,Double Negation
+(~~(qvp)^~~(qvp))^(qv~q),~~(qvp)^(qv~q),Idempotence
+~((p->q)v(q^q)),~((p->q)vq),Idempotence
+(p^q)v~pv(p^~q),(p^q)v(~pv(p^~q)),Associativity
+qv((r^~r)vp),qv(Fvp),Negation
+s^(svp)v~s,sv~s,Absorption
+(~q^p)v(q^~p),(p^~q)v(q^~p),Commutativity
+~(~p^~p)^((~p^~p)vs),~(~p^~p),Absorption
+(p->(r^(pv~p)))^(q->(r^r)),(p->(r^T))^(q->(r^r)),Negation
+~~(q^p)->~(~p^~q),~~(p^q)->~(~p^~q),Commutativity
+(p^q)->~(T^(~p^~q)),(p^q)->~(~p^~q),Identity
+pv~(~pv~q)v~p,pv(p^q)v~p,De Morgan's Law
+~(~(pvq)v((pvq)^s)v~(pvr)),~(~(pvq)v~(pvr)),Absorption
+(qv~q)^p,T^p,Negation
+(p^~r^(rvs))->q,(p^~r)->q,Absorption
+pv(qvq),~p->(qvq),Implication as Disjunction
+(Fv~p)->~p,~p->~p,Identity
+~pv((q^q)vr^(rvq)),~pv(qvr^(rvq)),Idempotence
+(pvq)^~(~pv(p^q)^q),(pvq)^~(~p^q),Absorption
+((p^~q)vT)^((p^~q)v(q^~p)),(p^~q)v(T^(q^~p)),Distributivity
+(pv~q^(qvs))^(rv(~s^T)),(pv~q)^(rv(~s^T)),Absorption
+(p->(r^T))^(q->(r^r)),(p->(r^T))^(q->r),Idempotence
+~~(qvqv~p),~~(qv~p),Idempotence
+(r^~r)v(r^~r),r^(~rv~r),Distributivity
+~((p->q)^(pv~q)v((pv~q)^r)),~((p->q)^(pv~q)),Absorption
+pv(q^pv(p^r)),pv(q^p),Absorption
+~((T^T^p)^~q),~((T^p)^~q),Idempotence
+((((p->r)^T)^(q->r))^(~q->p))->r,(((p->r)^(q->r))^(~q->p))->r,Identity
+~(~~((p^q)v(p^q))^~r),~(~r^~~((p^q)v(p^q))),Commutativity
+pv(~pv~p)^((~pv~p)vr),pv(~pv~p),Absorption
+pv(~(~qv~r)vF),pv((q^r)vF),De Morgan's Law
+~~(r^~r),r^~r,Double Negation
+~(~(((q^(Fvr))v(q^~r))v((q^r)v(q^~r)))^p),~(~(((q^r)v(q^~r))v((q^r)v(q^~r)))^p),Identity
+~~(sv(s^r)v~s),sv(s^r)v~s,Double Negation
+(((p^~q)^(p^~q))^((p^~q)^(p^~q)))v(~p^q),((p^~q)^(p^~q))v(~p^q),Idempotence
+~(((p->q)vq)^~(~(p->q)^~q)),~(~(~(p->q)^~q)^((p->q)vq)),Commutativity
+~~(~((Fvq)^~p)^(~q->~p)),~((Fvq)^~p)^(~q->~p),Double Negation
+~(~(((~(Fvp)^s)v((T^~p)^~s))^p)^~p),~(~(((~p^s)v((T^~p)^~s))^p)^~p),Identity
+~(~(~qvF)v~p),(~qvF)^p,De Morgan's Law
+~qv(p->q),q->(p->q),Implication as Disjunction
+((p^q)v(p^F))->r,(p^(qvF))->r,Distributivity
+~(~p->q),~(pvq),Implication as Disjunction
+~r^T^r^(p->r),~r^(~pvp)^r^(p->r),Negation
+~p->~~(q^~q),~p->(q^~q),Double Negation
+~~(~q^(qvs)),~q^(qvs),Double Negation
+~q->~p,~pvq,Implication as Disjunction
+~~~(~p^(pvs)^~q),~~~(~p^~q),Absorption
+(((q^~q)vp)v~q)v(pvq),((Fvp)v~q)v(pvq),Negation
+(pv~q)^(pvq),(pvq)^(pv~q),Commutativity
+~(((~pv~~(~p^q))^(qv~~(~p^q)))v~(rv~s)),~(((~p^q)v~~(~p^q))v~(rv~s)),Distributivity
+((pvqvp)^T)->r,((pvpvq)^T)->r,Commutativity
+pv(q^r)^((q^r)vs),pv(q^r),Absorption
+~(~(((~p^(svs))v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Idempotence
+~((Fv~q)^q),~(~q^q),Identity
+~(((qv~p)vq)^((p->q)vq)),~(((p->q)vq)^((p->q)vq)),Implication as Disjunction
+~~(~qvq)^~r^~(~pv~r),~~(~qvq)^~r^p^r,De Morgan's Law
+~((pvr)^~p),~(~p^(pvr)),Commutativity
+~~(Fv(~q^~q)),~~(Fv~q),Idempotence
+s^((~s^~q)v(~s^~(pv~p)))^p,s^((~s^~q)v(~s^~T))^p,Negation
+F,~q^q,Negation
+~(~~(~p->q)vF),~(~~(pvq)vF),Implication as Disjunction
+(~p->q)v(pv~q)v(~~(pv~q)^s),(~p->q)v(pv~q)v((pv~q)^s),Double Negation
+p->(q->r)v((q->r)^q),p->(q->r),Absorption
+~~(pvq)v(pv~q),(pvq)v(pv~q),Double Negation
+~~(~p^~q),~(pvq),De Morgan's Law
+~(~~~(pvq)v((pvq)^s)v~(pvr)),~(~(pvq)v((pvq)^s)v~(pvr)),Double Negation
+(qv~q)^(qvp),qv(~q^p),Distributivity
+p^(pvs)^p,p^p,Absorption
+~(~(((q^r)v(q^~r))v((q^r)v(q^~r)))^p),~(~((q^r)v(q^~r))^p),Idempotence
+~(~p^q)^(rv~s),(pv~q)^(rv~s),De Morgan's Law
+~~(~(p^q)^~(p^q)^(pv~q)),~(p^q)^~(p^q)^(pv~q),Double Negation
+~(~Tv~p),T^p,De Morgan's Law
+pv(p^((qv~q)^s)),pv(p^(T^s)),Negation
+~~((p^(pvs))^(p^(pvs))),~~(p^(pvs)),Idempotence
+((~p->p)vq)->rv(r^s),(pvpvq)->rv(r^s),Implication as Disjunction
+(p^q)v(p^~q)v~p,(p^q)v~pv(p^~q),Commutativity
+~r^((~p^r)v(~(p^r)->F))^(p->r),~r^((~p^r)v((p^r)vF))^(p->r),Implication as Disjunction
+(~(p^q)vp)v(~(p^q)vq),~(p^q)v(pvq),Distributivity
+(~pv(~q^T))^(pv~q),(~pv~q)^(pv~q),Identity
+((pvF)->p)^(p->(pvF)),(pvF)<->p,Iff as Implication
+~r^((~pvpv(p^s))^r)^(p->r),~r^((~pvp)^r)^(p->r),Absorption
+(pvq)^(pvr),pv(q^r),Distributivity
+~p->(qvq),~p->q,Idempotence
+(p->~(~q^(qvp)^~r))^T,(p->~(~q^~r))^T,Absorption
+Fv((p^p)->(q->r)),(p^p)->(q->r),Identity
+p^~qv~(~qv~s),p^~qv(q^s),De Morgan's Law
+~(((q->~q)->s)^(~p->~q)),~(((~qv~q)->s)^(~p->~q)),Implication as Disjunction
+(((p->r)^(q->r))^(~q->p))->r,((p->r)^(q->r)^(~q->p))->r,Associativity
+(p^q)->~(~q^~p),(p^q)->~(~p^~q),Commutativity
+~~((p^q)vF)->r,~~(p^q)->r,Identity
+p->((qvr)^(qvr))^(((qvr)^(rvq))vs),p->((qvr)^(qvr))^(((qvr)^(qvr))vs),Commutativity
+(p^(pvq)^~r)->((q^~q)vq),(p^(pvq)^~r)->(Fvq),Negation
+~(((~q^T)->s)^(~p->~q)),~((~q->s)^(~p->~q)),Identity
+~(q^r)->q,~(r^q)->q,Commutativity
+T^((pvq)^(pv~q)),T^((pv~q)^(pvq)),Commutativity
+~(((~p^q)v(~p^q))v~(rv~s)),~((~p^q)v~(rv~s)),Idempotence
+~pv(q^q)v(q^s),p->(q^q)v(q^s),Implication as Disjunction
+(p->r)^(q->r)v((q->r)^s),(p->r)^(q->r),Absorption
+(~qvp)^~(~r^s),(q->p)^~(~r^s),Implication as Disjunction
+Fvp,p,Identity
+(pv~(q^T))^(pvq),(~p->~(q^T))^(pvq),Implication as Disjunction
+~(~(pvq)v~(qv~q)),(pvq)^(qv~q),De Morgan's Law
+p->~~(q->r)v((rv~q)^r),p->~~(q->r)v((q->r)^r),Implication as Disjunction
+(p^(qvF))->r,(p^q)->r,Identity
+(Fv~p)v((Fv~p)^p)->q,(Fv~p)->q,Absorption
+~~(((q^r)v(q^~r))v~p),~(~((q^r)v(q^~r))^p),De Morgan's Law
+(p^~((p^q)v(p^s)v(~q^q)v(~q^s)))<->(p^q),(p^~(p^~q^(qvs)))<->(p^q),Distributivity
+qvF,q,Identity
+(p^~q)vq,qv(p^~q),Commutativity
+(q^q)v(r^q),qv(r^q),Idempotence
+p^(pvq),p,Absorption
+(p^q)v~(~(~pvp)v~(~qv~p)),(p^q)v((~pvp)^(~qv~p)),De Morgan's Law
+(r^(~qvq)^~r)^p,(r^~r^(~qvq))^p,Commutativity
+(qvq)^(qvr),qv(q^r),Distributivity
+p<->~~(qv(r^~r)),p<->(qv(r^~r)),Double Negation
+(pvq)v(Fvq),(pvF)vq,Distributivity
+(~p->~q)^(pvq),(pvq)^(~p->~q),Commutativity
+~~(~q^~p),~~(~p^~q),Commutativity
+(~~(p^p)^~r)->q,((p^p)^~r)->q,Double Negation
+~~((q->r)^(p->r)),(q->r)^(p->r),Double Negation
+q^(svq),q^(qvs),Commutativity
+~((q^q)vF)v((qvF)^p),~(qvF)v((qvF)^p),Idempotence
+~~(~(p->q)^((p->q)vs)^~q),~~(~(p->q)^~q),Absorption
+~~~(q^~p)^(qv~p),~(q^~p)^(qv~p),Double Negation
+~r^~(~(~~T^r)v~(p->r)),~r^~(~(~~(~pvp)^r)v~(p->r)),Negation
+~p->(q^r),pv(q^r),Implication as Disjunction
+(svs)v~s,svsv~s,Associativity
+(pvq)v(p^(pvs)vq)v(pv~q),(pvq)v(pvq)v(pv~q),Absorption
+~(~q->q),~(qvq),Implication as Disjunction
+Fv(~p->(q^~q)),~p->(q^~q),Identity
+s^((~sv~~(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vq)^p,s^((~sv(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vq)^p,Double Negation
+p^((pvF)vr),p^(pvr),Identity
+~(~(~q->p)v~(~q->p))->r,~~(~q->p)->r,Idempotence
+s^((~s^~q)v(~s^~T))^(((~s^~q)v(~s^~T))vq)^p,s^((~s^~q)v(~s^~T))^p,Absorption
+F->(qv~q),F->T,Negation
+~(q^r)->p,pv(q^r),Implication as Disjunction
+(r^~r^(~qvq))^p,r^~r^(~qvq)^p,Associativity
+~~~(pvq),~(pvq),Double Negation
+~(~(p^~q)^~(T^(~p^q))),~(~(p^~q)^~(T^(q^~p))),Commutativity
+p<->(pvF),(pvF)<->p,Commutativity
+~(~p^p),pv~p,De Morgan's Law
+qv~~(q^r),qv~~(r^q),Commutativity
+~~(~q^(qvr)^~p),~~(~q^~p),Absorption
+p->~~((q->r)^((q->r)vq)),p->(q->r)^((q->r)vq),Double Negation
+pv~pv~p,pv~p,Idempotence
+~((~(pvq)^~(qvp))v~(~p->~q)),~((~(pvq)^~(pvq))v~(~p->~q)),Commutativity
+p->((qvr)^(qvs)^(qvq)^(svr)),p->((qvq)^(qvs)^(qvr)^(svr)),Commutativity
+q^T^~q,q^(T^~q),Associativity
+(pv~q)^((rvr)v~s),(pv~q)^(rvrv~s),Associativity
+(((pv(p^r)v~q)^r)v((pv(p^r)v~q)^~s))^T,((pv(p^r)v~q)^r)v((pv(p^r)v~q)^~s),Identity
+(Fvq)v(r^(qvq)),(qvF)v(r^(qvq)),Commutativity
+q^(qvs),q,Absorption
+~pv(q->r),p->(q->r),Implication as Disjunction
+p->~~(q->r),p->(q->r),Double Negation
+((p^(~p->~q))vq)^((p^(~p->~q))v(qvs))^((p^(~p->~q))v(~p->~q)),(p^(~p->~q))v(q^(qvs)^(~p->~q)),Distributivity
+~(~qv~p)->(rvr),~(~pv~q)->(rvr),Commutativity
+(p^~(p^~q)->(p^q))^((p^q)->p^~(p^~q)),p^~(p^~q)<->(p^q),Iff as Implication
+qv~~(~qv~q),qv(~qv~q),Double Negation
+((p->r)^(rv~q)^(pvq))->(r^T),((p->r)^(rv~q)^(pvq))->r,Identity
+(pv~q)^~(p^q),~(p^q)^(pv~q),Commutativity
+(p^((s^~s)vq)^(qvs))->r,(p^(Fvq)^(qvs))->r,Negation
+~(Fv(pvp))->(~q^q),~(pvp)->(~q^q),Identity
+(qv~p)^~(q^~p),~(q^~p)^(qv~p),Commutativity
+((p^q)^(p^q))->(r^T),((p^p)^q)->(r^T),Distributivity
+((p^T)^(p^T))<->q,(p^T)<->q,Idempotence
+pvqv~(~p^~(~qvF)),(pvq)v~(~p^~(~qvF)),Associativity
+~((pvq)^~p^~q)->r,~(~p^(pvq)^~q)->r,Commutativity
+p^~pv(p^r),p^~p,Absorption
+~(~((((~p^s)^T)v(~s^(~p^T)))^p)^~p),~(~((((~p^s)^T)v((~p^T)^~s))^p)^~p),Commutativity
+p^~(p^~q)<->(q^(pvs)^p),p^~(p^~q)<->(p^(pvs)^q),Commutativity
+~~((p^(pvrvr))v(q^(pvrvr))),~~((pvq)^(pvrvr)),Distributivity
+~((~((rv~s)vF)v~p)^(~(rv~s)vq)),~((~(rv~s)v~p)^(~(rv~s)vq)),Identity
+~(~(q->r)^p),~~((q->r)v~p),De Morgan's Law
+((pv(p^q))vq)^(~p->~(q^q)),((pv(p^q))vq)^(~p->~q),Idempotence
+(p^~r)->(Fvq),(p^~r)->q,Identity
+p^(T^~(pvp)),p^(T^~p),Idempotence
+p->((q^q)v(q^s)->r),p->(qv(q^s)->r),Idempotence
+~s^(svp)->~s,s^(svp)v~s,Implication as Disjunction
+((p^q)v~pv(p^q))v~(~pvq),((p^q)v~p)v~(~pvq),Absorption
+~~(qv~qv~q),qv~qv~q,Double Negation
+~~((((pvq)vp)v((pvq)vq))^(pv~q)),~~(((pvq)v(pvq))^(pv~q)),Distributivity
+p^(pvs)->q,p->q,Absorption
+((~qvq)^(~qvs)^(qvq)^(qvs))^p^F,(~qvqv(q^s))^p^F,Distributivity
+(((q->r)^(p->r))^((p->r)^(pvq)))->r,(((p->r)^(q->r))^((p->r)^(pvq)))->r,Commutativity
+rv(r->r),rvrv~r,Implication as Disjunction
+r->r^(rvs),r->r,Absorption
+~((~q->s)^(~p->~q)),~((~p->~q)^(~q->s)),Commutativity
+(~(q^~p)^q)v(~(q^~p)^~p),~(q^~p)^(qv~p),Distributivity
+~(~(p->r)v~(q->r)),(p->r)^(q->r),De Morgan's Law
+~~((((~p^(svs))v(Fv((~p^T)^~s)))^p)vp),~~((((~p^(svs))v((~p^T)^~s))^p)vp),Identity
+(pvq)^(rvp)v((~r->p)^p),(pvq)^(rvp)v((rvp)^p),Implication as Disjunction
+~(pvp)->(q^~(qvq))^((q^~(qvq))vr),~p->(q^~(qvq))^((q^~(qvq))vr),Idempotence
+~((~p^qv~(rv~s))v((q^r)v~(rv~s))),~((~p^qv(q^r))v~(rv~s)),Distributivity
+~~(pv(~q^q)),pv(~q^q),Double Negation
+~(~r^~~(p^(qvq)v((qvq)^q))),~(~r^~(~(p^(qvq)))),Absorption
+(~~(~p^q)v~q)^((~p^q)v(Fv~s)),(~~(~p^q)v~q)^((~p^q)v~s),Identity
+(pvq)v~(~p^q),(pvq)v(pv~q),De Morgan's Law
+~~((p^q)v(p^~q)v~p),(p^q)v(p^~q)v~p,Double Negation
+~~(p->rv(r^p))^(q->r),~~(p->r)^(q->r),Absorption
+~~(~q->~(p^~q)),~~(~(p^~q)vq),Implication as Disjunction
+~~((~(Fvq)vq)v(~(Fvq)vq))^~r^p^r,~~(~(Fvq)vq)^~r^p^r,Idempotence
+((p^~q)^(p^~q))v(~p^q),((p^~q)^(p^~q))v(q^~p),Commutativity
+~(~((p^q)v(p^r)v(~q^q)v(~q^r))^~(q^~p)),~(~(p^~q^(qvr))^~(q^~p)),Distributivity
+(pvq)^(pv~q^((qvF)vs)),(pvq)^(pv~q^(qvs)),Identity
+(~q^(p^p))^T,~q^(p^p),Identity
+~(p->~q)->r,~(~pv~q)->r,Implication as Disjunction
+~(~s^s),sv~s,De Morgan's Law
+((r^~r)vp)^(pvq),(Fvp)^(pvq),Negation
+~(~rvr),~~(r^~r),De Morgan's Law
+~(qvpvp),~(qvp),Idempotence
+p^pv(p^s),p^p,Absorption
+p^~(p^~q)<->(p^(pvs)^q),p^~(p^~q)<->(p^q),Absorption
+~((~pv~(rv~s))^(qv~~~(s->r))),~((~pv~(rv~s))^(qv~(s->r))),Double Negation
+(q^p)v(~pv(p^~q)),(p^q)v(~pv(p^~q)),Commutativity
+~(p^~p),~pvp,De Morgan's Law
+(p->q)->((~~(p^p)->q)->q),(p->q)->(((p^p)->q)->q),Double Negation
+~(~pv~q)->r,(p^q)->r,De Morgan's Law
+~(~pv~q)->(rvr),(p^q)->(rvr),De Morgan's Law
+~(q^((qvr)^~p))^~(~q^p),~(q^(qvr)^~p)^~(~q^p),Associativity
+p^~qv(q^s),p^~q,Absorption
+((pvp)^(qvq))->r,(p^(qvq))->r,Idempotence
+pv(q^(sv~s)),pv(q^T),Negation
+pvp,p,Idempotence
+p^~~(~pvqvq)<->(p^q),p^~~(~pvq)<->(p^q),Idempotence
+~r^((~pv(~(p^s)->p))^r)^(p->r),~r^((~pv(pv(p^s)))^r)^(p->r),Implication as Disjunction
+s^((~s^~q)v(~s^~T^~T))^p,s^((~s^~q)v(~s^~T))^p,Idempotence
+~~(pvq)^(pvr),(pvq)^(pvr),Double Negation
+~(q^~(p->q)),~qv(p->q),De Morgan's Law
+(Fv~p)->q,~p->q,Identity
+~r^((~((pv~p)^p)vp)^r)^(p->r),~r^((~(T^p)vp)^r)^(p->r),Negation
+(q^r)vp,pv(q^r),Commutativity
+((qv~q)v(r^q))^(qv(r^q)),(Tv(r^q))^(qv(r^q)),Negation
+~~(Fv((p^p)->(q->r))),Fv((p^p)->(q->r)),Double Negation
+~((~s^~s)^s),~(~s^s),Idempotence
+~~(p^(~q->p)),~~(p^(pvq)),Implication as Disjunction
+~pvp,pv~p,Commutativity
+(((qvq)^~q)vp)vq,((q^~q)vp)vq,Idempotence
+~(~pv~(pvr))vq,p^(pvr)vq,De Morgan's Law
+~~(pv~q^(qvs))^(rv(~s^T)),(pv~q^(qvs))^(rv(~s^T)),Double Negation
+~(F^~T),~FvT,De Morgan's Law
+~(p^(~q^T)),~(p^~q),Identity
+~~((pvq)^(pvr)),(pvq)^(pvr),Double Negation
+~~(pvq)->r,(pvq)->r,Double Negation
+(qv~q)v(Fv~q),(qvF)v~q,Distributivity
+p<->~~(qvF),p<->(qvF),Double Negation
+~q->~(p^T^~q),~q->~((p^T)^~q),Associativity
+(q->p)^~(~r^s),(q->p)^(rv~s),De Morgan's Law
+s^~sv(s^r),s^~s,Absorption
+((~qvq)^~r^p)^r,(~qvq)^~r^p^r,Associativity
+qv(q^r),qv(r^q),Commutativity
+~q->~q,qv~q,Implication as Disjunction
+~(p^~q),~~(~pvq),De Morgan's Law
+~(s^r)->s^~s,s^~sv(s^r),Implication as Disjunction
+~(~(p^q)^~q)^((~(p^q)^~q)vr)->(~(p^q)^p),(~(p^q)^p)v(~(p^q)^~q)^((~(p^q)^~q)vr),Implication as Disjunction
+~(qv~p),~q^p,De Morgan's Law
+((p^q)v(q^s))->r,(p^qv(q^s))->r,Associativity
+~r^~(~(~~(~pvp)^r)v~(p->r)),~r^~(~((~pvp)^r)v~(p->r)),Double Negation
+pv~p,T,Negation
+(pv(~pv~~(p^~q)))^(qv(~pv(p^~q))),(pv(~pv(p^~q)))^(qv(~pv(p^~q))),Double Negation
+pv(~pv~p),pv~p,Idempotence
+(~q^T)^~p,~q^~p,Identity
+(~p^~p)->(q^~q),~p->(q^~q),Idempotence
+~(pvq),~p^~q,De Morgan's Law
+p->(~rv(r^q)->q),p->(~r->q),Absorption
+~(~pv(p^s)^q)^(rv~s),~(~p^q)^(rv~s),Absorption
+(T^~q)^((pvF)^p),(T^~q)^(p^p),Identity
+(p^T)<->q,p<->q,Identity
+(qvp)^~~(qv~q),(qvp)^(qv~q),Double Negation
+~(~p^qv~(rv~s)v(q^r)v~(rv~s)),~((~p^qv~(rv~s))v((q^r)v~(rv~s))),Associativity
+~F,~(~r^r),Negation
+~(~(((q^r)vq)^(((q^r)v(q^r))v~r))^p),~(~(((q^r)vq)^((q^r)v~r))^p),Idempotence
+qv~qv~q,qv~q,Idempotence
+~~(p^q)->~(T^(~p^~q)),(p^q)->~(T^(~p^~q)),Double Negation
+p^~~((pvs)v(pvs)),p^~~(pvs),Idempotence
+~(~p^~p)vF,(~p^~p)->F,Implication as Disjunction
+(~pv(~q^~s))^(~pv((~q^~s)^s))^(qv(~q^~s))^(qv((~q^~s)^s)),(~p^q)v(~q^~s)v((~q^~s)^s),Distributivity
+(pvq)^(pvq)^(q->p),((pvq)^(pvq))^(q->p),Associativity
+(qv(q^p))->~~(p->q),qv(q^p)->~~(p->q),Associativity
+~(~p^pv(p^s)),~(~p^p),Absorption
+q^(~q^(qvs)),q^~q^(qvs),Associativity
+~(q^~q)^~r^(p^r),(~qvq)^~r^(p^r),De Morgan's Law
+(pvq)v(~qvp),(pvq)v(pv~q),Commutativity
+(qvF)v(r^(qvq)),qv(r^(qvq)),Identity
+~(~(((q^r)vq)^(r->(q^r)))^p),~(~(((q^r)vq)^((q^r)v~r))^p),Implication as Disjunction
+s^((~sv(~s^~T^~T))^(~qv(~s^~T^~T)))^p,s^((~s^~q)v(~s^~T^~T))^p,Distributivity
+~pv(q->r)v((q->r)^q),p->(q->r)v((q->r)^q),Implication as Disjunction
+p->(qv(q^s)->r),p->(q->r),Absorption
+(p^p)v(p^s),p^(pvs),Distributivity
+(rv~r)^(~q^(pvp)),T^(~q^(pvp)),Negation
+~(~(~~(~((~p^T)^~s)->(~p^s))^p)^~(p^T)),~(~(~~(~((~p^T)^~s)->(~p^s))^p)^~p),Identity
+~~~(p->(p^~q))<->(p^q),~~~(~pv(p^~q))<->(p^q),Implication as Disjunction
+(q^p)v((~p^~p)v(p^~q)),(q^p)v(~pv(p^~q)),Idempotence
+q->((Fvp)->q),q->(p->q),Identity
+q->((pv(r^~r))v(p^q)->q),q->((pvF)v(p^q)->q),Negation
+~~((qv~q)^(qvp)),~~((qvp)^(qv~q)),Commutativity
+(p^r)vp^p,p^pv(p^r),Commutativity
+~((~q->p)vq),~((pvq)vq),Implication as Disjunction
+~(~~(~((~p^s)v(~p^T^~s))v~p)^~p),~(~~(~((~p^s)v((~p^T)^~s))v~p)^~p),Associativity
+~(~~(p^(qvq))^~r),~(~r^~(~(p^(qvq)))),Commutativity
+(((p->r)^p)v(((pvp)->r)^q)v(p^(q->r))v((q->r)^q))->r,(((p->r)^p)v((p->r)^q)v(p^(q->r))v((q->r)^q))->r,Idempotence
+p^(pvq)^p,p^p,Absorption
+~(~q^~q),qvq,De Morgan's Law
+~~(p^(pvs)^p)<->p,~~(p^p)<->p,Absorption
+~~~(~q^q),~(~q^q),Double Negation
+((~s^~q)v(~s^~T))^(p^s),((~s^~q)v(~s^~T))^p^s,Associativity
+pv~(pvF),pv~p,Identity
+(Fvp)v(Fv~p),Fv(pv~p),Distributivity
+~~(pvq)v~(~p^q),(pvq)v~(~p^q),Double Negation
+~(~q^~p)^~~(qv~q),(qvp)^~~(qv~q),De Morgan's Law
+(pv~q)^~~~~(~pv~q),~~~~(~pv~q)^(pv~q),Commutativity
+~(~((q^r)v(q^~r))^(((q^r)v(q^~r))vs)^p),~(~((q^r)v(q^~r))^p),Absorption
+Fv(p^p),p^p,Identity
+p^T,p,Identity
+r^(~rv~r),r^~r,Idempotence
+~~~((pvq)vF),~~~(pvq),Identity
+~(pvp)->(~q^q),~p->(~q^q),Idempotence
+p<->~~~(~q^~q),p<->~~(qvq),De Morgan's Law
+~~((pvp)v~p),~~(pv~p),Idempotence
+~~((pvq)^(pvq)),~~(pvq),Idempotence
+~(~(((~(Fvp)^s)v((T^~p)^~s))^p)^~p)^((~(((~(Fvp)^s)v((T^~p)^~s))^p)^~p)vq),~(~(((~(Fvp)^s)v((T^~p)^~s))^p)^~p),Absorption
+p^(pvr),p,Absorption
+(pvq)^(pv~q^(qvs)),(pvq)^(pv~q),Absorption
+((qvF)^(qvp)v~p)->((p->q)->q),(q^(qvp)v~p)->((p->q)->q),Identity
+~~(~(p->q)^~q)^((~(p->q)^~q)vs),~~(~(p->q)^~q),Absorption
+~(~r^~(~r^~r)),rv(~r^~r),De Morgan's Law
+~~((q^r)v(q^~r)v~p)v~~(((q^r)v(q^~r))v~p),~~(((q^r)v(q^~r))v~p)v~~(((q^r)v(q^~r))v~p),Associativity
+qv((r^~r)^(r^~r)),qv(r^~r),Idempotence
+(p^(~qvF))v(q^~p^(pvq)),(p^(~qvF))v(q^~p),Absorption
+~~((p->r)^(~qvr)),~~((p->r)^(q->r)),Implication as Disjunction
+p^~(~p^~r),p^(pvr),De Morgan's Law
+(~p^~p)->F,(~p^~p)->(q^~q),Negation
+(p->q)->((p->q)->q)^(((p->q)->q)vr),(p->q)->((p->q)->q),Absorption
+(Fv~~p)<->pv(p^q),~~p<->pv(p^q),Identity
+p^~(p^p),p^~p,Idempotence
+~~(pvq)v~(p^q),~(~p^~q)v~(p^q),De Morgan's Law
+((pvF)^q)->(pvq),(p^q)->(pvq),Identity
+~~(~pvq)vq^(qvp),~~(~pvq)vq,Absorption
+~(T^p)^~q,~p^~q,Identity
+((T^(p->r))^F)v((p->r)^(q->r)),((p->r)^F)v((p->r)^(q->r)),Identity
+~q->(p^~q),qv(p^~q),Implication as Disjunction
+~q^~p,~p^~q,Commutativity
+~(p^~q)->((q^~p)^(~p^q)),~(p^~q)->((q^~p)^(q^~p)),Commutativity
+((pvpv(p^q))vq)v((pvpv(p^q))vq)v(pv~q),((pvpv(p^q))vq)v(pv~q),Idempotence
+~((q->p)^(p->q))vF,~((q->p)^(p->q)),Identity
+~p->F,~p->(q^~q),Negation
+(~q->F)->~~(p->q),(Fvq)->~~(p->q),Implication as Disjunction
+~(q^~q),~qvq,De Morgan's Law
+s^((~s^(svr)^~q)v(~s^~(pv~p)))^p,s^((~s^(svr)^~q)v(~s^~T))^p,Negation
+(p^~r^~r)->q,(p^~r)->q,Idempotence
+pv(q^T),pvq,Identity
+~(~Tv~(pv~p)),T^(pv~p),De Morgan's Law
+(pvq)^(pv~(q^T)),(pvq)^(~p->~(q^T)),Implication as Disjunction
+p^~~(~pvq)<->((p^q)^T),p^~(p^~q)<->((p^q)^T),De Morgan's Law
+~qv~q^(qvr),~qv~q,Absorption
+~~((~(p->q)^((p->q)vs))^~q),~~(~(p->q)^((p->q)vs)^~q),Associativity
+pv(p^q)v~p,pv~p,Absorption
+~~~(p<->q)v((p<->q)^q),~~~(p<->q),Absorption
+~(Fv(qv(p->q))),~(qv(p->q)),Identity
+(p->r)^(~qvr)^~(~(q->r)^~r),(p->r)^(~qvr)^((q->r)vr),De Morgan's Law
+~(p^q)v(pvq),(p^q)->(pvq),Implication as Disjunction
+~((rv(r^p)v~(s^s))->(~p^q)),~((~p^q)v~(rv(r^p)v~(s^s))),Implication as Disjunction
+(p^(pvq)vq)->r,(pvq)->r,Absorption
+~~((pvq)^(pvT)),(pvq)^(pvT),Double Negation
+~q^(qvq),(qvq)^~q,Commutativity
+~(~r^~~((p^q)^((p^q)vp)v(p^q))),~(~r^~~((p^q)v(p^q))),Absorption
+(~p->q)^~~(~p->~q),(pvq)^~~(~p->~q),Implication as Disjunction
+(~qvp)^(rv~s)v((rv~s)^p),(pv~q)^(rv~s)v((rv~s)^p),Commutativity
+(pv(p^s)^~r^~r)->q,(p^~r^~r)->q,Absorption
+sv(s^r)v~s,sv~s,Absorption
+~FvT,F->T,Implication as Disjunction
+rv~(T^r),rv~r,Identity
+s^((~sv~~(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vr)^p,s^((~sv(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vr)^p,Double Negation
+((p->r)^(q->(T^r))^(pvq))->r,((p->r)^(q->(r^T))^(pvq))->r,Commutativity
+~~(pv(p^s)),pv(p^s),Double Negation
+~~(pvp),pvp,Double Negation
+qv(T^(p^~q)),qv(p^~q),Identity
+(p->p)^(p->p),p<->p,Iff as Implication
+~((~q->s)^(~p->~q)^(~p->~q)),~((~p->~q)^(~p->~q)^(~q->s)),Commutativity
+((pvF)->q)^(q->p),(p->q)^(q->p),Identity
+~~((pvp)v(pvp))^((pvp)vq),~~(pvp)^((pvp)vq),Idempotence
+p<->~~p,(~(~p))<->p,Commutativity
+(pvq)^(pv~(~rv~r)),(pvq)^(pv(r^r)),De Morgan's Law
+~(~pv~(pvs))->q,p^(pvs)->q,De Morgan's Law
+~(qv(p->(qvF))),~(qv(p->q)),Identity
+(Tv~p)^(qv~p),(T^q)v~p,Distributivity
+(rv~r)vF,rv~r,Identity
+(p^p)<->~~p,p<->~~p,Idempotence
+(q->r)^(p->r),(p->r)^(q->r),Commutativity
+~~~(~q^~p)->r,~~(qvp)->r,De Morgan's Law
+~(((p->q)vq)^((p->q)vq)),~((p->q)vq),Idempotence
+~(~((q^r)v(q^~r))^p)^~~(((q^r)v(q^~r))v~p),~(~((q^r)v(q^~r))^p)^~(~((q^r)v(q^~r))^p),De Morgan's Law
+((pvp)^~r)->q,(~r^(pvp))->q,Commutativity
+(p^~(p^~q)->(p^q))^((p^q)->~(p^~q)^p)^(((p^q)->~(p^~q)^p)vs),(p^~(p^~q)->(p^q))^((p^q)->~(p^~q)^p),Absorption
+~~(~pvq)vq,~(p^~q)vq,De Morgan's Law
+Fv(T^p),T^p,Identity
+(pvq)^(pv~q^((qv(r^~r))vs)),(pvq)^(pv~q^((qvF)vs)),Negation
+(pvq)v((pv(q^T))^s)^(pvr),(pvq)v((pvq)^s)^(pvr),Identity
+(T^(pv~q))^(rv~s),(pv~q)^(rv~s),Identity
+(~((p->r)->~(q->r))^(pvq^(qvp)))->r,(~(~(p->r)v~(q->r))^(pvq^(qvp)))->r,Implication as Disjunction
+~(s^~s),~svs,De Morgan's Law
+~((~q^p)v(p^~q))vq,~((p^~q)v(p^~q))vq,Commutativity
+~(~(p^p)v~(pvs))->q,~(~pv~(pvs))->q,Idempotence
+~~(Fv~~p)<->pv(p^q),(Fv~~p)<->pv(p^q),Double Negation
+q->(T^~~(pv(p^q)->q)),q->(T^~~(p->q)),Absorption
+~r^((~(T^p)vp)^r)^(p->r),~r^((~pvp)^r)^(p->r),Identity
+~p^(pvs)->q,~p->q,Absorption
+(pvr)^(pvqvpvq),(pvr)^((pvq)v(pvq)),Associativity
+~((~p^q)v~(rv~s)v(~p^q)v~(rv~s)),~(((~p^q)v~(rv~s))v((~p^q)v~(rv~s))),Associativity
+rv(~r^~r),rv~r,Idempotence
+((pvF)vq)v(~qvp),(pvq)v(~qvp),Identity
+p^~q,~q^p,Commutativity
+((~(q^~p)^q)v(~(q^~p)^~p))vF,(~(q^~p)^q)v(~(q^~p)^~p),Identity
+qv~(p^p),~(p^p)vq,Commutativity
+~~(~q^(qvp)^~q),~q^(qvp)^~q,Double Negation
+~r^T^(r^r)^(p->r),~r^T^r^(p->r),Idempotence
+~~(~(~p^q)^(rv~s)^((rv~s)vp)),~~(~(~p^q)^(rv~s)),Absorption
+(pvq)^(pv(r^r)),(pvq)^(pvr),Idempotence
+~(qvF),~q,Identity
+(~p^~p^~p)->q,(~p^~p)->q,Idempotence
+(~pv~(qvq))vr,~(~pv~(qvq))->r,Implication as Disjunction
+~~p^(~pvq),~(~p),Absorption
+~(~(~(q^r)->(q^~r))^p),~(~((q^r)v(q^~r))^p),Implication as Disjunction
+((p^q)v~p)v(p^~q),(p^q)v(~pv(p^~q)),Associativity
+(pv~p)^(p^p),T^(p^p),Negation
+(q^~q)v((p^q)->r),Fv((p^q)->r),Negation
+((p^p)^(T^q))->r,(((p^p)^T)^q)->r,Associativity
+s^((~s^(svr)^~q)v(~s^~T))^p,s^((~s^~q)v(~s^~T))^p,Absorption
+~p->~p,pv~p,Implication as Disjunction
+~(~((q^r)v(q^~r))^~(~(((q^r)v(q^~(r^r)))vs)v~p)),~(~((q^r)v(q^~r))^~(~(((q^r)v(q^~r))vs)v~p)),Idempotence
+(T^p)v(qvq),pv(qvq),Identity
+~(~(~~p->p)v~(p->~~p)),(~~p->p)^(p->~~p),De Morgan's Law
+~~(~p^~q),~p^~q,Double Negation
+q->~~(p->q),q->(p->q),Double Negation
+~(p->~(q^q))->r,~(p->~q)->r,Idempotence
+((Fvp)^(Fvq))->~(~p^~q),(Fv(p^q))->~(~p^~q),Distributivity
+q->(qv~p),q->(~pvq),Commutativity
+(((q->r)^(T^q))v((p->r)^p)v((p->r)^q)v((q->r)^p))->r,(((q->r)^q)v((p->r)^p)v((p->r)^q)v((q->r)^p))->r,Identity
+p->(qvq),p->q,Idempotence
+~~~(pv(qvq)),~~~(pvq),Idempotence
+(~p->q)v(pv~q)v((pv~q)^s),(~p->q)v(pv~q),Absorption
+pv(r^p)^p,pv(p^r)^p,Commutativity
+q^(T^~q),q^~q,Identity
+((p->r)^(q->r)^(~p->q))->r,((p->r)^(q->r)^(pvq))->r,Implication as Disjunction
+(p^q)^((p^q)vp)->~~(r^T),(p^q)->~~(r^T),Absorption
+q<->p,p<->q,Commutativity
+s->s,sv~s,Implication as Disjunction
+~~(p^(~p->s)^p)<->p,~~(p^(pvs)^p)<->p,Implication as Disjunction
+~~(qvq)^(qvr),(qvq)^(qvr),Double Negation
+~r^r,r^~r,Commutativity
+((T^~q)^~s)v(~p^q),(~q^~s)v(~p^q),Identity
+(p->q)->(((pvp)^(pvr)->q)->q),(p->q)->((pv(p^r)->q)->q),Distributivity
+(p->(r^T))^(q->r),(p->r)^(q->r),Identity
+~~((pvq)^(pv~q)),(pvq)^(pv~q),Double Negation
+~~p,~~(pvF),Identity
+~(q^~q),~(~q^q),Commutativity
+(~p->q)v(pv~q),(pvq)v(pv~q),Implication as Disjunction
+qv(r^~r),qvF,Negation
+((p->r)^(rv~q)^(pvq))->r,((p->r)^(q->r)^(pvq))->r,Implication as Disjunction
+(p^p)v(p^s)v(p^p)v(s^p),p^(pvs)^p,Distributivity
+~q^(qvp)^~q,~q^~q,Absorption
+pvq^(r^((q^r)vs)),pv(q^r)^((q^r)vs),Associativity
+~Fv(qv~q^(qvs)),~Fv(qv~q),Absorption
+~(~(Fvs)^s),~(~s^s),Identity
+~~~(~(~(~r^q)->(q^r))^p),~~~(~((q^r)v(~r^q))^p),Implication as Disjunction
+~~(pv(q^(rvF))),~~(pv(q^r)),Identity
+T^(p->q),p->q,Identity
+~(p^~(qvq)),~(p^~q),Idempotence
+p^~(p^(~qvF))<->(q^(pvs)^p),p^~(p^~q)<->(q^(pvs)^p),Identity
+(pvq)^(pvT),pv(q^T),Distributivity
+((p^r)v(p^s)v(~r^r)v(~r^s))->q,(p^~r^(rvs))->q,Distributivity
+p->((qv(q^s))^(qv(q^s))->r),p->((q^q)v(q^s)->r),Distributivity
+rv(Fv~r),rv~r,Identity
+~q^~q,~q,Idempotence
+p<->(qvF),p<->q,Identity
+(T^q)v(r^q),qv(r^q),Identity
+F,(~qvq)^F^p,Domination
+(~p->p)vF,~p->p,Identity
+~~(pvp)^((pvp)vq),~~(pvp),Absorption
+pvq,~p->q,Implication as Disjunction
+(qv~(~qv~s)->r)v~p,(qv(q^s)->r)v~p,De Morgan's Law
+((pvpvq)^T)->r,((pvq)^T)->r,Idempotence
+~~(p->rv(r^p))^~~(q->r),~~(p->rv(r^p))^(q->r),Double Negation
+(p^q)v(~pv(p^~(Fvq))),(p^q)v(~pv(p^~q)),Identity
+qv(q^s)vq,qvq,Absorption
+~~(rv(r^p)v~r),rv(r^p)v~r,Double Negation
+~((p->q)vq)^~((p->q)vq),~((p->q)vq),Idempotence
+p<->~~(qvq),p<->(qvq),Double Negation
+~(q^q^~p)^(qv(Fv~p)v((Fv~p)^q)),~(q^q^~p)^(qv(Fv~p)),Absorption
+((p^p)^p)v(p^q)->(qvr),(p^p)v(p^q)->(qvr),Idempotence
+qv(~pv~p),qv~(p^p),De Morgan's Law
+~~(qvp)^(qv~q),(qvp)^(qv~q),Double Negation
+(~p->~q)^((~p->~q)vr)^(pvq),(~p->~q)^(pvq),Absorption
+(pv(~pv(p^~(Fvq))))^(qv(~pv(p^~(Fvq)))),(p^q)v(~pv(p^~(Fvq))),Distributivity
+~((p->q)^(pv~q)),~((p->q)^(q->p)),Implication as Disjunction
+~(~pvq),~(qv~p),Commutativity
+~p->~(T^~(q^~q)),~p->~~(q^~q),Identity
+((p->r)^(q->r)^(pvq))->~((T^~r)^~F),((p->r)^(q->r)^(pvq))->~(~r^~F),Identity
+(~q^~r)v(~q^p)v(~q^r)v(q^~r)v~~(q^p)v(q^r),(~q^~r)v(~q^p)v(~q^r)v(q^~r)v(q^p)v(q^r),Double Negation
+~p->~~(q^T),~p->~~(T^q),Commutativity
+(p^q^q)->r,(p^q)->r,Idempotence
+(~p^~p)->~~(q^(~qv~q)),~p->~~(q^(~qv~q)),Idempotence
+~(~q^~(r^q)),qv(r^q),De Morgan's Law
+~(pvp^(r^q))^(pv~q),~(pv(p^r)^q)^(pv~q),Associativity
+r^p^((~qvq)vq)^~r^(~qvq),(~qvq)^((~qvq)vq)^~r^p^r,Commutativity
+~(~q->~p),~(qv~p),Implication as Disjunction
+~(~svs),s^~s,De Morgan's Law
+~q^(p^p),~q^p^p,Associativity
+(q^T^T)<->p,(q^T)<->p,Idempotence
+~~((p<->q)->~(p<->q)),~~(~(p<->q)v~(p<->q)),Implication as Disjunction
+~~~((qvq)vp),~~~(pv(qvq)),Commutativity
+(p^~q)v(q^(~p^~p)),(p^~q)v((q^~p)^(q^~p)),Distributivity
+((p->r)^(q->r)^(pvq))->~(~r^~F),((p->r)^(q->r)^(pvq))->(rvF),De Morgan's Law
+(p->q)->((((pvp)^(pvr))->q)->q),(p->q)->(((pvp)^(pvr)->q)->q),Associativity
+~(((~qv~q)->s)^(~p->~q)),~((~q->s)^(~p->~q)),Idempotence
+~(((p->q)^(p->q))vq),~((p->q)vq),Idempotence
+~~(Fv(~p->F)),Fv(~p->F),Double Negation
+(((q->r)^q)v((p->r)^p)v((p->r)^q)v((q->r)^p))->r,(((p->r)^p)v((p->r)^q)v((q->r)^p)v((q->r)^q))->r,Commutativity
+~((p^s)^qv~p)^(rv~s),~(~pv(p^s)^q)^(rv~s),Commutativity
+((p^q)v(p^q))v(~pv(p^~q^~~(qvp))),(p^q)v(~pv(p^~q^~~(qvp))),Idempotence
+~(~qvq),q^~q,De Morgan's Law
+pv(q^p),pv(p^q),Commutativity
+r->r,rv~r,Implication as Disjunction
+~(~~~(((q^r)v~r)^((q^r)vq))^p),~(~(((q^r)v~r)^((q^r)vq))^p),Double Negation
+(p^~q)v(p^~q)vq,(p^~q)vq,Idempotence
+s^(~(~s^~q)->(~s^~T))^p,s^((~s^~q)v(~s^~T))^p,Implication as Disjunction
+rv(r^p)v~r,rv~r,Absorption
+(~q->p)->r,(pvq)->r,Implication as Disjunction
+(pvr)^((pvq)v(pvq)),((pvq)v(pvq))^(pvr),Commutativity
+~(((p->q)v((p->q)^p))vq)^~((p->q)vq),~((p->q)v((p->q)^p)vq)^~((p->q)vq),Associativity
+~p->~~(q^q),~p->(q^q),Double Negation
+(T^~q)^p,~q^p,Identity
+Fv(~p->F),~p->F,Identity
+~~(~q^(~s->q)),~~(~q^(qvs)),Implication as Disjunction
+((pv(p^r)v~q)^r)v((pv(p^r)v~q)^~s),(pv(p^r)v~q)^(rv~s),Distributivity
+(pvq)^(rvp),(pvq)^(pvr),Commutativity
+(Fv~~(pvq))v(pv~q),~~(pvq)v(pv~q),Identity
+~(r^r)^r,r^~(r^r),Commutativity
+~~(qv~p)vq,~~(~pvq)vq,Commutativity
+(F->T)vF,F->T,Identity
+(p^~(qvF))->q,(p^~q)->q,Identity
+q->(p->q)v((p->q)^q),q->(p->q),Absorption
+((p^q)v(p^(s^~s)))->r,((p^q)v(p^F))->r,Negation
+~~(p^q)->(pvq),(p^q)->(pvq),Double Negation
+~(q^~p)^(~(~q^p)^(~pvq)),~(q^~p)^(~(~q^p)^(qv~p)),Commutativity
+pv~(p^p),pv~p,Idempotence
+~~(~(q^p)^(pv~q)),~~(~(p^q)^(pv~q)),Commutativity
+((p->r)^(rv~q)^(pvq))->(r^(pv~p)),((p->r)^(rv~q)^(pvq))->(r^T),Negation
+(~(p^q)^p)v(~(p^q)^~q),~(p^q)^(pv~q),Distributivity
+(p^~(p^~(T^q))->(p^q))^((p^q)->p^~(p^~q)),(p^~(p^~q)->(p^q))^((p^q)->p^~(p^~q)),Identity
+q->((p->q)v((p->q)^q)),q->(p->q)v((p->q)^q),Associativity
+~~(pv~p),pv~p,Double Negation
+~~(~pvp),~~(pv~p),Commutativity
+~(~pv~p)v(p^s),(p^p)v(p^s),De Morgan's Law
+~~(~(p^q)^(pv~q)),~(p^q)^(pv~q),Double Negation
+(T^(~p^q))v(~q^~s),(~p^q)v(~q^~s),Identity
+~(~~~~(~((~p^s)v(~p^T^~s))v~p)^~p),~(~~(~((~p^s)v(~p^T^~s))v~p)^~p),Double Negation
+~(~Tv~p)->q,~(~pv~T)->q,Commutativity
+~(~(((~p^s)v((~p^T)^~s))^p)^~p^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Idempotence
+(p^(~p->~q))v(q^(qvs)^(~p->~q)),(p^(~p->~q))v(q^(~p->~q)),Absorption
+~~(~(pv(p^r)^~q)vq),~~(~(p^~q)vq),Absorption
+(pv~q)^(rv~s)v((rv~s)^p),(pv~q)^(rv~s),Absorption
+((pvF)vq)v~~(~qvp),((pvF)vq)v(~qvp),Double Negation
+(p^~~(rv~s))v(~q^(rv~s)),(p^(rv~s))v(~q^(rv~s)),Double Negation
+~~~(~p^~q),~~(pvq),De Morgan's Law
+~~((~qvq)^p^F),~~((~qvq)^~r^p^r),Negation
+~(~((~(pv(p^q)v~s)^p)v(((~p^T)^~s)^p))^~p),~(~((~(pv(p^q)v~s)v((~p^T)^~s))^p)^~p),Distributivity
+(pv(pv~q))v(qv(pv~(Fvq))),(pv(pv~q))v(qv(pv~q)),Identity
+~(q^(qvr)^~p)^~(~q^p),~(q^~p)^~(~q^p),Absorption
+~(q^r)->(qvq),~(q^r)->q,Idempotence
+~(T^r)vr,rv~(T^r),Commutativity
+p^p^(pvq),p^p,Absorption
+~(~p^~q),pvq,De Morgan's Law
+(T^~r^p)^r,((~qvq)^~r^p)^r,Negation
+~~(~(p<->q)^(~(p<->q)^T)),~~(~(p<->q)^~(p<->q)),Identity
+~((p->~~p)->~(~~p->p)),~(~(~~p->p)v~(p->~~p)),Implication as Disjunction
+~~(~(~p->F)^~q),~(~p->F)^~q,Double Negation
+~q->(r^q),qv(r^q),Implication as Disjunction
+~((~q->s)^(~p->~q)),~(~~(~q->s)^(~p->~q)),Double Negation
+~~~~(~p^~q^~q),~~(~p^~q^~q),Double Negation
+p^~~(~pvq)<->(p^(T^q)),p^~~(~pvq)<->(p^q),Identity
+(pv(p^q)vq)^(~p->~q),(pvq)^(~p->~q),Absorption
+~p->~~q,~p->~~(q^q),Idempotence
+~pv((qvr)^((qvr)vr)^(qvr)),~pv((qvr)^(qvr)),Absorption
+~(~~((~p^(pvq))^q)v~(rv~s)),~(~~(~p^(pvq)^q)v~(rv~s)),Associativity
+~~(pv~(~pv~s)),~~(pv(p^s)),De Morgan's Law
+~(p^(pvr)^T)^~q,~(p^T)^~q,Absorption
+(pv(p^~r)^(p^~r)^(s^~r)^(s^~r))->q,(pv(p^s)^~r^~r)->q,Distributivity
+(pvq)v(~q->F),(pvq)v(Fvq),Implication as Disjunction
+~~~(~r^r),~(~r^r),Double Negation
+((p<->q)^q)v~~~(p<->q),~~~(p<->q)v((p<->q)^q),Commutativity
+~p->~~(T^q),~p->(T^q),Double Negation
+~~(qv~p),qv~p,Double Negation
+(p^p)->(q->r),p->(q->r),Idempotence
+(p^(~rv~r))->q,(p^~r)->q,Idempotence
+~(pvp^(rv(r^q)^q))^(pv~q),~(pvp^(r^q))^(pv~q),Absorption
+~(~q->q)v((~q->q)^s),~(~q->q),Absorption
+(~r^(pvp))->q,((p^~r)v(p^~r))->q,Distributivity
+~r^(~~(~p->~p)^r)^(p->r),~r^((~p->~p)^r)^(p->r),Double Negation
+pv((q^r)vF),pv(q^r),Identity
+(~p^q)v(~(q^q)^~s),(~p^q)v(~q^~s),Idempotence
+(Fv(p^(pvs)->q))->((p->q)->q),(Fv(p->q))->((p->q)->q),Absorption
+~((~(~(q^r)->(q^~r))^~(~(q^r)->(q^~r)))^p),~(~(~(q^r)->(q^~r))^p),Idempotence
+~(~p^(pvr)),~(~p),Absorption
+Fvpv(p^r),Fvp,Absorption
+~~~(~p^~q),~(~p^~q),Double Negation
+p^~(p^~q)<->((p^q)^T),p^~(p^~q)<->(p^q),Identity
+s^((~sv(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vq)^p,s^((~s^~q)v(~s^~T))^(((~s^~q)v(~s^~T))vq)^p,Distributivity
+~~((p^~q)v(~p^(pvq)^q)),(p^~q)v(~p^(pvq)^q),Double Negation
+(p->r)^(q->r)v((q->r)^s^s),(p->r)^(q->r)v((q->r)^s),Idempotence
+(p^(qvq))->r,(p^q)->r,Idempotence
+p^~~(pvs),p^(pvs),Double Negation
+~(~(~~((~p^s)v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Double Negation
+~(p->qv(q^r)),~(p->q),Absorption
+(Fv~q)->(p^~q)^((p^~q)vr),~q->(p^~q)^((p^~q)vr),Identity
+~~(qvp),~~(pvq),Commutativity
+~~(~r^r),~r^r,Double Negation
+(q^q)v(Fv~p),(q^q)v~p,Identity
+~(~qv~q)->q,qv(~qv~q),Implication as Disjunction
+~~~(p<->q),~(p<->q),Double Negation
+~(~~(p->q)vq),~((p->q)vq),Double Negation
+(p^~(p^~q)->(q^p))^((p^q)->~~(p^~(p^~q))),(p^~(p^~q)->(p^q))^((p^q)->~~(p^~(p^~q))),Commutativity
+~~(~((p^r)^~qvp)vq),~~(~(pv(p^r)^~q)vq),Commutativity
+(~(q^~p)^q)v((~(q^~p)^~p)vF),((~(q^~p)^q)v(~(q^~p)^~p))vF,Associativity
+((p->r)^F)v((p->r)^(q->r)),(p->r)^(Fv(q->r)),Distributivity
+pv(p->~p),pv~pv~p,Implication as Disjunction
+(((p^p)^T)^q)->r,((p^p)^q)->r,Identity
+~r^((~p^r)v(p^r))^(p->r),~r^((~pvp)^r)^(p->r),Distributivity
+~q->(p^~q)^((p^~q)vr),~q->(p^~q),Absorption
+~~(p^q)->(~q->p),~(~pv~q)->(~q->p),De Morgan's Law
+~~(~q->p)->r,(~q->p)->r,Double Negation
+qv~p,~pvq,Commutativity
+p^~p,F,Negation
+(p^(qvq))->r,rv~(p^(qvq)),Implication as Disjunction
+~p^(~q^~q),~p^~(qvq),De Morgan's Law
+(~(p^T)^q)v(~q^~s),(~p^q)v(~q^~s),Identity
+~(~(~(p->q)^~q)^((p->q)vq)),~(((p->q)vq)^((p->q)vq)),De Morgan's Law
+((p^~q)^(p^~q))v(q^~p),(p^~q)v(q^~p),Idempotence
+~(~((((~p^s)^T)v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Identity
+~(~(p^~q)^~(q^~p)),(p^~q)v(q^~p),De Morgan's Law
+~(qv(p->(qvF)v((qvF)^s))),~(qv(p->(qvF))),Absorption
+~~((q->r)v~p),(q->r)v~p,Double Negation
+((p^p)^q)->r,(p^q)->r,Idempotence
+~pv((Fvq)->r),~pv(q->r),Identity
+~((~p->~q)^((~p->~q)vr)^~~(~q->s)),~((~p->~q)^~~(~q->s)),Absorption
+~(qv~p)v(q^~p),(~q^p)v(q^~p),De Morgan's Law
+~((~q^~q)vF),~(~q^~q),Identity
+qv~(~qv~s)vq,qv(q^s)vq,De Morgan's Law
+~p->(q^~(qvq)),~p->(q^~q),Idempotence
+~~~~(pvq),~~~(~p^~q),De Morgan's Law
+(qv~q)^(q^(qvs)vp),(qv~q)^(qvp),Absorption
+((pvp)vq)v(pv~q),(pvq)v(pv~q),Idempotence
+~(~pv~(pvq)),p^(pvq),De Morgan's Law
+s->s,~svs,Implication as Disjunction
+~(~(q^~q)v~(q^~q)),~~(q^~q),Idempotence
+~~(sv~s)^((sv~s)vp),~~(sv~s),Absorption
+~~(~(q^p)vr),~(q^p)vr,Double Negation
+(~(p^T)^q)v(((~(p^T)^q)vF)^s)v(~q^~s),(~(p^T)^q)v((~(p^T)^q)^s)v(~q^~s),Identity
+~(q^q),~q,Idempotence
+pv(p^r)^p,p^p,Absorption
+(pvq)^((Fv~p)->(~qv~q)),(pvq)^((Fv~p)->~q),Idempotence
+~((~p->~q)^(((~q->s)^T)v((~q->s)^T))),~((~p->~q)^(((~q->s)v(~q->s))^T)),Distributivity
+p<->~~~(~q^~F),p<->~~(qvF),De Morgan's Law
+(~qvq)^((~qvq)vq)^~r^p^r,(~qvq)^~r^p^r,Absorption
+(pvq)v~(~p^~(~qvF)),(pvq)v(pv(~qvF)),De Morgan's Law
+~p->(~q^q),~p->(q^~q),Commutativity
+~p->(qvF),~p->q,Identity
+(q^~q)vp,~p->(q^~q),Implication as Disjunction
+((p^q)v~p)v~(~pvq),((p^q)v~p)v(p^~q),De Morgan's Law
+r^~(Fvr),r^~r,Identity
+~~(rv~r),rv~r,Double Negation
+~~(~(p^q)^~(p^q)^(~p->~q)),~~(~(p^q)^~(p^q)^(pv~q)),Implication as Disjunction
+~(p^~~(~q^~q)),~(p^~(qvq)),De Morgan's Law
+~((~p->~(q^q))^(qvs)),~((~p->~(q^q))^(~q->s)),Implication as Disjunction
+(F->T)^T,F->T,Identity
+((qvF)^~q)vp,(q^~q)vp,Identity
+(p->p)^(~pvp),(p->p)^(p->p),Implication as Disjunction
+~~(p^p)v((p^p)^p),~~(p^p),Absorption
+(Fvp)vq,pvq,Identity
+pvpv~p,(pvp)v~p,Associativity
+q->((pvF)v(p^q)->q),q->(pv(p^q)->q),Identity
+~p->p,pvp,Implication as Disjunction
+~p->qv(~q->(q^r)),~p->qvqv(q^r),Implication as Disjunction
+~(~r^~~((p^q)v(p^q)))^((~r^~~((p^q)v(p^q)))vs),~(~r^~~((p^q)v(p^q))),Absorption
+T^~(qvp),~(qvp),Identity
+((p->r)^((q->r)^(pvq)))->r,((p->r)^(q->r)^(pvq))->r,Associativity
+~(r^q)->q,qv(r^q),Implication as Disjunction
+~~(~qvp)^(~r->~s),~~(pv~q)^(~r->~s),Commutativity
+Fv(p->q),p->q,Identity
+(pvq)^(qv~q),(qvp)^(qv~q),Commutativity
+~~(~(p->q)^~q),~(~~(p->q)vq),De Morgan's Law
+r^~rv(r^q),r^~r,Absorption
+(p->r)^((Fv(q^q)v(q^r))->r),(p->r)^((Fvqv(q^r))->r),Idempotence
+((pvq)^(pvq))v(p^(pvs)vq)v(pv~q),(pvq)v(p^(pvs)vq)v(pv~q),Idempotence
+pv(q^~(~rv~r)),(pvq)^(pv~(~rv~r)),Distributivity
+~p^(~qv~q),~p^~q,Idempotence
+~(~q^(T^q)),~(~q^q),Identity
+r^~r^(~qvq)^p,(~qvq)^~r^p^r,Commutativity
+(q^p)->(rvq)^r,(q^p)->r^(rvq),Commutativity
+(p->q)->((~(~Tvp)vq)->q),(p->q)->(((T^~p)vq)->q),De Morgan's Law
+~~(qv(q^r)v~q),~~(qv~q),Absorption
+(pvq)^(pv((~q^T)^~q)),(pvq)^(pv(~q^~q)),Identity
+((p^~(rvF))v(p^~r))->q,(p^(~(rvF)v~r))->q,Distributivity
+(pv~q)^(rv(~s^T)),(pv~q)^(rv~s),Identity
+~~(p^(svp)),p^(svp),Double Negation
+((~s^~(qvF))v(~s^F))^s^p,((~s^~q)v(~s^F))^s^p,Identity
+(p^q)->(pv(T^q)),(p^q)->(pvq),Identity
+p^~((p^p)^T),p^~(p^p),Identity
+~~(p^~q),~(~pvq),De Morgan's Law
+((p->r)^(q->r)^(~q->p))->r,((p->r)^(q->r)^(pvq))->r,Implication as Disjunction
+(~(~s^~T)->(~s^~q))^(p^s),((~s^~q)v(~s^~T))^(p^s),Implication as Disjunction
+(~~~(~pv~q)^T)->r,~~~(~pv~q)->r,Identity
+~(~(((~((~p^T)^~s)->~p)^(sv((~p^T)^~s)))^p)^~p^~p),~(~(((~pv((~p^T)^~s))^(sv((~p^T)^~s)))^p)^~p^~p),Implication as Disjunction
+~qv(p->q)v((p->q)^q),~qv(p->q),Absorption
+(~q^(pvp))v(q^~p),((pvp)^~q)v(q^~p),Commutativity
+(Fv(p^~(~p^~s)->q))->((p->q)->q),(Fv(p^(pvs)->q))->((p->q)->q),De Morgan's Law
+(s^~s)->T,F->T,Negation
+(~pv(~q^T))^(~qvp),(~pv(~q^T))^(pv~q),Commutativity
+~(~~(((p^q)v(p^q))vF)^~r),~(~~((p^q)v(p^q))^~r),Identity
+s^((~s^~q)v((~sv~s)^~~~(pv~p)))^p,s^((~s^~q)v((~sv~s)^~(pv~p)))^p,Double Negation
+p->((qvr)^(qvr)),p->(qvr),Idempotence
+~~(~(q^T)^p^(pvq)),~~(~q^p^(pvq)),Identity
+~(q^~q)^~r^(rvs)^(p^r),~(q^~q)^~r^(p^r),Absorption
+~~~(~qvq),~(~qvq),Double Negation
+~~((((~p^(svs))v((~p^T)^~s))^p)vp),~(~(((~p^(svs))v((~p^T)^~s))^p)^~p),De Morgan's Law
+qv(Fv~q),qv~q,Identity
+~~(q^~q^~q),~~(q^~q),Idempotence
+~~p^(qv~p),~~p^(~pvq),Commutativity
+~~((~(q^p)v~(q^p))^(pv~q)),~~(~(q^p)^(pv~q)),Idempotence
+~((~(rv~s)v~p)^(~(rv~s)vq)),~(~(rv~s)v(~p^q)),Distributivity
+~((pvF)^~q)vq,~(p^~q)vq,Identity
+(~(~(p->r)v~(q->r))^(pvq^(qvp)))->r,((p->r)^(q->r)^(pvq^(qvp)))->r,De Morgan's Law
+(p^(pvq)^~r)->(Fvq),(p^~r)->(Fvq),Absorption
+~(~pv~~~(pvq)),~(~pv~(pvq)),Double Negation
+~~p^(qv~p)v((qv~p)^q),~~p^(qv~p),Absorption
+Fv((p->q)^(q->p)),(p->q)^(q->p),Identity
+(~pv(q->r))^(~pvq)^((q->r)v(q->r))^((q->r)vq),~pv(q->r)v((q->r)^q),Distributivity
+rv~r,T,Negation
+s^((~s^~q)v(~s^F))^p,s^((~s^~q)v(~s^~T))^p,Negation
+~(pv(qvq)),~(pvq),Idempotence
+(p->q)->((p->q)->q)v(r^r)^((p->q)->q),(p->q)->((p->q)->q)^(((p->q)->q)vr)^(((p->q)->q)vr),Distributivity
+(p->q)^(q->(p^T)),(p->q)^(q->p),Identity
+pv(p^(T^s)),pv(p^s),Identity
+~(~((~(pv~s)v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),De Morgan's Law
+p^p,p^p^T,Identity
+~~(p^p),p^p,Double Negation
+Fv(~q^p),(~q^q)v(~q^p),Negation
+~~((~qvq)^~r^p^r),(~qvq)^~r^p^r,Double Negation
+~~((~q^p)v(~q^F)v(q^p)v(q^F)),~~((~qvq)^p^F),Distributivity
+(qv~p)^~~~(q^~p),~~~(q^~p)^(qv~p),Commutativity
+~~(qvq)^~q,(qvq)^~q,Double Negation
+qv~q,T,Negation
+~(~q->~(p^T)),~(~q->~p),Identity
+(p^~r)->(qvq),(p^~r)->q,Idempotence
+Fv(qvq),Fvq,Idempotence
+(Fv~~(pvq))v((pv~q)v(pv~q)),(Fv~~(pvq))v(pv~q),Idempotence
+~((~p->~qv(q^r))^~~(~q->s)),~((~p->~qv(q^r))^(~q->s)),Double Negation
+~(((p->q)vq)^((p->q)vq)),~((p->q)v(q^q)),Distributivity
+~~(~(q^~p)^(p->q))^~~(~(q^~p)^(qv~p)),~~(~(q^~p)^(qv~p))^~~(~(q^~p)^(qv~p)),Implication as Disjunction
+~~((q^q)^p)->r,~~(p^(q^q))->r,Commutativity
+(~p^q)v(~q^~s)v((~q^~s)^s),(~p^q)v(~q^~s),Absorption
+~Fv(pv(~pvF)),~Fv(pv~p),Identity
+(((pvq)^(pvq))->r)^T,((pvq)^(pvq))->r,Identity
+p^(~p->s),p^(pvs),Implication as Disjunction
+(~r^p)->q,(p^~r)->q,Commutativity
+~(~pv~p),~(~p),Idempotence
+~pvrvq,(~pvr)vq,Associativity
+~(~q->~q),~(~qvq),Implication as Disjunction
+~((pvF)^~q)vq^(qvs),~((pvF)^~q)vq,Absorption
+(~~((pvF)^p)^~r)->q,(~~(p^p)^~r)->q,Identity
+~p->(r^q),~p->(q^r),Commutativity
+((Fvp)v~q)v(pvq),(pvq)v((Fvp)v~q),Commutativity
+~((~p^q)v~(~r->~s)),~((~p^q)v~(rv~s)),Implication as Disjunction
+((pvq)vp)v~q,(pvq)v(pv~q),Associativity
+(p^p)v(p^q),p^(pvq),Distributivity
+~~~(~(q^~p)^~(~q^~s)),~(~(q^~p)^~(~q^~s)),Double Negation
+~(q^~p)^~(~q^p),~(q^~p)^(qv~p),De Morgan's Law
+(~q->~p)^~(q^~p),(qv~p)^~(q^~p),Implication as Disjunction
+~(~(pvq)v~(rvp)),~(~(pvq)v~(pvr)),Commutativity
+(~q->q)^T,(qvq)^T,Implication as Disjunction
+~(~(((~pv((~p^T)^~s))^(sv((~p^T)^~s)))^p)^~p^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p^~p),Distributivity
+p^(pvs),p,Absorption
+~(~(pvq)v~(T^(pvq)))->r,~(~(pvq)v~(pvq))->r,Identity
+~~~(q^r)->p,~(q^r)->p,Double Negation
+qv(~q^p),qv(p^~q),Commutativity
+~(q^~p)^((qv~p)^(qv~p)),~(q^~p)^(qv~p),Idempotence
+(pvq)^(~p->~(q^T)),(pvq)^(~p->~q),Identity
+((p^q)->r)vF,(p^q)->r,Identity
+~~(~q^p),~q^p,Double Negation
+qv(r^(qvq)),qv(r^q),Idempotence
+~(~qv~r)vp,~~(q^r)vp,De Morgan's Law
+(pvq)^~~((pvr)^(pvr)),(pvq)^~~(pvr),Idempotence
+~((~(pvq)^~(pvq))v~(~p->~q)),~(~(pvq)v~(~p->~q)),Idempotence
+~(~(F->T)v~T),(F->T)^T,De Morgan's Law
+~~~(~p^~q)->r,~(~p^~q)->r,Double Negation
+(p->q)->~~(((Fvp)->q)->q),(p->q)->~~((p->q)->q),Identity
+~svsvs,~svs,Idempotence
+~~(p^q)v(~pv~(~pvq)),(p^q)v(~pv~(~pvq)),Double Negation
+~~(((p^q)^(p^q))vF)->r,~~((p^q)vF)->r,Idempotence
+(q^p)->r^(rvq),(q^p)->r,Absorption
+(q^p)v((~pvp)^(~pv(p^q)v~q)),(p^q)v((~pvp)^(~pv(p^q)v~q)),Commutativity
+(~(p^q)^p)v(~(p^q)^~q)^((~(p^q)^~q)vr),(~(p^q)^p)v(~(p^q)^~q),Absorption
+~(~r^~~((qvq)^~p->((qvq)^q))),~(~r^~~(~p^(qvq)->((qvq)^q))),Commutativity
+F,~p^p,Negation
+(~q->~q)^p,(qv~q)^p,Implication as Disjunction
+~~(~(~p^q)^(rv~s)),~((~p^q)v~(rv~s)),De Morgan's Law
+pv(p^s),p,Absorption
+~~(~q->(~pvq)),~~(~q->~(p^~q)),De Morgan's Law
+pvF,p,Identity
+~(~p^~q)->r,(pvq)->r,De Morgan's Law
+p^~(p^~q^(qvs))<->(p^q),p^~(p^~q)<->(p^q),Absorption
+(pvqvF)^(pvr),((pvq)vF)^(pvr),Associativity
+(p^q)->~~(r^T),(p^q)->(r^T),Double Negation
+Fvqv~(~qv~p),Fvqv(q^p),De Morgan's Law
+p->((q^T)->r),p->(q->r),Identity
+(q->r)v~p,p->(q->r),Implication as Disjunction
+~r^(~pvp)^r^(p->r),~r^((~pvp)^r)^(p->r),Associativity
+~(~((((~p^T)^s)v((~p^T)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Identity
+(q^T)<->p,q<->p,Identity
+(q^q)v(Fv(q^r)),(q^q)v(q^r),Identity
+~~~(~~(p^(~q->q))^~r),~(~~(p^(~q->q))^~r),Double Negation
+~(~((q^r)v(~r^q))^p),~(~((q^r)v(q^~r))^p),Commutativity
+q<->(~F->p),q<->(Fvp),Implication as Disjunction
+~p->~~(q^(~qv~q)),~p->(q^(~qv~q)),Double Negation
+~r->~(r^r),~r->~r,Idempotence
+p^~~(~pvq)<->((p^q)^(sv~s)),p^~~(~pvq)<->((p^q)^T),Negation
+Fv(~p^((p^p)vr)->(q^~q)),Fv(~p^(pvr)->(q^~q)),Idempotence
+(T^(q^q^r))vp,(q^q^r)vp,Identity
+(~p^~p)->q,~(pvp)->q,De Morgan's Law
+qv((Fv~q)v(Fv~q)),qv(Fv~q),Idempotence
+~((p->q)v((p->q)^p)vq)^~((p->q)vq),~((p->q)vq)^~((p->q)vq),Absorption
+~(pv(p^r)^q)^(pv~q),~(p^q)^(pv~q),Absorption
+~~(p^(q^q))->r,~~(p^q)->r,Idempotence
+~((q->(pvF))^(p->q)),~((q->p)^(p->q)),Identity
+~(~(~(~p^q)^(s->r))v((~p^q)v~(s->r))),~(((~p^q)v~(s->r))v((~p^q)v~(s->r))),De Morgan's Law
+((~q^~r)v~q)^((~q^~r)vr)^((~q^p)v~q)^((~q^p)vr)^(~qv(q^~r))^(~qv~~(q^p))^(~qv(q^r))^(rv(q^~r))^(rv~~(q^p))^(rv(q^r)),(~q^~r)v(~q^p)v(~q^r)v(q^~r)v~~(q^p)v(q^r),Distributivity
+(p^~~(~qvF))v(q^~p^(pvq)),(p^(~qvF))v(q^~p^(pvq)),Double Negation
+(~((pvq)^(pvq))vr)^T,(((pvq)^(pvq))->r)^T,Implication as Disjunction
+~q->~(~(r^q)v~(r^q)),~q->~~(r^q),Idempotence
+p->(qv(q^s)vr),p->(qvr),Absorption
+((T^(pv~q))^(rv~s))^((rv~s)vp),(T^(pv~q))^(rv~s)^((rv~s)vp),Associativity
+Fv~~(p^p),Fv(p^p),Double Negation
+~~(~r^((~pvp)^r)^(p->r)),~r^((~pvp)^r)^(p->r),Double Negation
+s^((~s^~q)v(~s^~T))^(((~s^~q)v(~s^~T))vr)^p,s^((~s^~q)v(~s^~T))^p,Absorption
+q->~~(p->~(~qv~q)),q->~~(p->(q^q)),De Morgan's Law
+~~(~pvq)v(qvF),~~(~pvq)vq,Identity
+~(T^(~svs)),~(~svs),Identity
+~p->(T^q),~p->q,Identity
+(q->(p^T))^(p->q),(p->q)^(q->(p^T)),Commutativity
+~~T,~~(sv~s),Negation
+~~~(~p^q)^((rv~s)^(rv~s)),~~~(~p^q)^(rv~s),Idempotence
+((~r^p)^(~r^p))->q,(~r^p)->q,Idempotence
+p^(svp),p^(pvs),Commutativity
+p^~~(~pvq)<->(p^~~(T^q)),p^~~(~pvq)<->(p^(T^q)),Double Negation
+~(~~((p->q)^(q->p))^~~((p->q)^(q->p))),~~~((p->q)^(q->p)),Idempotence
+~~~(~r^r),~~(rv~r),De Morgan's Law
+~((~p->q)vp),~(qvpvp),Implication as Disjunction
+~(~~~(F->T)v~T),~(~(F->T)v~T),Double Negation
+(p->q)->(((T^~p)vq)->q),(p->q)->((~pvq)->q),Identity
+~~((T^p)vq)^(pvr),~~(pvq)^(pvr),Identity
+(pvq)^(pv((~q^T)^(~q^~q))),(pvq)^(pv((~q^T)^~q)),Idempotence
+s^(T^((~s^~q)v(~s^~T)))^p,s^((~s^~q)v(~s^~T))^p,Identity
+Fv(pvF),pvF,Identity
+~((~pv~(rv~s))^(qv~(s->r))),~((~pv~(rv~s))^(qv~(rv~s))),Implication as Disjunction
+~~(q->r)^((q->r)vp)^(p->r),~~(q->r)^(p->r),Absorption
+~~(~q^~(qv~p)),~~(~q^~(p->q)),Implication as Disjunction
+(p^q)->(r^T),(p^q)->r,Identity
+Fv(rv~r),(rv~r)vF,Commutativity
+(p^q)v((~pvp)^(~pv~q)),(p^q)v(~pv(p^~q)),Distributivity
+(p^~q)v(~p^(pvq)^q),(p^~q)v(~p^q),Absorption
+~pv((qvr)^(qvr)),p->((qvr)^(qvr)),Implication as Disjunction
+pv(T^p)v(p^q),pvpv(p^q),Identity
+~p->(q^q),~p->q,Idempotence
+((Fvq)^~q)vp,((qvF)^~q)vp,Commutativity
+~Fv(pv~p),F->(pv~p),Implication as Disjunction
+(~qvq)^~r^(p^r),(~qvq)^~r^p^r,Associativity
+((pv~p)v~~(p^~q))^(qv(~pv(p^~q))),(pv(~pv~~(p^~q)))^(qv(~pv(p^~q))),Associativity
+~qv(~q^q)v(~q^r),~qv~q^(qvr),Distributivity
+pv~~(p^s),pv(p^s),Double Negation
+~~~(~svs)->T,~(~svs)->T,Double Negation
+~(~r^rv(r^s)),~(~r^r),Absorption
+~~(~svs),~~(sv~s),Commutativity
+(svs)^~s,s^~s,Idempotence
+r^~(r^r),r^~r,Idempotence
+p->~~(~(q^q)vr),p->~~((q^q)->r),Implication as Disjunction
+~p->(q^(~qv~q)),~p->(q^~q),Idempotence
+q->~~(p->(q^q)),q->~~(p->q),Idempotence
+~(r^~r),~rvr,De Morgan's Law
+~((~((~q->(q^r))^((q^r)v~r))^p)v(~(((q^r)vq)^((q^r)v~r))^p)),~((~(((q^r)vq)^((q^r)v~r))^p)v(~(((q^r)vq)^((q^r)v~r))^p)),Implication as Disjunction
+~(~s^s)v((~s^s)^s),~(~s^s),Absorption
+p->(rvq),p->(qvr),Commutativity
+~(~p^~q)v~(p^q),(p^q)->~(~p^~q),Implication as Disjunction
+(qv(q^s)->r)v~p,p->(qv(q^s)->r),Implication as Disjunction
+~~~(p^q)^(pv~q),~(p^q)^(pv~q),Double Negation
+(~pvr)vq,~(p^~r)vq,De Morgan's Law
+~((~p->~qv(q^r))^(~q->s)),~((~p->~q)^(~q->s)),Absorption
+~((~p->~(q^q))^(~q->s)),~((~p->~q)^(~q->s)),Idempotence
+~((~q->s)^(Fv(~p->~q))),~((~q->s)^(~p->~q)),Identity
+(((p->r)^p)v((p->r)^q)v((q->r)^p)v((q->r)^q))->r,((p->r)^(q->r)^(pvq))->r,Distributivity
+~(~((((~p^s)^T)v~~(~s^(~p^T)))^p)^~p),~(~((((~p^s)^T)v(~s^(~p^T)))^p)^~p),Double Negation
+~(q^~p)^(qv(Fv~p)),~(q^~p)^(qv~p),Identity
+((T^~s)^(~q^~s))v(~p^q),((T^~q)^~s)v(~p^q),Distributivity
+(p->q)->((p->q)->q)^(((p->q)->q)vr)^(((p->q)->q)vr),(p->q)->((p->q)->q)^(((p->q)->q)vr),Idempotence
+~~(p->r)^(q->r),(p->r)^(q->r),Double Negation
+(T^(p^q^q))->r,(p^q^q)->r,Identity
+((p->r)^(q->r)^(pvq^(qvp)))->r,((p->r)^(q->r)^(pvq))->r,Absorption
+p^p,p,Idempotence
+~~(~pvq)v(q^(qvp)),~~(~pvq)vq^(qvp),Associativity
+(pvq)v((Fvp)v~q),(pvq)v(pv~q),Identity
+(p^~(p^~q)->(p^q))^((p^q)->~~~(p^~q)^p),(p^~(p^~q)->(p^q))^((p^q)->~(p^~q)^p),Double Negation
+((p^q)v((q^s)v(q^s)))->r,((p^q)v(q^s))->r,Idempotence
+(p^~(p^~q^(qvs)))<->(p^q),p^~(p^~q^(qvs))<->(p^q),Associativity
+T^(qv~(~qv~r)),qv~(~qv~r),Identity
+(q^~q)vF,q^~q,Identity
+((p^r)v(p^s)vFv(~r^s))->q,((p^r)v(p^s)v(~r^r)v(~r^s))->q,Negation
+(pvpvq)->r,(pvq)->r,Idempotence
+~r^((~((p^p)v(~p^p))vp)^r)^(p->r),~r^((~((pv~p)^p)vp)^r)^(p->r),Distributivity
+~~~(~p^~p),~~~~p,Idempotence
+~~(p^q)->r,(p^q)->r,Double Negation
+(p^((Fv~p)->(~qvF)))v(q^((Fv~p)->~q)),(p^((Fv~p)->~q))v(q^((Fv~p)->~q)),Identity
+~(pvp)vp,pv~(pvp),Commutativity
+~~(T^~r^p)^r,(T^~r^p)^r,Double Negation
+~((~qv~q)->~p),~(~q->~p),Idempotence
+~~~((p->q)^(q->p)),~~~(p<->q),Iff as Implication
+(p^~(p^q))v(~q^~(p^q)),(pv~q)^~(p^q),Distributivity
+(~q^~r)v(~q^p)v(~q^r)v(q^~r)v(q^p)v(q^r),(~qvq)^~r^p^r,Distributivity
+T^(pv~p),pv~p,Identity
+(~p^q)v~(qvs),(~p^q)v(~q^~s),De Morgan's Law
+((pvq)^(pvq))->r,(pvq)->r,Idempotence
+~~(pvq)^(~p->~q),(pvq)^(~p->~q),Double Negation
+((pvpv(p^q))vq)v(pv~q),((pvp)vq)v(pv~q),Absorption
+~((~p->~qv(q^r))^~~(~(qvq)->s)),~((~p->~qv(q^r))^~~(~q->s)),Idempotence
+~(qvF)v((qvF)^p),~(qvF),Absorption
+~pv(qvr),p->(qvr),Implication as Disjunction
+~~(p^p^(pvq)),p^p^(pvq),Double Negation
+s^((~sv(~s^~T))^(~qv(~s^~T)))^(((~s^~q)v(~s^~T))vr)^p,s^((~s^~q)v(~s^~T))^(((~s^~q)v(~s^~T))vr)^p,Distributivity
+~(~q^~p)->r,(qvp)->r,De Morgan's Law
+(p^(~qvF))v(q^~p),(p^~q)v(q^~p),Identity
+~~(qvpvp)^(qv~q),~~(qvp)^(qv~q),Idempotence
+rv~(r^T),rv~(T^r),Commutativity
+(Fv(p->q))->((p->q)->q),(p->q)->((p->q)->q),Identity
+(Fv(p^q))->~(~p^~q),(p^q)->~(~p^~q),Identity
+(q^q)v~p,qv~p,Idempotence
+((p->r)^(q->r)^((pvq)^(pvq)))->r,((p->r)^(q->r)^(pvq))->r,Idempotence
+(pvF)<->p,p<->p,Identity
+~~(~p->q),~~(qvp),Implication as Disjunction
+((pvq)v~q)v(pv~q),((pvq)vp)v~q,Distributivity
+(q^p)v~(~(~p^~p)^~(p^~q)),(q^p)v((~p^~p)v(p^~q)),De Morgan's Law
+(~p^p)v(~p^r)v(p^~q)v(r^~q),~p^(pvr)^~q,Distributivity
+(~pvp)^(p->~~p),(~~p->p)^(p->~~p),Implication as Disjunction
+~p^~(qvq),~(pv(qvq)),De Morgan's Law
+T,~qvq,Negation
+~(pvqvq),~(pvq),Idempotence
+~(~pv~(pvq))v~p,p^(pvq)v~p,De Morgan's Law
+~~(p^~(p^~q))<->(p^q),p^~(p^~q)<->(p^q),Double Negation
+(~(q^~p)v~(q^~p))^(qv~p),~(q^~p)^(qv~p),Idempotence
+~(pvF)^~q,~p^~q,Identity
+~(~q^~(r^q)v((r^q)^r)),~(~q^~(r^q)),Absorption
+~(qvp)v((qvp)^q),~(qvp),Absorption
+T^~((pvr)^~p),~((pvr)^~p),Identity
+~~((pvp)^p),~~(p^p),Idempotence
+~(((~p^q)v~(rv~s))v((~p^q)v~(rv~s))),~((~p^q)v~(rv~s)),Idempotence
+s^(((~F->~s)^~q)v(~s^~T))^p,s^(((~svF)^~q)v(~s^~T))^p,Implication as Disjunction
+(T^(p->q))->(qv~((p^p)->q)),(T^(p->q))->(qv~(p->q)),Idempotence
+~~(qv~q),qv~q,Double Negation
+(q->p)^(p->q),q<->p,Iff as Implication
+~((~p^qv(q^r))v~(rv~s)),~((~p^q)v~(rv~s)),Absorption
+(pv~q)^(rvrv~s),(pv~q)^(rv~s),Idempotence
+~~(~(q^~p)^(qv~p)),~(q^~p)^(qv~p),Double Negation
+(p^(~(rvF)v~r))->q,(p^(~rv~r))->q,Identity
+~r^~~(p->r)^((~pvp)^r),~r^(p->r)^((~pvp)^r),Double Negation
+sv(~s^(svr)),sv~s^(svr),Associativity
+r^p^((q->q)vq)^~r^(~qvq),r^p^((~qvq)vq)^~r^(~qvq),Implication as Disjunction
+~~~(~pv~(Fvp)),~~~(~pv~p),Identity
+~(~pv~(pvq))^((~pv~(pvq))vq),~(~pv~(pvq)),Absorption
+(~q^q)v(~q^p),~q^(qvp),Distributivity
+F->(rv~r),F->T,Negation
+s^~s,F,Negation
+~(Fvr)^r,r^~(Fvr),Commutativity
+((pv(Fvq))^p)v((pvq)^~q),((pvq)^p)v((pvq)^~q),Identity
+pv(q^r),(pvq)^(pvr),Distributivity
+(F->T)^((F->T)vp)vF,(F->T)vF,Absorption
+(~p->p)^T,~p->p,Identity
+~(~(((~p^(~p^s))v((~p^(sv~s))^~s))^p)^~p),~(~(((~p^(~p^s))v((~p^T)^~s))^p)^~p),Negation
+(pvq)v((pvq)^q)^(pvr),(pvq)^(pvr),Absorption
+~(q^(qvs)^q),~(q^q),Absorption
+~(~((q^r)v(q^~r))^p)^~(~((q^r)v(q^~r))^p),~(~((q^r)v(q^~r))^p),Idempotence
+~(~((q^r)v(q^~r))^p)^~~((q^r)v(q^~r)v~p),~(~((q^r)v(q^~r))^p)^~~(((q^r)v(q^~r))v~p),Associativity
+~(p->q),~(qv~p),Implication as Disjunction
+~(pvp)->(q^~q),(~p^~p)->(q^~q),De Morgan's Law
+(~p->~p)vF,~p->~p,Identity
+(p->~(~q^~r))^T,p->~(~q^~r),Identity
+~(~Tv~(~p->(q^~q))),T^(~p->(q^~q)),De Morgan's Law
+~(~(p->q)^q),~(q^~(p->q)),Commutativity
+~(~(pvq)v~(pvq))->r,~~(pvq)->r,Idempotence
+~~(((pvq)v(pvq))^(pv~q)),~~((pvq)^(pv~q)),Idempotence
+~(~F^~((p->q)^(q->p))),Fv((p->q)^(q->p)),De Morgan's Law
+qv~p,p->q,Implication as Disjunction
+((p->r)^~(~(q->r)v~(((pvp)vq)^(pvq))))->r,((p->r)^~(~(q->r)v~((pvq)^(pvq))))->r,Idempotence
+~~(p^~~(~pvqvq))<->(p^q),p^~~(~pvqvq)<->(p^q),Double Negation
+~((pvq)vq),~(pvqvq),Associativity
+~~(p^(pvs)),p^(pvs),Double Negation
+~((~pv~(rv~s))^(qv~(rv~s))),~((~p^q)v~(rv~s)),Distributivity
+(pvq)^(~p->~q),(pvq)^(pv~q),Implication as Disjunction
+~~~(p->~p),~~~(~pv~p),Implication as Disjunction
+~q->~p^(pvq),~q->~p,Absorption
+~~((p^~q)vq),~~(qv(p^~q)),Commutativity
+(pvq)^((Fv~p)->~q),(pvq)^(~p->~q),Identity
+(T^((p^q^q)v(p^q^q)))->r,(T^(p^q^q))->r,Idempotence
+(p->r)^(Fv(q->r)),(p->r)^(q->r),Identity
+~(~p^(p^p)),pv~(p^p),De Morgan's Law
+qv~(~qv~r),qv(q^r),De Morgan's Law
+~(~(p^~q^(qvr))^~(q^~p)),~(~(p^~q)^~(q^~p)),Absorption
+((q^~q)v~p)v((Fv~p)^p)->q,(Fv~p)v((Fv~p)^p)->q,Negation
+(pvp)^(~p->r),(pvp)^(pvr),Implication as Disjunction
+((p->r)^(q->r)^(pvq))->(rvF),((p->r)^(q->r)^(pvq))->r,Identity
+((T^p)^q)->(pvq),(p^q)->(pvq),Identity
+(p^q)->~(~p^~q),(p^q)->(pvq),De Morgan's Law
+~(~(p->r)v~(q^~(~q^~s)->r)),~(~(p->r)v~(q^(qvs)->r)),De Morgan's Law
+qv(q^p)->~~(p->q),qv(q^p)->(p->q),Double Negation
+F->~~(~pvp),F->~~(pv~p),Commutativity
+~~~(~pv~q)->r,~~(p^q)->r,De Morgan's Law
+~(p^~q),~pvq,De Morgan's Law
+~(p^~q)->((q^~p)^(q^~p)),(p^~q)v((q^~p)^(q^~p)),Implication as Disjunction
+(p^~q)->q,~(p^~q)vq,Implication as Disjunction
+~~~(~s^s),~(~s^s),Double Negation
+(pvq)^((~F->~p)->(~qv~q)),(pvq)^((Fv~p)->(~qv~q)),Implication as Disjunction
+~(p<->(qvF)),~(p<->q),Identity
+Fv(qv(T^q)),Fv(qvq),Identity
+~((p->q)^(q->p)),~(p<->q),Iff as Implication
+(~(p^q)^p)v(~(p^q)^(~(q^T)v~q)),(~(p^q)^p)v(~(p^q)^(~qv~q)),Identity
+~(qvq),~q,Idempotence
+~~p<->(p^p),(p^p)<->~~p,Commutativity
+(p^T)^(pvr),p^(T^(pvr)),Associativity
+~~((pvq)^(~p->q)),~~((pvq)^(pvq)),Implication as Disjunction
+(T^(p^q))->(pvq),((T^p)^q)->(pvq),Associativity
+~(~(((q^r)v~r)^((q^r)vq))^p),~(~((q^r)v(~r^q))^p),Distributivity
+q^~(q^(sv~s)),q^~(q^T),Negation
+~(p^T)^~q,~(T^p)^~q,Commutativity
+~(p^~p),~(~p^p),Commutativity
+~~(~(q^~p)^(qv~p))^~~(~(q^~p)^(qv~p)),~~(~(q^~p)^(qv~p)),Idempotence
+p->((qvr)^(qvr))^(((qvr)^(qvr))vs),p->((qvr)^(qvr)),Absorption
+~(q^p)vr,(q^p)->r,Implication as Disjunction
+(pvpvq)->rv(r^s),(pvpvq)->r,Absorption
+~(~p^~((((~p^s)v((~p^T)^~s))^p)^(((~p^s)v((~p^T)^~s))^p))),~(~p^~(((~p^s)v((~p^T)^~s))^p)),Idempotence
+~qv~(qvs)v~q,~(q^(qvs)^q),De Morgan's Law
+~(~r^~~((p^T)^(qvq))),~(~r^~(~(p^(qvq)))),Identity
+~~(r->r),~~(rv~r),Implication as Disjunction
+p^p^T,p^T,Idempotence
+~~(~qvq)^~r^p^r,(~qvq)^~r^p^r,Double Negation
+~(p^~(~q->q)),~(p^~(qvq)),Implication as Disjunction
+(~r^p)->(qvq),(p^~r)->(qvq),Commutativity
+(q^~p)v(~q^~s),(~p^q)v(~q^~s),Commutativity
+rv~rv~r,rv~r,Idempotence
+(~~p->p)^(p->~~p),(~(~p))<->p,Iff as Implication
+~r->~r,~rvr,Implication as Disjunction
+~(p<->~(~q^~F)),~(p<->(qvF)),De Morgan's Law
+pv~(pv(r^~r)),pv~(pvF),Negation
+((pvF)->q)^((q->p)v(q->p)),((pvF)->q)^(q->p),Idempotence
+(~(p^q)^p)v(~(p^q)^(~qv~q)),(~(p^q)^p)v(~(p^q)^~q),Idempotence
+~((~p^q)v~(rv~s)v(~p^q)v~(rv(r^p)v~s)),~((~p^q)v~(rv~s)v(~p^q)v~(rv~s)),Absorption
+(pvq)v(pv(~qvF)),(pvq)v(pv~q),Identity
+(p->q)->((qv~p)->q),(p->q)->((~pvq)->q),Commutativity
+(p^(~p->~q))v(q^(~p->~q)),(pvq)^(~p->~q),Distributivity
+(p^T)->q,p->q,Identity
+(p^~q)v(T^(q^~p)),(p^~q)v(q^~p),Identity
+~(~pvp)v(p^r),p^~pv(p^r),De Morgan's Law
+(~p^q)v(~q^(qvp)^~s),(~p^q)v(~q^~s),Absorption
+((p->r)^((q->r)^(~p->q)))->r,((p->r)^(q->r)^(~p->q))->r,Associativity
+(p^q)v((~F->~p)v~pv(p^~q)),(p^q)v((~pvF)v~pv(p^~q)),Implication as Disjunction
+(pvq)v(pvq)v(pv~q),(pvq)v(pv~q),Idempotence
+~(~q^(~(r^q)^~(r^q))v((r^q)^r)),~(~q^~(r^q)v((r^q)^r)),Idempotence
+~r^(T^r)^(p->r),~r^((~pvp)^r)^(p->r),Negation
+~(~(~~(~((~p^T)^~s)->(~p^s))^p)^~p),~(~(~~((~p^s)v((~p^T)^~s))^p)^~p),Implication as Disjunction
+Fvq,q,Identity
+q->(~pvq),q->(p->q),Implication as Disjunction
+~((q->p)^(p->q)),~(q<->p),Iff as Implication
+((pvp)^~r)->q,(p^~r)->q,Idempotence
+(pvq)v~(~(pvq)v~q)^(pvr),(pvq)v((pvq)^q)^(pvr),De Morgan's Law
+((~s^~q)v(~s^F))^s^p,s^((~s^~q)v(~s^F))^p,Commutativity
+~(~svs)->T,(s^~s)->T,De Morgan's Law
+(pvq)^(pv(~q^~q)),(pvq)^(pv~q),Idempotence
+~~(qvp)^(~p->~q),~~(pvq)^(~p->~q),Commutativity
+~((~p^q)v~(rv(r^p)v~s)),~((~p^q)v~(rv~s)),Absorption
+Fv(~p^(pvr)->(q^~q)),Fv(~p->(q^~q)),Absorption
+~p^(pvr)->(qvF),~p->(qvF),Absorption
+~p^(~qv(q^p)^~q),~p^(~q^~q),Absorption
+~~(((q^r)v(q^~r))v~p)v~~(((q^r)v(q^~r))v~p),~~(((q^r)v(q^~r))v~p),Idempotence
+~((pv(Fvq))^p)->((pvq)^~q),((pv(Fvq))^p)v((pvq)^~q),Implication as Disjunction
+~~(qv(q^r)v~p)vq,~~(qv~p)vq,Absorption
+Fv(pv~p),pv~p,Identity
+((pvq)^p)v((pvq)^~q),(pvq)^(pv~q),Distributivity
+~~(p->q)^T,T^~~(p->q),Commutativity
+(~~~(~s^~q)->(~s^~T))^p^s,s^(~~~(~s^~q)->(~s^~T))^p,Commutativity
+~p->~~~(T^~(q^~q)),~p->~(T^~(q^~q)),Double Negation
+~p->(q^~q),~(pvp)->(q^~q),Idempotence
+((p^T)vq)^(~p->~q),(pvq)^(~p->~q),Identity
+~p->qvqv(q^r),~p->qv(q^r),Idempotence
+(p->q)vF,Fv(p->q),Commutativity
+(p->q)->((pv(p^r)->q)->q),(p->q)->((p->q)->q),Absorption
+Tv(p^r),pv~pv(p^r),Negation
+~(~(((q^r)vq)^((q^r)v~r))^p),~(~((q^r)v(q^~r))^p),Distributivity
+~(~(((~p^s)v((T^~p)^~s))^p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Commutativity
+p<->(qvq),p<->q,Idempotence
+p^(pvr)vq,pvq,Absorption
+T,~svs,Negation
+sv~s^(svr),sv~s,Absorption
+~~(~(~p^q)^(rv~s)^(pv(rv~s))),~~(~(~p^q)^(rv~s)^((rv~s)vp)),Commutativity
+((~p->F)^q)->(pvq),((pvF)^q)->(pvq),Implication as Disjunction
+~((~(((q^r)vq)^((q^r)v~r))^p)v(~(((q^r)vq)^((q^r)v~r))^p)),~(~(((q^r)vq)^((q^r)v~r))^p),Idempotence
+pvpv(p^q),pvp,Absorption
+((~p->(p^r))vq)^(pvr),(pv(p^r)vq)^(pvr),Implication as Disjunction
+~r^(p->r)^((~pvp)^r),~r^((~pvp)^r)^(p->r),Commutativity
+~(p^q)^(~p->~(q^T)),~(p^q)^(~p->~(T^q)),Commutativity
+~~(~(Fvq)vq)^~r^p^r,~~(~qvq)^~r^p^r,Identity
+rvrv~r,rv~r,Idempotence
+(qvs)v((qvs)^p)->(~p^q),(qvs)->(~p^q),Absorption
+s^(T^((~sv(~s^~T^~T))^(~qv(~s^~T^~T))))^p,s^(T^((~s^~q)v(~s^~T^~T)))^p,Distributivity
+~~(~rv~q)->(q^q),~(r^q)->(q^q),De Morgan's Law
+(p^q^(qvs))->r,(p^q)->r,Absorption
+Fv(p^p)v(p^r),Fvpv(p^r),Idempotence
+qv((pv~pv(p^s))^(p^~q)),qv((pv~p)^(p^~q)),Absorption
+r^~r,F,Negation
+(r^r)v(r^q)v~r,r^(rvq)v~r,Distributivity
+~~~((qvq)^T),~~~(qvq),Identity
+~(((pvF)^(pvF))^~q)vq^(qvs),~((pvF)^~q)vq^(qvs),Idempotence
+((p^~r)v(p^~r))->q,(p^~r)->q,Idempotence
+~(~(((q^r)vq)^~(~((q^r)v(q^r))^r))^p),~(~(((q^r)vq)^(((q^r)v(q^r))v~r))^p),De Morgan's Law
+~~((p->r)^(q->r)),~~((q->r)^(p->r)),Commutativity
+(T^(pv~q))^(rv~s)^((rv~s)vp),(T^(pv~q))^(rv~s),Absorption
+~(q^~p)->(~q^(pvp)),(~q^(pvp))v(q^~p),Implication as Disjunction
+T^(~q^p),~q^p,Identity
+p->(q^q)v(q^s),p->q^(qvs),Distributivity
+~~((~(q^~p)v~(q^~p))^(qv~p)),(~(q^~p)v~(q^~p))^(qv~p),Double Negation
+~p^~q,~(pvq),De Morgan's Law
+(pvq)^~(~pv((p^q)^q)),(pvq)^~(~pv(p^q)^q),Associativity
+(qvF)v~q,qv~q,Identity
+~(T->~p),~(~Tv~p),Implication as Disjunction
+~((~p->~q)^((~p->~q)vr)^~~(~(q^q)->s)),~((~p->~q)^((~p->~q)vr)^~~(~q->s)),Idempotence
+~(Fv(qvp)),~(Fv(~p->q)),Implication as Disjunction
+~(q^~p)^(~(~q^p)^(qv~p)),~(q^~p)^((qv~p)^(qv~p)),De Morgan's Law
+~((((~q^T)->s)^(~p->~q))^((~q->s)^(~p->~q))),~(((~q->s)^(~p->~q))^((~q->s)^(~p->~q))),Identity
+(p^q)v(~pv(p^~q^~~(qvp))),(p^q)v(~pv(p^~q^(qvp))),Double Negation
+~~~(~pv~p),~~~~p,Idempotence
+~(~(qvp)v~(~p->~q)),~~(qvp)^(~p->~q),De Morgan's Law
+~~~(q<->p),~(q<->p),Double Negation
+~~((qvp)^(qv~q)),~~(qv(p^~q)),Distributivity
+(T^(p->q))->((p->q)->q),(p->q)->((p->q)->q),Identity
+(pv(pv~qv(q^r)))v(qv(pv~(Fvq))),(pv(pv~q))v(qv(pv~(Fvq))),Absorption
+(~p->~(q^T))^(pvq),(pvq)^(~p->~(q^T)),Commutativity
+(q^(pvp))->r,(q^p)->r,Idempotence
+Tvp,pvpv~p,Negation
+svsv~s,sv~s,Idempotence
+(p^q)v(p^p),(p^p)v(p^q),Commutativity
+(~pv~p)v((Fvq)->r),~pv((Fvq)->r),Idempotence
+(~qvq)^F^p,(~qvq)^~r^p^r,Negation
+q^T,q,Identity
+(pv(pv~q))v(qv(pv~q)),(pvq)v(pv~q),Distributivity
+~~(q^~q),q^~q,Double Negation
+~(~p^~((((~p^s)v((~p^(qv~q))^~s))^p)^(((~p^s)v((~p^T)^~s))^p))),~(~p^~((((~p^s)v((~p^T)^~s))^p)^(((~p^s)v((~p^T)^~s))^p))),Negation
+~pv(qvq),p->(qvq),Implication as Disjunction
+~(Fv~(pvF)),~~(pvF),Identity
+~~(~q^~~~(p->q)),~~(~q^~(p->q)),Double Negation
+(p^q)->(~p->(q^T)),(p^q)->(~p->(T^q)),Commutativity
+~(p^T)^~q,~p^~q,Identity
+T^(~r^(T^r)^(p->r)),~r^(T^r)^(p->r),Identity
+p->~~(q->r)v((q->r)^r),p->~~(q->r),Absorption
+~r^((~pvp)^(Fvr))^(p->r),~r^((~pvp)^r)^(p->r),Identity
+~~~(~p^q)^(rv~s),~(~p^q)^(rv~s),Double Negation
+~~(qv~(p^~q)),~~(~(p^~q)vq),Commutativity
+(~p^p)v(~p^r)v~~(p^~q)v(r^~q),(~p^p)v(~p^r)v(p^~q)v(r^~q),Double Negation
+~~(T^p),T^p,Double Negation
+(q^p)->r,(p^q)->r,Commutativity
+~(((~p^q)v~~(~p^q))v~(rv~s)),~(((~p^q)v(~p^q))v~(rv~s)),Double Negation
+(p^p^~(p^q))v(~q^~(p^q)),(p^~(p^q))v(~q^~(p^q)),Idempotence
+p->(~~(q^T)->r),p->((q^T)->r),Double Negation
+~~~(~rv(r^s)^~~(p^(qvq))),~~~(~r^~~(p^(qvq))),Absorption
+~~(((p->r)^~q)v((p->r)^r)),~~((p->r)^(~qvr)),Distributivity
+p^(rvp),p^(pvr),Commutativity
+(p^q)v(~pv~pv(p^~q)),(p^q)v(~pv(p^~q)),Idempotence
+(((p->r)^p)v((p->r)^q)v(p^(q->r))v((q->r)^q))->r,(((p->r)^p)v((p->r)^q)v((q->r)^p)v((q->r)^q))->r,Commutativity
+(pvq)v~(~(pvq)v~q)^(pvr^(rvp)),(pvq)v~(~(pvq)v~q)^(pvr),Absorption
+(qvs)->(~p^q),(~p^q)v~(qvs),Implication as Disjunction
+~((Fvp)^~q),~(p^~q),Identity
+(~p^q)v(~(q^qv(q^p))^~s),(~p^q)v(~(q^q)^~s),Absorption
+T^~~(p->q),T^(p->q),Double Negation
+~~(p^q)->~(~p^~q),~~(p^q)->(pvq),De Morgan's Law
+T^(p^p),T^p,Idempotence
+~~(Fv~q),Fv~q,Double Negation
+(r^~r)->T,F->T,Negation
+~~(p^p)<->p,(~(~p))<->p,Idempotence
+~~(~(p^q)vp)v(~(p^q)vq),(~(p^q)vp)v(~(p^q)vq),Double Negation
+p^(rvp^(pvq)),p^(rvp),Absorption
+~(~r^~~((p^q)v(p^q)))^(~(rv~((p^q)v(p^q)))vs),~(~r^~~((p^q)v(p^q)))^((~r^~~((p^q)v(p^q)))vs),De Morgan's Law
+~p^~(qvq),~p^~q,Idempotence
+(pvq)v((pvq)^s)^(pvr),(pvq)^(pvr),Absorption
+~q->~~(r^q^(qvp)),qv~~(r^q^(qvp)),Implication as Disjunction
+~(rv~p)->(qvq),(~r^p)->(qvq),De Morgan's Law
+((q^~q)vp)vq,(Fvp)vq,Negation
+p->~~(qvr),p->(qvr),Double Negation
+p->~~((q^q)->r),p->~~(q->r),Idempotence
+p^(pvq)vq^(r^((q^r)vs)),pvq^(r^((q^r)vs)),Absorption
+(q->p)^(rv~s),(pv~q)^(rv~s),Implication as Disjunction
+~((p^T)^~q)vq,~(p^~q)vq,Identity
+~~~(~rv((r^s)vF)^~~(p^(qvq))),~~~(~rv(r^s)^~~(p^(qvq))),Identity
+p->~~((Fv(q->r))^((q->r)vq)),p->~~((q->r)^((q->r)vq)),Identity
+~(~r^~~~~((p^(qv~q))^(qvq))),~(~r^~~((p^(qv~q))^(qvq))),Double Negation
+~~~((q->p)^(p->q)),~~~(q<->p),Iff as Implication
+~(r^q)->(q^q),(q^q)v(r^q),Implication as Disjunction
+~~(~r^((~p^r)v(p^r))^(~pvr)),~~(~r^((~p^r)v(p^r))^(p->r)),Implication as Disjunction
+(pvp)^(sv~s),(pvp)^T,Negation
+~~(~(~q^p)^~(p^~q))vq,~((~q^p)v(p^~q))vq,De Morgan's Law
+(~p^~p)vp,pv(~p^~p),Commutativity
+~(~r^~~((p^q)v(q^pv(p^q)))),~(~r^~~((p^q)v(q^p))),Absorption
+(p^~(~q->F))->q,(p^~(qvF))->q,Implication as Disjunction
+~~(p^(pvr)),p^(pvr),Double Negation
+~((~(p^s)->p)<->q),~(pv(p^s)<->q),Implication as Disjunction
+~qv~q,~q,Idempotence
+(p^q)v((~pvp)^(~pv(p^q)v~q)),(p^q)v((~pvp)^(~pv~q)),Absorption
+~~(~svs),~svs,Double Negation
+(pvq)^~~((pvr)^(rvp)),(pvq)^~~((pvr)^(pvr)),Commutativity
+q->(pv(p^q)->q),q->(p->q),Absorption
+~(~pv~q)->(pvq),(p^q)->(pvq),De Morgan's Law
+~((~p->(~qv~q))^(qvs)),~((~p->~(q^q))^(qvs)),De Morgan's Law
+T^(~r^(T^r)^((T^r)vs)^(p->r)),T^(~r^(T^r)^(p->r)),Absorption
+rv~(q^p),(q^p)->r,Implication as Disjunction
+~q^q,q^~q,Commutativity
+F->(pv~p),F->T,Negation
+(~qv(p->q))^(~qvq)^((p->q)v(p->q))^((p->q)vq),~qv(p->q)v((p->q)^q),Distributivity
+~(~~(~q->s)^(~p->~q)),~((~p->~q)^~~(~q->s)),Commutativity
+~(p^q)^~(p^q)^(pv~q),~(p^q)^(pv~q),Idempotence
+(pvF)vq,pvq,Identity
+qv~((~r^p)^(~r^p)),((~r^p)^(~r^p))->q,Implication as Disjunction
+qv((r^T)^q),qv(r^q),Identity
+T^(p->~~p),(~pvp)^(p->~~p),Negation
+~r^~~(p->r)^(~(p^~p)^r),~r^~~(p->r)^((~pvp)^r),De Morgan's Law
+(p^~(p^~~(~Tv~q))->(p^q))^((p^q)->p^~(p^~q)),(p^~(p^~(T^q))->(p^q))^((p^q)->p^~(p^~q)),De Morgan's Law
+~~((T^p)vq^(qvs))^(pvr),~~((T^p)vq)^(pvr),Absorption
+~(((~q^T^T)->s)^(~p->~q)),~(((~q^T)->s)^(~p->~q)),Idempotence
+Fv~q,~q,Identity
+(~r^~~(~p->~p))^(~r^r)^(~~(~p->~p)^(p->r))^(r^(p->r)),~r^(~~(~p->~p)^r)^(p->r),Distributivity
+~(p^s)->p^p,p^pv(p^s),Implication as Disjunction
+(qvq)^T,q^T,Idempotence
+(p^q)v(~pv(p^~q^(qvp))),(p^q)v(~pv(p^~q)),Absorption
+(pvq)^~~(pvr),(pvq)^(pvr),Double Negation
+~~~(Fv(qv(p->q))),~(Fv(qv(p->q))),Double Negation
+~(((~q->s)^(~p->~q))^((~q->s)^(~p->~q))),~((~q->s)^(~p->~q)),Idempotence
+s^((~sv(~s^~T^~(qv~q)))^(~qv(~s^~T^~T)))^p,s^((~sv(~s^~T^~T))^(~qv(~s^~T^~T)))^p,Negation
+~p^~(~p^~s)->q,~p^(pvs)->q,De Morgan's Law
+~r^((~pvp)^(Fv(r^r)))^(p->r),~r^((~pvp)^(Fvr))^(p->r),Idempotence
+~~(~q^p^(pvq)),~~(~q^p),Absorption
+~(~pv~(qvq))->r,(p^(qvq))->r,De Morgan's Law
+r^(rvq)v~r,rv~r,Absorption
+~(~(((q^r)v(T^q))^(r->(q^r)))^p),~(~(((q^r)vq)^(r->(q^r)))^p),Identity
+~~~(~pv(p^q)^~q)->r,~~~(~p^~q)->r,Absorption
+T^p^(pvs),T^p,Absorption
+(T^~q)^(p^p),(T^~q)^p,Idempotence
+T^(~p->(q^~q)),~p->(q^~q),Identity
+~((q^~p)v~(~r->~s)),~((~p^q)v~(~r->~s)),Commutativity
+(p->q)->~~(((p->qv(q^r))v(p->q))->q),(p->q)->(((p->qv(q^r))v(p->q))->q),Double Negation
+(pvp)v~p,pv~p,Idempotence
+(pvp)^(pvqv(q^s)),(pvp)^(pvq),Absorption
+~~((~(q^~p)v~(~p^q))^(qv~p)),~~((~(q^~p)v~(q^~p))^(qv~p)),Commutativity
+((pvF)vr)^p,p^((pvF)vr),Commutativity
+(~(q^~p)^q)v((~(q^~p)^q)^p)v(~(q^~p)^(~p^~p)),(~(q^~p)^q)v(~(q^~p)^(~p^~p)),Absorption
+((pvq)v(pvq))^(pvr),(pvq)^(pvr),Idempotence
+(pvq)^~(~p^q),(pvq)^(pv~q),De Morgan's Law
+s^(T^((~s^~q)v(~s^~T^~T)))^p,s^(T^((~s^~q)v(~s^~T)))^p,Idempotence
+~~(qv((r^T)^q)),qv((r^T)^q),Double Negation
+T,~pvp,Negation
+~(~pv~(pvr)^((pvr)vr))vq,~(~pv~(pvr))vq,Absorption
+~~((pvq)^(pv(rvF))),~~(pv(q^(rvF))),Distributivity
+p^(pvq)->(qvr),p->(qvr),Absorption
+~~(qv(~(~rv~T)^q)),~~(qv((r^T)^q)),De Morgan's Law
+(pvq)v(((pvq)^(pvT))^s)^(pvr),(pvq)v((pv(q^T))^s)^(pvr),Distributivity
+~(~(p->r)v~(q^(qvs)->r)),~(~(p->r)v~(q->r)),Absorption
+(p^q)v((~pvF)v~pv(p^~q)),(p^q)v(~pv~pv(p^~q)),Identity
+~(~~(~p^(pvq)^q)v~(rv~s)),~(~~(~p^q)v~(rv~s)),Absorption
+(p^p)^~~(pvr),p^~~(pvr),Idempotence
+(p^~q)v(~p^q),(p^~q)v(q^~p),Commutativity
+pv(~q^q),(pv~q)^(pvq),Distributivity
+~r^((~p->~p)^r)^(p->r),~r^((~pvp)^r)^(p->r),Implication as Disjunction
+~~(q^r)vp,(q^r)vp,Double Negation
+qv~~~(p^p),qv~(p^p),Double Negation
+((pvq)v~(q^T))v(pv~q),((pvq)v~q)v(pv~q),Identity
+(T^(p->q))->(qv~(p->q)),(T^(p->q))->((p->q)->q),Implication as Disjunction
+~s^(svp)->~s,~s->~s,Absorption
+(p^~q)v((q^~p)^(q^~p)),(p^~q)v(q^~p),Idempotence
+~((Fvq)^~p)^(~q->~p),~((Fvq)^~p)^(qv~p),Implication as Disjunction
+(p->r)^((Fvqv(q^r))->r),(p->r)^((Fvq)->r),Absorption
+pv~(~qv~r)vF,pv(~(~qv~r)vF),Associativity
+~(~r^r),rv~r,De Morgan's Law
+~~~(~pv(p^~q))<->(p^q),~~(p^~(p^~q))<->(p^q),De Morgan's Law
+(~qvF)^p,~q^p,Identity
+~(~((~(pv(p^q)v~s)v((~p^T)^~s))^p)^~p),~(~((~(pv~s)v((~p^T)^~s))^p)^~p),Absorption
+(~p^q)v((qvp)v((qvp)^s)^~q^~s),(~p^q)v((qvp)^~q^~s),Absorption
+(~qvqv(q^s))^p^F,(~qvqv(q^s))^~r^p^r,Negation
+r->(r^r),r->r,Idempotence
+(pv(~pv(p^~q)))^(qv(~pv(p^~q))),(p^q)v(~pv(p^~q)),Distributivity
+((pvq)^T)->r,(pvq)->r,Identity
+~~(p^q)v(p->~(~pvq)),~~(p^q)v(~pv~(~pvq)),Implication as Disjunction
+~(qv~p)v(~p^q),~(qv~p)v(q^~p),Commutativity
+(p^~q)v(q^~~(~p^~p)),(p^~q)v(q^(~p^~p)),Double Negation
+~r^((~pv(pv(p^s)))^r)^(p->r),~r^((~pvpv(p^s))^r)^(p->r),Associativity
+(~(p^(qv~q))^q)v(~q^~s),(~(p^T)^q)v(~q^~s),Negation
+~q->(~p^(pvq)),~q->~p^(pvq),Associativity
+(pv(~pv(p^~(Fvq))))^(qv(~pv(p^~(Fvq))^((p^~(Fvq))vs))),(pv(~pv(p^~(Fvq))))^(qv(~pv(p^~(Fvq)))),Absorption
+~(~r^~~(~p^(qvq)->((qvq)^q))),~(~r^~~(p^(qvq)v((qvq)^q))),Implication as Disjunction
+(p^p)v(p^q)->(qvr),p^(pvq)->(qvr),Distributivity
+((p^p)^q)->(r^T),((p^p)^q)->r,Identity
+~(q^~p)^(~q->~p),(~q->~p)^~(q^~p),Commutativity
+~pv(p^s)vq,~pvq,Absorption
+qv((pv~p)^(p^~q)),qv(T^(p^~q)),Negation
+(p->q)->~~((p->q)->q),(p->q)->((p->q)->q),Double Negation
+(p->q)->((~pvq)->q),(p->q)->((p->q)->q),Implication as Disjunction
+~((q->p)^(p->q)),~((p->q)^(q->p)),Commutativity
+(p^~~(rv~s))v((~q^r)v(~q^~s)),(p^~~(rv~s))v(~q^(rv~s)),Distributivity
+(((p^T)vq)^~q)v(((p^T)vq)^p),((p^T)vq)^(~qvp),Distributivity
+~(Fv((~q->s)^(~p->~q)^(~p->~q))),~((~q->s)^(~p->~q)^(~p->~q)),Identity
+~(Fv(~p->q)),~(~p->q),Identity
+~(~pv~p),p^p,De Morgan's Law
+(p->q)^(q->p),p<->q,Iff as Implication
+rv~(p^(qvq)),~(~r^~(~(p^(qvq)))),De Morgan's Law
+~(~p^~q)^((~p^~q)vq)->r,~(~p^~q)->r,Absorption
+~(~(rv~s)v(~p^q)),~((~p^q)v~(rv~s)),Commutativity
+p->q^(qvs),p->q,Absorption
+~Fv(qv~q),F->(qv~q),Implication as Disjunction
+(q^p)->r,~(~qv~p)->r,De Morgan's Law
+~(~pv~q)->(~q->p),~(~pv~q)->(pvq),Implication as Disjunction
+(p->r)^(~qvr)^((q->r)vr),(p->r)^(q->r)^((q->r)vr),Implication as Disjunction
+~~((pvq)^(pvrvr)),~~((pvq)^(pvr)),Idempotence
+p->q,~pvq,Implication as Disjunction
+((F->T)^((F->T)vp)vF)vF,(F->T)^((F->T)vp)vF,Identity
+s->s^(svp),s^(svp)v~s,Implication as Disjunction
+(p->q^(qvp))->((p->q)->q),(p->q)->((p->q)->q),Absorption
+s^(~~~(~s^~q)->(~s^~T))^p,s^(~(~s^~q)->(~s^~T))^p,Double Negation
+~(~(~qv~qvF)v~p),~(~(~qvF)v~p),Idempotence
+((p^p)^~r)->q,(p^~r)->q,Idempotence
+~q^(qvp),~q,Absorption
+~(~p^~p),pvp,De Morgan's Law
+T^p,p^T,Commutativity
+q^~q,F,Negation
+pv~(pvp),pv~p,Idempotence
+(T^q)v~p,qv~p,Identity
+~~(pv~q)^(rv~s),(pv~q)^(rv~s),Double Negation
+~(~p^~F),pvF,De Morgan's Law
+~pv(qvr^(rvq)),~pv(qvr),Absorption
+~p^(pvr)^~q,~p^~q,Absorption
+F->~~(qv~q),F->(qv~q),Double Negation
+(q^q)v(q^r),q^(qvr),Distributivity
+~pvq,qv~p,Commutativity
+~(p^q)vr,~~(p^q)->r,Implication as Disjunction
+Fv((p^q)->r),((p^q)->r)vF,Commutativity
+q->((p->q)v(((p->q)^q)v((p->q)^q))),q->((p->q)v((p->q)^q)),Idempotence
+(qvp)->((qvp)^q),~(qvp)v((qvp)^q),Implication as Disjunction
+(p^qv(q^s))->r,(p^q)->r,Absorption
+~r^((~p^r)v((p^r)vF))^(p->r),~r^((~p^r)v(p^r))^(p->r),Identity
+~~(q->r)^(p->r),(q->r)^(p->r),Double Negation
+(~s->s)^~s,(svs)^~s,Implication as Disjunction
+(q^~(~p^~p))->r,(q^(pvp))->r,De Morgan's Law
+~~(~(p<->q)v~(p<->q)),~~~(p<->q),Idempotence
+F->~(~r^r),F->(rv~r),De Morgan's Law
+~~~(~pv~p),~(~pv~p),Double Negation
+T^(((p->r)^((q->r)^(~p->q)))->r),((p->r)^((q->r)^(~p->q)))->r,Identity
+~((p^q)v~(~qvp))^((~qvp)vp),~(p^q)^(~qvp)^((~qvp)vp),De Morgan's Law
+~svs,sv~s,Commutativity
+F->~~(pv~p),F->(pv~p),Double Negation
+((pvp)^~q)v(q^~p),(p^~q)v(q^~p),Idempotence
+((p^T)vq)^(~qvp),((p^T)vq)^(~p->~q),Implication as Disjunction
+~sv(s^r)vs,~svs,Absorption
+~~(~(pvq)^~(pvq)),~~~(pvq),Idempotence
+~(~p^~q)^((~p^~q)v(qvF))->r,~(~p^~q)^((~p^~q)vq)->r,Identity
+(pvp)^T,p^T,Idempotence
+p->~(~r^~q),p->(rvq),De Morgan's Law
+~(~r^~~((p^q)v(p^q))),~(~r^~(~(p^(qvq)))),Distributivity
+~(p^q)^(~qvp)^((~qvp)vp),~(p^q)^(~qvp),Absorption
+~q->~((p^T)^~q),~((p^T)^~q)vq,Implication as Disjunction
+((p->r)^~(~(q->r)v~((pvq)^(pvq))))->r,((p->r)^(q->r)^((pvq)^(pvq)))->r,De Morgan's Law
+(pvq)v~(T^(p^q)),(T^(p^q))->(pvq),Implication as Disjunction
+(~T->(p^~q))^((p^~q)v(q^~p)),((p^~q)vT)^((p^~q)v(q^~p)),Implication as Disjunction
+~(~~(~((~p^s)v((~p^T)^~s))v~p)^~p),~(~(((~p^s)v((~p^T)^~s))^p)^~p),De Morgan's Law
+((pv(p^q))vq)^(~p->~q),(pv(p^q)vq)^(~p->~q),Associativity
+pvpv~p,pv~p,Idempotence
+rv((r^~r)v~r),rv(Fv~r),Negation
+p->~((qvr)->~(qvr)),p->~(~(qvr)v~(qvr)),Implication as Disjunction
+(p->q)->(((p->q)v(p->q))->q),(p->q)->((p->q)->q),Idempotence
+~(r^~r)vT,(r^~r)->T,Implication as Disjunction
+p^pv(p^r),p^p,Absorption
+q^~q^(qvs),q^~q,Absorption
+(qvq)^~q,q^~q,Idempotence
+qv~~(r^q),qv(r^q),Double Negation
+(Fvq)->~~(p->q),q->~~(p->q),Identity
+~((T^p)^~q),~(p^~q),Identity
+(p^(q->p))v(q^(q->p)),(pvq)^(q->p),Distributivity
+(Fvp)^(pvq),p^(pvq),Identity
+qv~~(r^q^(qvp)),qv~~(r^q),Absorption
+(qvp)->r,(pvq)->r,Commutativity
+rv(~rv~r),rv~r,Idempotence
+~((~(p^s)->(pvF))<->q),~((~(p^s)->p)<->q),Identity
+((pvq)vF)^(pvr),(pvq)^(pvr),Identity
+p->(~r->q),p->(qvr),Implication as Disjunction
+~((~p->~q)^((~q->s)^T)),~((~p->~q)^(~q->s)),Identity
+~((~p^q)v~(s->r)),~((~p^q)v~(rv~s)),Implication as Disjunction
+p^~~(~pvq)<->(p^q),p^~(p^~q)<->(p^q),De Morgan's Law
+(pvp)^(pvq),pv(p^q),Distributivity
+qvp,pvq,Commutativity
+(p^((Fv~p)->~q))v(q^((Fv~p)->~q)),(pvq)^((Fv~p)->~q),Distributivity
+pv(~p^~p),pv~p,Idempotence
+q^(qvr),q,Absorption
+(T^p)^((T^p)vq)v(qvq),(T^p)v(qvq),Absorption
+~~(pv(q^r)),pv(q^r),Double Negation
+((p^T)^~(~pv~T))<->q,((p^T)^(p^T))<->q,De Morgan's Law
+(~qvqv(q^s))^~r^p^r,(~qvq)^~r^p^r,Absorption
+(p^~(p^~q)->(p^q))^((p^q)->~(p^~q)^p),(p^~(p^~q)->(p^q))^((p^q)->p^~(p^~q)),Commutativity
+(p^q)->(rvr),(p^q)->r,Idempotence
+s^(svp)->s,s->s,Absorption
+((p->r)^(q->(r^T))^(pvq))->r,((p->r)^(q->r)^(pvq))->r,Identity
+~(p^q)v(T^r),~(p^q)vr,Identity
+~~(pvq),pvq,Double Negation
+r^~~(~rv~r),r^(~rv~r),Double Negation
+~(((~p^q)v~(s->r))v((~p^q)v~(s->r))),~((~p^q)v~(s->r)),Idempotence
+p^(pvq)v~p,pv~p,Absorption
+(~~(~p^q)v~q)^((~p^q)v~s),((~p^q)v~q)^((~p^q)v~s),Double Negation
+pv(qvq),pvq,Idempotence
+(T^(~(p^(qv~q))^q))v(~q^~s),(~(p^(qv~q))^q)v(~q^~s),Identity
+p->(qv(q^p)vq),p->(qvq),Absorption
+((T^(~p^q))v~q)^((T^(~p^q))v~s),(T^(~p^q))v(~q^~s),Distributivity
+q->(~~((q^~q)vp)->q),q->(((q^~q)vp)->q),Double Negation
+((~p^q)v~q)^((~p^q)v~s),(~p^q)v(~q^~s),Distributivity
+~(~(~~((q^(Fvr))v(q^~r))v((q^r)v(q^~r)))^p),~(~(((q^(Fvr))v(q^~r))v((q^r)v(q^~r)))^p),Double Negation
+~(~q^q),qv~q,De Morgan's Law
+p->~~~(~r^~q),p->~(~r^~q),Double Negation
+((~p->(p^~p))^q)->(pvq),((~p->F)^q)->(pvq),Negation
+~~((p->r)^(q->r)),(p->r)^(q->r),Double Negation
+~(~(sv~s)^~(sv~s)),~~(sv~s),Idempotence
+(p->r)^((Fvq)->r),(p->r)^(q->r),Identity
+~(q^q^~p)^(qv(Fv~p)),~(q^~p)^(qv(Fv~p)),Idempotence
+~p^(pvr)->~(~q^~F),~p^(pvr)->(qvF),De Morgan's Law
+~(p^q)^(~qvp),~(p^q)^(pv~q),Commutativity
+~~(~p->p),~~(pvp),Implication as Disjunction
+(pv(p^r)vq)^(pvr),(pvq)^(pvr),Absorption
+~(pv(p^s)<->q),~(p<->q),Absorption
+(p^q)v(~pv~(~pvq)),(p^q)v(~pv(p^~q)),De Morgan's Law
+~(p^~r)vq,(p^~r)->q,Implication as Disjunction
+rv(r->~r),rv(~rv~r),Implication as Disjunction
+sv~s,T,Negation
+T^(~q^(pvp)),T^(~q^p),Idempotence
+~(~q^~r)v(~pv~p),~(~q^~r)v~p,Idempotence
+(p^q)->(~p->(T^q)),(p^q)->(pv(T^q)),Implication as Disjunction
+(~p^q)v((qvp)^~q^~s),(~p^q)v(~q^(qvp)^~s),Commutativity
+((p->r)^(q->r))v((q->r)^s^s),(p->r)^(q->r)v((q->r)^s^s),Associativity
+~~(qvp)->r,(qvp)->r,Double Negation
+~pv((qvq)^(qvq)),~pv(qvq),Idempotence
+~~(q^(qvs)^~q),~~(q^~q),Absorption
+~(~p^~(((~p^s)v((~p^T)^~s))^p)),~(~(((~p^s)v((~p^T)^~s))^p)^~p),Commutativity
+~((~p->~q)^(~p->~q)^(~q->s)),~((~p->~q)^(~q->s)),Idempotence
+~~(p^p),~(~pv~p),De Morgan's Law
+~p->(q^~(qvq))^((q^~(qvq))vr),~p->(q^~(qvq)),Absorption
+(qv~p)^~~(~qvp),(qv~p)^~~~(q^~p),De Morgan's Law
+~q->~~(r^q),~q->(r^q),Double Negation
+~~((~qv~q)^~p),~~(~p^(~qv~q)),Commutativity
+~((((p->q)^(p->q))vF)v(((p->q)^(p->q))vq)),~(((p->q)^(p->q))v(Fvq)),Distributivity
+qvq,q,Idempotence
+((p->r)^(q->(T^r))^~(~p^~q))->r,((p->r)^(q->(T^r))^(pvq))->r,De Morgan's Law
+(p->r)^(q->r)^((q->r)vr),(p->r)^(q->r),Absorption
+(q^(q->p))v(p^(q->p)),(p^(q->p))v(q^(q->p)),Commutativity
+(~~pv~~p)<->p,(~(~p))<->p,Idempotence
+~~~~p,~(~p),Double Negation
+p->(q->r)^((q->r)vq),p->(q->r),Absorption
+q->(qv~(T^p)),q->(qv~p),Identity
+~~~(~pvp),~~(p^~p),De Morgan's Law
+~r^~(~((~pvp)^r)v~(p->r)),~r^((~pvp)^r)^(p->r),De Morgan's Law
+~~~((pvF)v(qvF)),~~~((pvq)vF),Distributivity
+(~pvq)vF,(p->q)vF,Implication as Disjunction
+~~(~r^((~p^r)v(p^r))^(p->r)),~~(~r^((~pvp)^r)^(p->r)),Distributivity
+~(~(((~p^(~p^s))v((~p^T)^~s))^p)^~p),~(~((((~p^~p)^s)v((~p^T)^~s))^p)^~p),Associativity
+~(p<->~(~q^~F))^T,~(p<->~(~q^~F)),Identity
+~(~(pvq)v~(pvr)),(pvq)^(pvr),De Morgan's Law
+(svs)v((svs)^q)^~s,(svs)^~s,Absorption
+~r^(~pvp)^(Fv(r^r))^(p->r),~r^((~pvp)^(Fv(r^r)))^(p->r),Associativity
+~(~r^~~~(~pv~(qvq))),~(~r^~~~~(p^(qvq))),De Morgan's Law
+q^~(q^T),q^~q,Identity
+qv(~qv~q),qv~q,Idempotence
+~(~qv~p)->r,~(~pv~q)->r,Commutativity
+(qvp)^(qv~q),qv(p^~q),Distributivity
+(p^q)v((~pvp)^(~qv~p)),(p^q)v((~pvp)^(~pv~q)),Commutativity
+(~~pv~~p)<->p^~~(pvq),(~~pv~~p)<->p^(pvq),Double Negation
+(pv~q)^(((rvr)v~s)v((rvr)v~s)),(pv~q)^((rvr)v~s),Idempotence
+(p^~q)vq,~~((p^~q)vq),Double Negation
+T^p,p,Identity
+~~(pvqvq)v~(~p^q),~~(pvq)v~(~p^q),Idempotence
+(q^q^r)vp,(q^r)vp,Idempotence
+~((~p^q)v~(rv(r^p)v~(s^s))),~((~p^q)v~(rv(r^p)v~s)),Idempotence
+~(((p->q)^(p->q))v(Fvq)),~(((p->q)^(p->q))vq),Identity
+~(~~(pvq)vF),~~~(pvq),Identity
+~q->~(q^q),~q->~q,Idempotence
+p->~(~(qvr)v~(qvr)),p->~~(qvr),Idempotence
+~(qv(p->q)),~((p->q)vq),Commutativity
+(~p^~(~p^~s))->q,~p^~(~p^~s)->q,Associativity
+~(p^~q)v(qvF),~~(~pvq)v(qvF),De Morgan's Law
