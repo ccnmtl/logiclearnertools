@@ -41,21 +41,24 @@ def generate_training_data(question_seeds, target_type, out_file,
 if __name__ == "__main__":
     data_seeds = get_seeds_from_questions(
         os.path.join("..", "..", "questions.json"))
-    # generate_training_data(["p"], "rule", "rule_test.csv")
+    """
     generate_training_data(["p",
                             "q",
                             "T",
                             "F"],
                            "rule",
                            "training_datasets/rule_test_small.csv",
+                           enforce_unique=True)"""
+    generate_training_data(data_seeds, "rule", "training_datasets/rule_test_unique.csv", questions_per_seed=20,
                            enforce_unique=True)
-    # generate_training_data(data_seeds, "rule", "rule_test_unique.csv", questions_per_seed=10, enforce_unique=True)
-    # generate_training_data(["p"], "step", "step_test.csv")
+    """
     generate_training_data(["p",
                             "q",
                             "T",
                             "F"],
                            "step",
                            "training_datasets/step_test_small.csv",
+                           enforce_unique=True)"""
+    generate_training_data(data_seeds, "step", "training_datasets/step_test_unique.csv", questions_per_seed=20,
                            enforce_unique=True)
     # generate_training_data(data_seeds, "step", "step_test_unique.csv", questions_per_seed=10, enforce_unique=True)
