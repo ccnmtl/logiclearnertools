@@ -37,6 +37,6 @@ setup(
     scripts=[],
     license="GPLv3+",
     platforms=["any"],
-    packages=['logictools', 'logictools.AI'],
+    packages=['logictools', 'logictools.AI', 'logictools.AI.neural_heuristic'],
     include_package_data=True,
     )
