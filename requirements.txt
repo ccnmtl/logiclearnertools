@@ -25,7 +25,7 @@ pep8==1.7.1
 pyflakes==3.0.1
 pycodestyle==2.10.0
 levenshtein==0.21.0
-rapidfuzz==2.15.1
+rapidfuzz==3.1.0
 importlib-metadata<6.7  # for flake8
 
 botocore>=1.12.198,<1.30.0
