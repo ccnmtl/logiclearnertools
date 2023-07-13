@@ -17,7 +17,7 @@ sympy==1.12
 typing-extensions==4.7.1
 urllib3==1.26.15
 Werkzeug==2.3.4
-zipp==3.16.0
+zipp==3.16.1
 lark==1.1.5
 flake8==6.0.0
 pep8==1.7.1
