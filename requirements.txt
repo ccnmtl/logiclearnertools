@@ -35,5 +35,5 @@ boto3>=1.9.198,<1.29.0
 gunicorn==21.2.0
 torch==1.13.1
 
-setuptools~=68.1.0
+setuptools~=68.1.2
 scikit-learn~=1.2.1
