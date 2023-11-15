@@ -29,7 +29,7 @@ rapidfuzz==3.5.2
 importlib-metadata<6.9  # for flake8
 
 botocore>=1.12.198,<1.32.0
-boto3>=1.9.198,<1.29.0
+boto3>=1.9.198,<1.30.0
 
 
 gunicorn==21.2.0
