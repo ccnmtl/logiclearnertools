@@ -34,5 +34,5 @@ botocore>=1.12.198,<1.33.0
 gunicorn==21.2.0
 torch==2.1.0
 
-setuptools~=68.2.2
+setuptools~=69.0.0
 scikit-learn~=1.2.1
