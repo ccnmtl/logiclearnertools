@@ -19,7 +19,7 @@ urllib3==2.1.0
 Werkzeug==2.3.7
 zipp==3.17.0
 lark==1.1.8
-flake8==6.1.0
+flake8==7.0.0
 pep8==1.7.1
 
 pyflakes==3.1.0
