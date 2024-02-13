@@ -24,7 +24,7 @@ pep8==1.7.1
 
 pyflakes==3.2.0
 pycodestyle==2.11.1
-levenshtein==0.23.0
+levenshtein==0.25.0
 rapidfuzz==3.6.0
 importlib-metadata<7.1  # for flake8
 
