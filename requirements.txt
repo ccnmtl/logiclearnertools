@@ -16,7 +16,7 @@ sly==0.5
 sympy==1.12
 typing-extensions==4.10.0
 urllib3==2.2.1
-Werkzeug==2.3.7
+Werkzeug==3.0.2
 zipp==3.18.1
 lark==1.1.9
 flake8==7.0.0
