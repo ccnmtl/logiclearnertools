@@ -35,4 +35,4 @@ gunicorn==21.2.0
 torch==2.2.2
 
 setuptools~=69.2.0
-scikit-learn~=1.2.1
+scikit-learn~=1.4.2
