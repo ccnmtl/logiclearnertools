@@ -10,7 +10,7 @@ networkx<3.4
 numpy<2.1
 psutil==6.0.0
 python-dateutil==2.9.0.post0
-s3transfer==0.10.1
+s3transfer==0.10.2
 six==1.16.0
 sly==0.5
 sympy==1.12.1
