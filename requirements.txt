@@ -13,7 +13,7 @@ python-dateutil==2.9.0.post0
 s3transfer==0.10.2
 six==1.16.0
 sly==0.5
-sympy==1.13.1
+sympy==1.13.2
 typing-extensions==4.12.2
 urllib3==2.2.2
 Werkzeug==2.3.7
