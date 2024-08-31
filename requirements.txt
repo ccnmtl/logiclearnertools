@@ -18,7 +18,7 @@ typing-extensions==4.12.2
 urllib3==2.2.2
 Werkzeug==2.3.7
 zipp==3.19.2
-lark==1.1.9
+lark==1.2.2
 flake8==7.1.1
 pep8==1.7.1
 
