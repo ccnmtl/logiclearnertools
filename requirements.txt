@@ -25,5 +25,5 @@ pycodestyle==2.12.1
 levenshtein==0.26.0
 rapidfuzz==3.10.0
 importlib-metadata<8.6  # for flake8
-torch==2.4.1
+torch==2.5.0
 scikit-learn~=1.3.2
