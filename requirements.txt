@@ -22,7 +22,7 @@ flake8==7.1.1
 pep8==1.7.1
 pyflakes==3.2.0
 pycodestyle==2.12.1
-levenshtein==0.26.0
+levenshtein==0.26.1
 rapidfuzz==3.10.1
 importlib-metadata<8.6  # for flake8
 torch==2.5.1
