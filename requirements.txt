@@ -10,7 +10,7 @@ numpy<2.2
 psutil==6.1.0
 python-dateutil==2.9.0.post0
 s3transfer==0.10.4
-six==1.16.0
+six==1.17.0
 sly==0.5
 sympy==1.13.3
 typing-extensions==4.12.2
