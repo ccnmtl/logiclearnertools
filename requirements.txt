@@ -22,7 +22,7 @@ pep8==1.7.1
 pyflakes==3.3.2
 pycodestyle==2.13.0
 levenshtein==0.27.1
-rapidfuzz==3.12.2
+rapidfuzz==3.13.0
 importlib-metadata<8.7  # for flake8
 torch==2.6.0
 scikit-learn~=1.6.1
