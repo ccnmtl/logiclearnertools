@@ -19,7 +19,7 @@ zipp==3.23.0
 lark==1.2.2
 flake8==7.3.0
 pep8==1.7.1
-pyflakes==3.3.2
+pyflakes==3.4.0
 pycodestyle==2.14.0
 levenshtein==0.23.0
 rapidfuzz==3.13.0
