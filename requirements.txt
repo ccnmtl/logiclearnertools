@@ -25,4 +25,4 @@ levenshtein==0.23.0
 rapidfuzz==3.13.0
 importlib-metadata<8.8  # for flake8
 torch==2.2.2
-scikit-learn~=1.6.1
+scikit-learn~=1.8.0
