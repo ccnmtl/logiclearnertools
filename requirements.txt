@@ -23,7 +23,7 @@ pyflakes==3.4.0
 pycodestyle==2.14.0
 levenshtein==0.27.3
 rapidfuzz==3.13.0
-importlib-metadata<8.8  # for flake8
+importlib-metadata<9.1  # for flake8
 
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.10.0+cpu
