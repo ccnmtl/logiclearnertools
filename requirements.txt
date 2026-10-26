@@ -1,6 +1,6 @@
 click==8.5.0
 decorator==5.3.1
-importlib-metadata==9.0.0
+importlib-metadata==9.1.0
 itsdangerous==2.2.0
 jmespath==1.1.0
 mpmath==1.4.1
@@ -23,7 +23,7 @@ pyflakes==4.0.3
 pycodestyle==2.15.0
 levenshtein==0.27.5
 rapidfuzz==3.14.6
-importlib-metadata<9.1  # for flake8
+importlib-metadata<9.2  # for flake8
 
 --extra-index-url https://download.pytorch.org/whl/cpu
 torch==2.14.1+cpu
