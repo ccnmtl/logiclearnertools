@@ -26,6 +26,6 @@ rapidfuzz==3.14.6
 importlib-metadata<10.2  # for flake8
 
 --extra-index-url https://download.pytorch.org/whl/cpu
-torch==2.14.1+cpu
+torch==2.15.0+cpu
 
 scikit-learn~=1.9.1
