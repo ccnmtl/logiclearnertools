@@ -1,4 +1,4 @@
-click==8.5.0
+click==8.5.1
 decorator==5.3.1
 importlib-metadata==10.1.0
 itsdangerous==2.2.0
