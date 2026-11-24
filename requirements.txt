@@ -1,5 +1,5 @@
 click==8.5.1
-decorator==5.3.1
+decorator==5.3.2
 importlib-metadata==10.2.0
 itsdangerous==2.2.0
 jmespath==1.1.0
